@@ -31,7 +31,7 @@
 }
 
 /* Preloader: hide GSAP-animated elements until JS initialises them */
-html.w-mod-js :is(
+html.w-mod-js:not(.w-mod-ix3) :is(
   .parallax-image, .hero-reveal-large-text, .hero-stack-overlay,
   .hero-stack-background, .location-icon, .contact-link-text, .contact-bg,
   .brand-slogan, .faq-accordion-item, .accordion-dropdown, .mega-menu-trigger,
