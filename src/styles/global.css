@@ -292,8 +292,8 @@ html.w-mod-js:not(.w-mod-ix3) :is(
    ========================================================= */
 
 .section_animated-heading {
-  padding-top: 8vw;
-  padding-bottom: 4vw;
+  padding-top: 6vw;
+  padding-bottom: 3vw;
   text-align: center;
 }
 
@@ -301,21 +301,27 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5vw;
+  justify-content: center;
+  gap: 0.2vw;
+  text-align: center;
 }
 
 .animated-scroll-heading {
   font-family: var(--_typography---display-font, 'Nyght Serif', serif);
-  font-size: clamp(2.5rem, 6vw, 6rem);
-  line-height: 1;
+  font-size: clamp(2.2rem, 5.2vw, 5.2rem);
+  line-height: 1.05;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
   margin: 0;
-  color: #1a1a1a;
+  color: #111315;
+  text-align: center;
+  transform: none !important;
 }
 
-.animated-scroll-heading.is-first  { transform: translateX(-4vw); }
-.animated-scroll-heading.is-middle { font-style: italic; }
-.animated-scroll-heading.is-last   { transform: translateX(4vw); }
+.animated-scroll-heading.is-middle {
+  font-style: italic;
+  font-weight: 400;
+}
 
 .section_testimonials {
   padding-bottom: 6vw;
