@@ -112,9 +112,9 @@
 .hero-cinematic-content {
   position: relative;
   z-index: 2;
-  margin-top: auto;
+  margin-top: 16vh;
   margin-bottom: auto;
-  transform: translateY(50px);
+  padding-top: 40px;
   max-width: 950px;
 }
 
