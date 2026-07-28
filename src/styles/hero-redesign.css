@@ -25,6 +25,7 @@
   width: 100%;
   z-index: 100;
   background: transparent;
+  border-bottom: none !important;
 }
 
 .nav-grid {
@@ -32,6 +33,14 @@
   justify-content: space-between !important;
   align-items: center !important;
   width: 100%;
+  border-bottom: none !important;
+}
+
+.nav-border {
+  display: none !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  border: none !important;
 }
 
 .nav-logo {

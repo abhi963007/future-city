@@ -147,8 +147,6 @@ const Navbar: React.FC = () => {
             <div className="burger-menu-bg for-animation"></div>
           </button>
         </div>
-
-        <div className="nav-border"></div>
       </div>
 
       {/* Full-screen menu overlay */}
