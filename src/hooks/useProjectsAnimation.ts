@@ -10,13 +10,40 @@ export function useProjectsAnimation(containerRef: React.RefObject<Element | nul
       const rows = container.querySelectorAll('.project-clean_row');
 
       rows.forEach((row) => {
+        const left = row.querySelector('.project-clean_left');
+        const right = row.querySelector('.project-clean_right');
         const img = row.querySelector('.project-clean_image');
-        const content = row.querySelector('.project-clean_content');
+
+        if (left) {
+          gsap.from(left, {
+            x: -35,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: row,
+              start: 'top 78%',
+            },
+          });
+        }
+
+        if (right) {
+          gsap.from(right, {
+            x: 35,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: row,
+              start: 'top 78%',
+            },
+          });
+        }
 
         if (img) {
           gsap.fromTo(
             img,
-            { scale: 1.12 },
+            { scale: 1.1 },
             {
               scale: 1,
               ease: 'power1.out',
@@ -28,19 +55,6 @@ export function useProjectsAnimation(containerRef: React.RefObject<Element | nul
               },
             }
           );
-        }
-
-        if (content) {
-          gsap.from(content, {
-            y: 45,
-            opacity: 0,
-            duration: 0.9,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: row,
-              start: 'top 75%',
-            },
-          });
         }
       });
     }, container);

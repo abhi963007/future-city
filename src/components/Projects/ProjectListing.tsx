@@ -70,16 +70,20 @@ const ProjectListing: React.FC = () => {
 
   return (
     <div ref={containerRef} className="section_project-clean-listing">
+      {/* Section Heading matching exact style of other sections */}
+      <div className="section_animated-heading" style={{ paddingTop: '1vw', paddingBottom: '2.5vw' }}>
+        <div className="animated-heading_wrap">
+          <h2 className="animated-scroll-heading is-first">Masterplan</h2>
+          <h2 className="animated-scroll-heading is-middle">Layout Sectors</h2>
+        </div>
+      </div>
+
+      {/* Sector Rows Container */}
       <div className="project-clean_container">
         {sectorsData.map((sector) => (
           <div key={sector.id} className="project-clean_row">
-            {/* Left Image Column */}
-            <div className="project-clean_image-wrap">
-              <img src={sector.imageSrc} loading="lazy" alt={sector.title} className="project-clean_image" />
-            </div>
-
-            {/* Right Text Column */}
-            <div className="project-clean_content">
+            {/* Left Side: Title & Description */}
+            <div className="project-clean_left">
               <div className="project-clean_badge">
                 <span>{sector.year}</span>
                 <span className="badge-sep">•</span>
@@ -87,10 +91,22 @@ const ProjectListing: React.FC = () => {
               </div>
 
               <h3 className="project-clean_title">{sector.title}</h3>
-
               <p className="project-clean_desc">{sector.desc}</p>
 
-              {/* Specs Table */}
+              <div className="project-clean_action">
+                <Button href={ROUTES.CONSULTATION} variant="secondary">
+                  <div className="button-text is-1st">Book Site Visit</div>
+                  <div className="button-text is-2nd">Book Site Visit</div>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Side: Image & Specs Table */}
+            <div className="project-clean_right">
+              <div className="project-clean_image-wrap">
+                <img src={sector.imageSrc} loading="lazy" alt={sector.title} className="project-clean_image" />
+              </div>
+
               <div className="project-clean_specs-table">
                 {sector.specs.map((spec, sIdx) => (
                   <div key={sIdx} className="project-clean_spec-row">
@@ -98,14 +114,6 @@ const ProjectListing: React.FC = () => {
                     <span className="spec-value">{spec.value}</span>
                   </div>
                 ))}
-              </div>
-
-              {/* Action Button */}
-              <div className="project-clean_action">
-                <Button href={ROUTES.CONSULTATION} variant="secondary">
-                  <div className="button-text is-1st">Book Site Visit</div>
-                  <div className="button-text is-2nd">Book Site Visit</div>
-                </Button>
               </div>
             </div>
           </div>

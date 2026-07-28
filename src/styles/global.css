@@ -292,8 +292,8 @@ html.w-mod-js:not(.w-mod-ix3) :is(
    ========================================================= */
 
 .section_animated-heading {
-  padding-top: 6vw;
-  padding-bottom: 3vw;
+  padding-top: 2.5vw;
+  padding-bottom: 2.5vw;
   text-align: center;
 }
 
@@ -329,8 +329,8 @@ html.w-mod-js:not(.w-mod-ix3) :is(
    ========================================================= */
 
 .section_services-home {
-  padding-top: 6vw;
-  padding-bottom: 6vw;
+  padding-top: 2vw;
+  padding-bottom: 5vw;
   position: relative;
   overflow: clip;
   width: 100%;
@@ -457,8 +457,8 @@ html.w-mod-js:not(.w-mod-ix3) :is(
    ========================================================= */
 
 .section_project-clean-listing {
-  padding-top: 6vw;
-  padding-bottom: 6vw;
+  padding-top: 2vw;
+  padding-bottom: 5vw;
   width: 100%;
 }
 
@@ -473,9 +473,16 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 .project-clean_row {
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 5vw;
-  align-items: center;
+  grid-template-columns: 5.2fr 6.8fr;
+  gap: 6vw;
+  align-items: start;
+  padding-bottom: 6vw;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.project-clean_row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 @media (max-width: 991px) {
@@ -485,11 +492,27 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   }
 }
 
+.project-clean_left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  position: sticky;
+  top: 14vh;
+}
+
+.project-clean_right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .project-clean_image-wrap {
   border-radius: 1.2rem;
-  height: 420px;
+  height: 440px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -503,13 +526,6 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   width: 100%;
   height: 100%;
   will-change: transform;
-}
-
-.project-clean_content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-  align-items: flex-start;
 }
 
 .project-clean_badge {
@@ -528,25 +544,24 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 .project-clean_title {
   font-family: var(--_typography---display-font, 'Nyght Serif', serif);
-  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
   line-height: 1.15;
   margin: 0;
   color: #111315;
 }
 
 .project-clean_desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   opacity: 0.75;
   margin: 0;
-  max-width: 36rem;
+  max-width: 32rem;
 }
 
 .project-clean_specs-table {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 36rem;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   margin-top: 0.5rem;
 }
@@ -555,9 +570,9 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0;
+  padding: 0.9rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   letter-spacing: 0.05em;
 }
 
@@ -573,7 +588,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 .project-clean_action {
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 /* =========================================================
