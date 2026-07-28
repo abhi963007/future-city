@@ -323,6 +323,172 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   font-weight: 400;
 }
 
+/* =========================================================
+   FOOTER MINIMAL — Sleek Dark Luxury Layout
+   ========================================================= */
+
+.footer-minimal {
+  background-color: #0b0d0e;
+  color: #f8f7f3;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-minimal_cta {
+  padding: 6vw 4vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.03), transparent 70%);
+}
+
+.footer-minimal_cta-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+.footer-minimal_title {
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: clamp(2rem, 4.5vw, 4.2rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #f8f7f3;
+  margin: 0;
+  max-width: 54rem;
+}
+
+.footer-minimal_main {
+  padding: 5vw 4vw 3vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-minimal_grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.2fr 1fr;
+  gap: 4vw;
+  align-items: start;
+  padding-bottom: 4vw;
+}
+
+@media (max-width: 991px) {
+  .footer-minimal_grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.footer-minimal_brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-minimal_logo {
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer-minimal_tagline {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.65;
+  margin: 0;
+  max-width: 24rem;
+}
+
+.footer-minimal_badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}
+
+.badge-dot {
+  opacity: 0.4;
+}
+
+.footer-minimal_nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-minimal_nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-minimal_link {
+  color: #f8f7f3;
+  opacity: 0.7;
+  font-size: 1rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-minimal_link:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.footer-minimal_contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-minimal_contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  opacity: 0.45;
+}
+
+.contact-value {
+  color: #f8f7f3;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-value:hover {
+  opacity: 1;
+}
+
+.footer-minimal_bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
 .section_testimonials {
   padding-bottom: 6vw;
   width: 100%;
