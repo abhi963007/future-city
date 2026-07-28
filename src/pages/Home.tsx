@@ -4,7 +4,7 @@ import HeroIntro from '../components/Hero/HeroIntro';
 import AboutGrid from '../components/About/AboutGrid';
 import TypoTitles from '../components/Typography/TypoTitles';
 import SolutionsShowcase from '../components/Solutions/SolutionsShowcase';
-import StatementReveal from '../components/Statement/StatementReveal';
+import TestimonialsSection from '../components/Testimonials/TestimonialsSection';
 import StickyServices from '../components/StickyServices/StickyServices';
 import ProjectListing from '../components/Projects/ProjectListing';
 import ImageSplit from '../components/ImageSplit/ImageSplit';
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
         subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
       />
       <SolutionsShowcase />
-      <StatementReveal />
+      <TestimonialsSection />
       <StickyServices />
       <ProjectListing />
       <ImageSplit />
