@@ -97,29 +97,7 @@ const Navbar: React.FC = () => {
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
-        {/* Top Left Logo Link */}
-        <div className="nav-logo">
-          <Link
-            to={ROUTES.HOME}
-            onClick={(e) => handleNavClick(e, ROUTES.HOME, '.hero-cinematic')}
-            aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
-            className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
-          >
-            {/* BRAND LOGO ICON */}
-            <div className="logo-icon-wrap">
-              <img
-                src="/logo.svg"
-                loading="eager"
-                alt="Future City Logo"
-                className="brand-logo-image"
-              />
-            </div>
-            <div className="logo-text-wrap">
-              <div className="brand-name-text">FUTURE CITY</div>
-              <div className="brand-slogan">HYDERABAD'S FOURTH CITY</div>
-            </div>
-          </Link>
-        </div>
+        {/* Top Left Logo Link - Removed per user request */}
 
         {/* Top Right Actions: Book Site Visit CTA + Burger Menu */}
         <div className="nav-actions">

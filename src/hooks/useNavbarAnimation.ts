@@ -59,6 +59,24 @@ export function useNavbarAnimation(containerRef: React.RefObject<Element | null>
         gsap.set(brandSlogan, { visibility: 'visible' });
         gsap.from(brandSlogan, { opacity: 0, y: 5, duration: 0.6, ease: 'power2.out', delay: 0.4 });
       }
+
+      // Scroll direction listener: Hide navbar on scroll down, show on scroll up
+      let lastScrollY = window.scrollY;
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+          gsap.to(container, { yPercent: -120, duration: 0.4, ease: 'power2.out' });
+        } else {
+          gsap.to(container, { yPercent: 0, duration: 0.4, ease: 'power2.out' });
+        }
+        lastScrollY = currentScrollY;
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }, container);
 
     return () => ctx.revert();
