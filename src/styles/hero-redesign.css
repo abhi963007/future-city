@@ -17,6 +17,51 @@
   box-sizing: border-box;
 }
 
+/* Minimal Unlinked Header Layout */
+.nav {
+  z-index: 10;
+  background: transparent;
+}
+
+.nav-grid {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+.nav-logo {
+  margin-right: auto;
+}
+
+.nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px;
+}
+
+.nav-site-visit-btn {
+  font-family: 'Sono', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c5a059;
+  text-decoration: none;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  padding: 10px 20px;
+  border-radius: 4px;
+  background: rgba(5, 6, 8, 0.4);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.nav-site-visit-btn:hover {
+  background: #c5a059;
+  color: #050608;
+  border-color: #c5a059;
+}
+
 /* Cinematic Background & Overlays */
 .hero-cinematic-bg {
   position: absolute;

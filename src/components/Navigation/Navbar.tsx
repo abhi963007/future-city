@@ -73,104 +73,31 @@ const Navbar: React.FC = () => {
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
-        {/* Left nav links */}
-        <div id="w-node-_1b35a1ae-84f6-7697-a581-a9667f4b0e3b-7f4b0e3a" className="nav-main-links">
-          <div className="nav-links-wrap">
-            {/* Pages mega-menu trigger */}
-            <div className="mega-menu">
-              <Link
-                to={ROUTES.HOME}
-                aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
-                className={`nav-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
-              >
-                <div className="nav-text is-1st">Navigation</div>
-                <div className="nav-text is-2nd">Navigation</div>
-                <div className="nav-icon-wrap">
-                  <img src="/images/69e8dafe2b2ad885270bec2d_angle-small-down.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
-                </div>
-                <div className="nav-link-blur"></div>
-                <div className="nav-link-bg-animation"></div>
-              </Link>
-              <div className="mega-menu-trigger">
-                <div className="mega-menu-layout">
-                  <div className="mega-menu-actions">
-                    {navMenuItems.map((link) => (
-                      <Link
-                        key={link.href}
-                        to={link.href}
-                        aria-current={isActive(link.href) ? 'page' : undefined}
-                        className={`mega-menu-link w-inline-block${isActive(link.href) ? ' w--current' : ''}`}
-                      >
-                        <div className="mega-menu-link-text">{link.label}</div>
-                        <img src="/images/69e7c7b0c8b5b85fe79564cd_arrow-dark-5.svg" loading="lazy" alt="Arrow icon" className="mega-menu-link-icon" />
-                        <div className="mega-menu-link-line-1st"></div>
-                        <div className="mega-menu-link-line-2nd"></div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Link to={ROUTES.PROJECT} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Project</div>
-              <div className="nav-text is-2nd">Project</div>
-              <div className="nav-icon-wrap">
-                <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
-              </div>
-              <div className="nav-link-blur"></div>
-              <div className="nav-link-bg-animation"></div>
-            </Link>
-
-            <Link to={ROUTES.CONNECTIVITY} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Connectivity</div>
-              <div className="nav-text is-2nd">Connectivity</div>
-              <div className="nav-icon-wrap">
-                <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
-              </div>
-              <div className="nav-link-blur"></div>
-              <div className="nav-link-bg-animation"></div>
-            </Link>
-          </div>
-        </div>
-
-        {/* Logo */}
-        <div id="w-node-fe0d276e-e449-0cb4-f4aa-4eb312bbad9e-7f4b0e3a" className="nav-logo">
+        {/* Top Left Logo Only */}
+        <div className="nav-logo">
           <Link
             to={ROUTES.HOME}
             aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
             className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
           >
-            <img src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg" loading="lazy" alt="Future City Logo" className="brand-logo-image" />
+            <img
+              src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg"
+              loading="lazy"
+              alt="Future City Logo"
+              className="brand-logo-image"
+            />
             <div className="brand-name-text">Future City</div>
             <div className="brand-slogan">Fourth City Hyderabad</div>
           </Link>
         </div>
 
-        {/* Right nav actions */}
+        {/* Top Right Actions Only: Book Site Visit CTA + Burger Menu */}
         <div className="nav-actions">
-          <div className="nav-links-wrap is-2nd">
-            <Link to={ROUTES.INVESTMENT} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Investment</div>
-              <div className="nav-text is-2nd">Investment</div>
-              <div className="nav-icon-wrap">
-                <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
-              </div>
-              <div className="nav-link-blur"></div>
-              <div className="nav-link-bg-animation"></div>
-            </Link>
-            <Link to={ROUTES.CONSULTATION} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Book Site Visit</div>
-              <div className="nav-text is-2nd">Book Site Visit</div>
-              <div className="nav-icon-wrap">
-                <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
-              </div>
-              <div className="nav-link-blur"></div>
-              <div className="nav-link-bg-animation"></div>
-            </Link>
-          </div>
+          <Link to={ROUTES.CONSULTATION} className="nav-site-visit-btn">
+            Book Site Visit
+          </Link>
 
-          {/* Burger menu */}
+          {/* Burger menu trigger */}
           <button
             className="burger-menu"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -190,7 +117,7 @@ const Navbar: React.FC = () => {
         <div className="nav-border"></div>
       </div>
 
-      {/* Full-screen menu */}
+      {/* Full-screen menu overlay */}
       <div className="menu" style={{ display: isMenuOpen ? 'flex' : 'none' }}>
         <div className="menu-layout">
           <div ref={menuRef} className="menu-wrap">
