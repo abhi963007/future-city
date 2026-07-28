@@ -314,10 +314,10 @@
   display: block;
   position: relative;
   overflow: hidden;
-  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-family: var(--_typography---display-font, 'Nyght Serif', 'NyghtSerif', serif);
   font-size: clamp(3rem, 6.8vw, 7.2rem);
-  font-weight: 200;
-  letter-spacing: 0.12em;
+  font-weight: 300;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
   white-space: nowrap;
@@ -360,10 +360,11 @@
 
 .hero-cinematic-title-secondary {
   display: block;
-  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-family: var(--_typography---display-font, 'Nyght Serif', 'NyghtSerif', serif);
   font-size: clamp(3rem, 6.8vw, 7.2rem);
-  font-weight: 200;
-  letter-spacing: 0.12em;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #c5a059;
   white-space: nowrap;
