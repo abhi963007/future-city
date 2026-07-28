@@ -917,14 +917,23 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 .testimonials_logo-tile {
-  height: 1.8vw;
-  min-height: 24px;
-  margin-left: auto;
-  margin-right: auto;
   position: absolute;
-  inset: 8% 0% auto;
-  z-index: 2;
-  filter: brightness(0) invert(1);
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 90%;
+  text-align: center;
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: clamp(0.75rem, 1.1vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  filter: none !important;
+  white-space: nowrap;
 }
 
 .testimonials_master-texts {
