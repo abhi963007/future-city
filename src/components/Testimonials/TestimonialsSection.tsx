@@ -15,7 +15,7 @@ interface PillarItem {
 const pillarsData: PillarItem[] = [
   {
     id: 'dtcp',
-    imageSrc: '/images/grid-image-12.webp',
+    imageSrc: '/images/pillar-verified-plots.png',
     alt: 'DTCP & RERA Approved Villa Plotting',
     badgeText: '100% VERIFIED',
     title: 'DTCP & RERA Approved Layouts',
@@ -26,7 +26,7 @@ const pillarsData: PillarItem[] = [
   },
   {
     id: 'ai-hub',
-    imageSrc: '/images/grid-image-04.webp',
+    imageSrc: '/images/pillar-ai-hub.png',
     alt: 'AI City Tech Hub Corridor',
     badgeText: 'AI HUB ACCESS',
     title: '200-Acre AI City & Skills Corridor',
@@ -37,7 +37,7 @@ const pillarsData: PillarItem[] = [
   },
   {
     id: 'fourth-city',
-    imageSrc: '/images/grid-image-05.webp',
+    imageSrc: '/images/pillar-fourth-city.png',
     alt: 'Future City Masterplan Vision',
     badgeText: 'FOURTH CITY',
     title: 'Hyderabad’s Fourth Economic City',
@@ -48,7 +48,7 @@ const pillarsData: PillarItem[] = [
   },
   {
     id: 'rrr-highway',
-    imageSrc: '/images/grid-image-11.webp',
+    imageSrc: '/images/pillar-express-highway.png',
     alt: 'Regional Ring Road Connectivity',
     badgeText: '6-LANE HIGHWAY',
     title: 'Regional Ring Road & Highway Link',
@@ -59,7 +59,7 @@ const pillarsData: PillarItem[] = [
   },
   {
     id: 'pharma-city',
-    imageSrc: '/images/grid-image-08.webp',
+    imageSrc: '/images/pillar-life-sciences.png',
     alt: 'Pharma City Cluster Proximity',
     badgeText: 'LIFE SCIENCES',
     title: '14,000-Acre Pharma City Proximity',
