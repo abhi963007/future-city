@@ -153,7 +153,7 @@ const ConsultationForm: React.FC = () => {
                           checked={formData.service === srv.label}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         />
-                        <span className="radio-label w-form-label" htmlFor={srv.id}>
+                        <span className="radio-label w-form-label">
                           {srv.label}
                         </span>
                       </label>
@@ -179,7 +179,7 @@ const ConsultationForm: React.FC = () => {
                         checked={formData.gdpr}
                         onChange={() => setFormData({ ...formData, gdpr: !formData.gdpr })}
                       />
-                      <span className="radio-label w-form-label" htmlFor="GDPR">
+                      <span className="radio-label w-form-label">
                         I agree to the processing of my personal data.
                       </span>
                     </label>
