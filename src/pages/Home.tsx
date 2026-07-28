@@ -7,7 +7,6 @@ import SolutionsShowcase from '../components/Solutions/SolutionsShowcase';
 import TestimonialsSection from '../components/Testimonials/TestimonialsSection';
 import StickyServices from '../components/StickyServices/StickyServices';
 import ProjectListing from '../components/Projects/ProjectListing';
-import ConsultationSection from '../components/Consultation/ConsultationSection';
 import { SITE_META } from '../utils/constants';
 
 const Home: React.FC = () => {
@@ -39,7 +38,6 @@ const Home: React.FC = () => {
       <TestimonialsSection />
       <StickyServices />
       <ProjectListing />
-      <ConsultationSection />
     </>
   );
 };
