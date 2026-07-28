@@ -2,67 +2,67 @@ import React, { useRef } from 'react';
 import { useHomeGridAnimation } from '../../hooks/useHomeGridAnimation';
 
 const gridImages = [
-  // Top row (5 images)
+  // Top row (5 images: Slots 1 to 5)
   {
-    src: '/images/grid-image-12.webp',
-    alt: 'Future City development aerial view',
+    src: '/images/Slot 1.png',
+    alt: 'Future City masterplan aerial view',
     position: 'is-topleft',
   },
   {
-    src: '/images/grid-image-09.webp',
-    alt: 'Future City green spaces and parks',
+    src: '/images/Slot 2.png',
+    alt: 'Future City AI Hub tech corridor',
     position: 'is-top',
   },
   {
-    src: '/images/grid-image-07.webp',
-    alt: 'Future City smart infrastructure',
+    src: '/images/Slot 3.png',
+    alt: 'Future City luxury villa plot boundary',
     position: 'is-top',
   },
   {
-    src: '/images/grid-image-05.webp',
-    alt: 'Future City residential district',
+    src: '/images/Slot 4.png',
+    alt: 'Future City executive clubhouse amenities',
     position: 'is-top',
   },
   {
-    src: '/images/grid-image-03.webp',
-    alt: 'Future City skyline vision',
+    src: '/images/Slot 5.png',
+    alt: 'Future City 6-lane highway corridor',
     position: 'is-top-right',
   },
-  // Middle row side images (2 images)
+  // Middle row side images (2 images: Slots 6 and 7)
   {
-    src: '/images/grid-image-11.webp',
-    alt: 'Future City commercial hub',
+    src: '/images/Slot 6.png',
+    alt: 'Future City grand entry arch and security gate',
     position: 'is-left',
   },
   {
-    src: '/images/grid-image-02.webp',
-    alt: 'Future City lifestyle amenities',
+    src: '/images/Slot 7.png',
+    alt: 'Future City avenue parks and jogging tracks',
     position: 'is-right',
   },
-  // Bottom row (5 images)
+  // Bottom row (5 images: Slots 8 to 12)
   {
-    src: '/images/grid-image-10.webp',
-    alt: 'Future City water features',
+    src: '/images/Slot 8.png',
+    alt: 'Future City subterranean utilities smart grid',
     position: 'is-bottom-left',
   },
   {
-    src: '/images/grid-image-08.webp',
-    alt: 'Future City mixed-use development',
+    src: '/images/Slot 9.png',
+    alt: 'Future City Pharma City life sciences hub',
     position: 'is-bottom',
   },
   {
-    src: '/images/grid-image-06.webp',
-    alt: 'Future City innovation district',
+    src: '/images/Slot 10.png',
+    alt: 'Future City Regional Ring Road cloverleaf junction',
     position: 'is-bottom',
   },
   {
-    src: '/images/grid-image-04.webp',
-    alt: 'Future City connectivity network',
+    src: '/images/Slot 11.png',
+    alt: 'Future City central landscaped park and waterfront lake',
     position: 'is-bottom',
   },
   {
-    src: '/images/grid-image-01.webp',
-    alt: 'Future City master plan overview',
+    src: '/images/Slot 12.png',
+    alt: 'Future City Young India Skills University campus',
     position: 'is-bottom-right',
   },
 ];
