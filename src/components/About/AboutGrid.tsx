@@ -132,7 +132,7 @@ const AboutGrid: React.FC = () => {
 
               {/* Lightbox overlay */}
               <div className="home-grid_lightbox">
-                <div className="home-grid_lightbox-text">play</div>
+                <div className="home-grid_lightbox-text">EXPLORE</div>
                 <svg
                   className="home-grid_lightbox-icon"
                   width="28"
@@ -144,7 +144,7 @@ const AboutGrid: React.FC = () => {
                   <line x1="14" y1="0" x2="14" y2="28" stroke="currentColor" strokeWidth="1.5" />
                   <line x1="0" y1="14" x2="28" y2="14" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
-                <div className="home-grid_lightbox-text">showreel</div>
+                <div className="home-grid_lightbox-text">MASTERPLAN</div>
               </div>
             </div>
 
