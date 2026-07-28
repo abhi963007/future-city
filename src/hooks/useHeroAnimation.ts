@@ -94,7 +94,7 @@ export function useHeroAnimation(containerRef: React.RefObject<Element | null>) 
           val1: 12999,
           val2: 197,
           val3: 16,
-          duration: 2,
+          duration: 3.6,
           ease: 'power2.out',
           onUpdate: () => {
             if (num1) num1.textContent = `₹${Math.floor(counterObj.val1).toLocaleString('en-IN')}`;
