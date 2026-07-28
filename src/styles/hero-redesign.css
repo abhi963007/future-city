@@ -148,14 +148,14 @@
 
 .hero-cinematic-title-secondary {
   display: block;
-  font-family: 'Pathway Gothic One', sans-serif;
-  font-size: clamp(3rem, 6.8vw, 7.2rem);
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: 'Arizonia', cursive;
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: none;
   color: #c5a059;
   white-space: nowrap;
-  margin-top: -2px;
+  margin-top: 2px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

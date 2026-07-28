@@ -33,7 +33,7 @@ const HeroIntro: React.FC = () => {
         <div className="hero-cinematic-kicker">INVEST BEFORE THE BOOM.</div>
         <h1 className="hero-cinematic-headline">
           <span className="hero-cinematic-title-primary">BULLETSPEED</span>
-          <span className="hero-cinematic-title-secondary">YOUR INVESTMENTS</span>
+          <span className="hero-cinematic-title-secondary">Your Investments</span>
         </h1>
         <div className="hero-cinematic-cta-wrap">
           <button type="button" onClick={scrollToNextSection} className="hero-cinematic-cta">
