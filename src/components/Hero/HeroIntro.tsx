@@ -47,17 +47,17 @@ const HeroIntro: React.FC = () => {
       <div className="hero-cinematic-bottom">
         <div className="hero-cinematic-stats">
           <div className="hero-cinematic-stat-item">
-            <span className="hero-cinematic-stat-number">₹12,999</span>
+            <span className="hero-cinematic-stat-number stat-num-1">₹0</span>
             <span className="hero-cinematic-stat-label">PER SQ YARD</span>
           </div>
           <div className="hero-cinematic-stat-divider"></div>
           <div className="hero-cinematic-stat-item">
-            <span className="hero-cinematic-stat-number">197</span>
+            <span className="hero-cinematic-stat-number stat-num-2">0</span>
             <span className="hero-cinematic-stat-label">VILLA PLOTS</span>
           </div>
           <div className="hero-cinematic-stat-divider"></div>
           <div className="hero-cinematic-stat-item">
-            <span className="hero-cinematic-stat-number">16</span>
+            <span className="hero-cinematic-stat-number stat-num-3">0</span>
             <span className="hero-cinematic-stat-label">ACRES</span>
           </div>
         </div>

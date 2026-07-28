@@ -75,6 +75,12 @@ export function useHeroAnimation(containerRef: React.RefObject<Element | null>) 
         }, 0.9);
       }
 
+      const num1 = container.querySelector('.stat-num-1');
+      const num2 = container.querySelector('.stat-num-2');
+      const num3 = container.querySelector('.stat-num-3');
+
+      const counterObj = { val1: 0, val2: 0, val3: 0 };
+
       if (stats.length) {
         tl.to(stats, {
           opacity: 1,
@@ -82,6 +88,19 @@ export function useHeroAnimation(containerRef: React.RefObject<Element | null>) 
           stagger: 0.08,
           duration: 0.8,
           ease: 'power2.out',
+        }, 1.1);
+
+        tl.to(counterObj, {
+          val1: 12999,
+          val2: 197,
+          val3: 16,
+          duration: 2,
+          ease: 'power2.out',
+          onUpdate: () => {
+            if (num1) num1.textContent = `₹${Math.floor(counterObj.val1).toLocaleString('en-IN')}`;
+            if (num2) num2.textContent = `${Math.floor(counterObj.val2)}`;
+            if (num3) num3.textContent = `${Math.floor(counterObj.val3)}`;
+          },
         }, 1.1);
       }
 
