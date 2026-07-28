@@ -23,7 +23,7 @@ export const useHeroAnimation = (heroRef: React.RefObject<HTMLDivElement | null>
       if (sunbloom) gsap.set(sunbloom, { opacity: 0, scale: 0.8 });
       if (kicker) gsap.set(kicker, { opacity: 0, y: 20 });
       if (primaryTitle) gsap.set(primaryTitle, { opacity: 0, y: 30 });
-      if (streak) gsap.set(streak, { xPercent: -100, opacity: 0 });
+      if (streak) gsap.set(streak, { backgroundPosition: '200% 0', opacity: 0 });
       if (secondaryTitle) gsap.set(secondaryTitle, { opacity: 0, y: 30 });
       if (cta) gsap.set(cta, { opacity: 0, y: 20 });
       if (scrollBtn) gsap.set(scrollBtn, { opacity: 0, y: 15 });
@@ -74,17 +74,17 @@ export const useHeroAnimation = (heroRef: React.RefObject<HTMLDivElement | null>
         }, 0.7);
       }
 
-      // Signature moment: Golden illumination streak across BULLETSPEED
+      // Signature moment: Text-clipped golden illumination shine across BULLETSPEED
       if (streak) {
         tl.to(streak, {
-          opacity: 0.9,
-          xPercent: 100,
-          duration: 1.4,
+          opacity: 1,
+          backgroundPosition: '-100% 0',
+          duration: 1.6,
           ease: 'power2.inOut',
           onComplete: () => {
-            gsap.set(streak, { opacity: 0 });
+            gsap.to(streak, { opacity: 0, duration: 0.4 });
           },
-        }, 1.5);
+        }, 1.3);
       }
 
       if (secondaryTitle) {

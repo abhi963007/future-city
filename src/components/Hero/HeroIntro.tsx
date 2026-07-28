@@ -41,7 +41,7 @@ const HeroIntro: React.FC = () => {
         <h1 className="hero-cinematic-headline">
           <span className="hero-cinematic-title-primary">
             BULLETSPEED
-            <span className="hero-signature-streak"></span>
+            <span className="hero-signature-streak" aria-hidden="true">BULLETSPEED</span>
           </span>
           <span className="hero-cinematic-title-secondary">YOUR INVESTMENTS</span>
         </h1>
