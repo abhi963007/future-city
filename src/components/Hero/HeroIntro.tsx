@@ -7,9 +7,14 @@ const HeroIntro: React.FC = () => {
   useHeroAnimation(heroRef);
 
   const scrollToNextSection = () => {
-    const nextSection = document.querySelector('.section-about-grid');
+    const nextSection =
+      document.querySelector('.section_grid-home') ||
+      document.querySelector('.section-about-grid') ||
+      document.querySelector('.animated-heading_wrap');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     }
   };
 
