@@ -217,20 +217,38 @@ html.w-mod-js:not(.w-mod-ix3) :is(
    visual narrowing & expanding effect without CSS conflicts.
    ========================================================= */
 
-/* Allow cards to visually exceed the inner container */
-.section-solutions-showcase,
+/* Allow cards & section to break out of any container padding & align edge-to-edge with the viewport */
+.section-solutions-showcase {
+  position: relative !important;
+  overflow: visible !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .solutions-showcase-wrap,
 .solutions-showcase-list {
   overflow: visible !important;
-  width: 100% !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Each card: always 100vw, no side margins, overflow clips the parallax image */
+/* Each card: always 100vw full-bleed viewport width, aligned to x=0 */
 .solution-showcase-item {
   width:     100vw !important;
   min-width: 100vw !important;
   max-width: 100vw !important;
-  margin:    0 auto !important;
+  aspect-ratio: 16 / 9 !important;
+  padding-top: 0 !important;
+  height: auto !important;
+  min-height: 56.25vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
   padding-left:  0 !important;
   padding-right: 0 !important;
   overflow: hidden;
@@ -241,7 +259,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   will-change: transform, border-radius;
 }
 
-/* Fix card image zoom & cropping so full card graphics are clearly visible */
+/* Fix card image display so full 100% 16:9 card graphics are visible */
 .solution-showcase-item .parallax-wrap {
   width: 100% !important;
   height: 100% !important;
@@ -260,6 +278,12 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   right: 0 !important;
   bottom: 0 !important;
   transform: none;
+}
+
+/* Remove dark black gradient overlay so all graphics/writing on card images are 100% visible */
+.solution-showcase-item .solutions-showcase-gradient {
+  display: none !important;
+  opacity: 0 !important;
 }
 
 
