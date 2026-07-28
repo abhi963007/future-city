@@ -138,8 +138,8 @@ const Navbar: React.FC = () => {
             onClick={isMenuOpen ? closeMenu : openMenu}
           >
             <div className="burger-lines">
-              <div className="burger-menu-line"></div>
-              <div className="burger-menu-line-2"></div>
+              <div className={`burger-menu-line${isMenuOpen ? ' is-open' : ''}`}></div>
+              <div className={`burger-menu-line-2${isMenuOpen ? ' is-open' : ''}`}></div>
               <div className={`burger-menu-line is-2nd${isMenuOpen ? ' is-open' : ''}`}></div>
               <div className={`burger-menu-line-2 is-2nd${isMenuOpen ? ' is-open' : ''}`}></div>
             </div>
