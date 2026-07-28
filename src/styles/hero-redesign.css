@@ -102,25 +102,30 @@
 }
 
 .nav-site-visit-btn {
+  display: inline-flex;
+  align-items: center;
   font-family: 'Sono', sans-serif;
   font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #c5a059;
+  color: #ffffff;
   text-decoration: none;
-  border: 1px solid #c5a059;
-  padding: 10px 22px;
-  border-radius: 2px;
-  background: rgba(5, 6, 8, 0.5);
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 9px 22px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
   transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
 }
 
 .nav-site-visit-btn:hover {
-  background: #c5a059;
-  color: #050608;
-  border-color: #c5a059;
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
 }
 
 /* Burger Menu Display Rules: Hidden on Desktop, Visible on Mobile/Tablet */
