@@ -73,28 +73,33 @@ const Navbar: React.FC = () => {
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
-        {/* Top Left Logo Only */}
+        {/* Top Left Logo Block with Placeholder */}
         <div className="nav-logo">
           <Link
             to={ROUTES.HOME}
             aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
             className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
           >
-            <img
-              src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg"
-              loading="lazy"
-              alt="Future City Logo"
-              className="brand-logo-image"
-            />
-            <div className="brand-name-text">Future City</div>
-            <div className="brand-slogan">Fourth City Hyderabad</div>
+            {/* LOGO ICON PLACEHOLDER — Swap src attribute below when you provide your final logo asset */}
+            <div className="logo-icon-wrap">
+              <img
+                src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg"
+                loading="eager"
+                alt="Future City Logo Placeholder"
+                className="brand-logo-image"
+              />
+            </div>
+            <div className="logo-text-wrap">
+              <div className="brand-name-text">FUTURE CITY</div>
+              <div className="brand-slogan">HYDERABAD'S FOURTH CITY</div>
+            </div>
           </Link>
         </div>
 
-        {/* Top Right Actions Only: Book Site Visit CTA + Burger Menu */}
+        {/* Top Right Actions: Book Site Visit CTA + Burger Menu */}
         <div className="nav-actions">
           <Link to={ROUTES.CONSULTATION} className="nav-site-visit-btn">
-            Book Site Visit
+            BOOK SITE VISIT
           </Link>
 
           {/* Burger menu trigger */}

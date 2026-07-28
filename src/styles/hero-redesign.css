@@ -34,24 +34,72 @@
   margin-right: auto;
 }
 
+.logo-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.logo-icon-wrap {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-name-text {
+  font-family: 'Sono', 'Bricolage Grotesque', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.brand-slogan {
+  font-family: 'Sono', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #c5a059;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
 .nav-actions {
   display: flex !important;
   align-items: center !important;
-  gap: 24px;
+  gap: 20px;
 }
 
 .nav-site-visit-btn {
   font-family: 'Sono', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #c5a059;
   text-decoration: none;
-  border: 1px solid rgba(197, 160, 89, 0.4);
-  padding: 10px 20px;
-  border-radius: 4px;
-  background: rgba(5, 6, 8, 0.4);
+  border: 1px solid #c5a059;
+  padding: 10px 22px;
+  border-radius: 2px;
+  background: rgba(5, 6, 8, 0.5);
   backdrop-filter: blur(8px);
   transition: all 0.3s ease;
 }
