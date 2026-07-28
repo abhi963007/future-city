@@ -2,6 +2,8 @@
 
 A modern React application built with TypeScript, Vite, and advanced animation libraries for creating smooth, interactive web experiences.
 
+![Hero Image](public/images/69f33e4ed787feeb78d1b49e_hero-image.avif)
+
 ## Features
 
 - **Smooth Scrolling**: Lenis integration for buttery smooth scroll experiences
