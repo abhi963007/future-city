@@ -15,24 +15,34 @@ const HeroIntro: React.FC = () => {
 
   return (
     <div ref={heroRef} className="hero-cinematic">
-      {/* Background Image & Vignette Overlays */}
+      {/* Layer 1: Background Image/Video Container & Vignette Overlays */}
       <div className="hero-cinematic-bg">
         <img
           loading="eager"
           src="/images/hero-background.png"
-          alt="Codename Future City — Hyderabad's Fourth City AI-driven urban ecosystem masterplan"
+          alt="Codename Future City — Hyderabad's Fourth City masterplan"
           className="hero-cinematic-img"
         />
+        {/* Layer 2: Soft Atmospheric Fog */}
+        <div className="hero-cinematic-fog"></div>
+
+        {/* Layer 3: Warm Sunlight Bloom */}
+        <div className="hero-cinematic-sunbloom"></div>
+
+        {/* Vignette Overlays */}
         <div className="hero-cinematic-overlay-top"></div>
         <div className="hero-cinematic-overlay-left"></div>
         <div className="hero-cinematic-overlay-bottom"></div>
       </div>
 
-      {/* Center Left Main Headline Content */}
+      {/* Layer 4: Main Editorial Content */}
       <div className="hero-cinematic-content">
         <div className="hero-cinematic-kicker">INVEST BEFORE THE BOOM.</div>
         <h1 className="hero-cinematic-headline">
-          <span className="hero-cinematic-title-primary">BULLETSPEED</span>
+          <span className="hero-cinematic-title-primary">
+            BULLETSPEED
+            <span className="hero-signature-streak"></span>
+          </span>
           <span className="hero-cinematic-title-secondary">YOUR INVESTMENTS</span>
         </h1>
         <div className="hero-cinematic-cta-wrap">
@@ -43,30 +53,15 @@ const HeroIntro: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Bar: Stats & Scroll Indicator */}
+      {/* Bottom Bar: Minimal Scroll Indicator Only (No Stats) */}
       <div className="hero-cinematic-bottom">
-        <div className="hero-cinematic-stats">
-          <div className="hero-cinematic-stat-item">
-            <span className="hero-cinematic-stat-number stat-num-1">₹0</span>
-            <span className="hero-cinematic-stat-label">PER SQ YARD</span>
-          </div>
-          <div className="hero-cinematic-stat-divider"></div>
-          <div className="hero-cinematic-stat-item">
-            <span className="hero-cinematic-stat-number stat-num-2">0</span>
-            <span className="hero-cinematic-stat-label">VILLA PLOTS</span>
-          </div>
-          <div className="hero-cinematic-stat-divider"></div>
-          <div className="hero-cinematic-stat-item">
-            <span className="hero-cinematic-stat-number stat-num-3">0</span>
-            <span className="hero-cinematic-stat-label">ACRES</span>
-          </div>
-        </div>
-
-        <button type="button" onClick={scrollToNextSection} className="hero-cinematic-scroll" aria-label="Scroll to explore">
-          <span className="hero-cinematic-scroll-label">SCROLL TO EXPLORE</span>
-          <div className="hero-cinematic-scroll-pill">
-            <div className="hero-cinematic-scroll-dot"></div>
-          </div>
+        <button
+          type="button"
+          onClick={scrollToNextSection}
+          className="hero-cinematic-scroll-minimal"
+          aria-label="Scroll down to explore"
+        >
+          <div className="hero-minimal-arrow">↓</div>
         </button>
       </div>
     </div>

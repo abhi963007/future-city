@@ -1,122 +1,123 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { gsap } from '../utils/gsap';
 
-/**
- * Cinematic Hero animation hook tailored for Future City Phase 2 redesign.
- * Smooth entrance sequence and scroll-linked parallax.
- */
-export function useHeroAnimation(containerRef: React.RefObject<Element | null>) {
-  useLayoutEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
+export const useHeroAnimation = (heroRef: React.RefObject<HTMLDivElement | null>) => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
+      const container = heroRef.current;
+      if (!container) return;
+
       const img = container.querySelector('.hero-cinematic-img');
+      const fog = container.querySelector('.hero-cinematic-fog');
+      const sunbloom = container.querySelector('.hero-cinematic-sunbloom');
       const kicker = container.querySelector('.hero-cinematic-kicker');
       const primaryTitle = container.querySelector('.hero-cinematic-title-primary');
+      const streak = container.querySelector('.hero-signature-streak');
       const secondaryTitle = container.querySelector('.hero-cinematic-title-secondary');
       const cta = container.querySelector('.hero-cinematic-cta-wrap');
-      const stats = container.querySelectorAll('.hero-cinematic-stat-item, .hero-cinematic-stat-divider');
-      const scrollBtn = container.querySelector('.hero-cinematic-scroll');
+      const scrollBtn = container.querySelector('.hero-cinematic-scroll-minimal');
 
       // Set initial states
       if (img) gsap.set(img, { scale: 1.08 });
-      if (kicker) gsap.set(kicker, { opacity: 0, y: 15 });
-      if (primaryTitle) gsap.set(primaryTitle, { opacity: 0, y: 35 });
-      if (secondaryTitle) gsap.set(secondaryTitle, { opacity: 0, y: 35 });
-      if (cta) gsap.set(cta, { opacity: 0, y: 15 });
-      if (stats.length) gsap.set(stats, { opacity: 0, y: 15 });
+      if (fog) gsap.set(fog, { opacity: 0 });
+      if (sunbloom) gsap.set(sunbloom, { opacity: 0, scale: 0.8 });
+      if (kicker) gsap.set(kicker, { opacity: 0, y: 20 });
+      if (primaryTitle) gsap.set(primaryTitle, { opacity: 0, y: 30 });
+      if (streak) gsap.set(streak, { xPercent: -100, opacity: 0 });
+      if (secondaryTitle) gsap.set(secondaryTitle, { opacity: 0, y: 30 });
+      if (cta) gsap.set(cta, { opacity: 0, y: 20 });
       if (scrollBtn) gsap.set(scrollBtn, { opacity: 0, y: 15 });
 
-      // Entrance timeline
-      const tl = gsap.timeline({ delay: 0.3 });
+      // Slow, cinematic entrance timeline
+      const tl = gsap.timeline({ delay: 0.2 });
 
       if (img) {
         tl.to(img, {
           scale: 1,
-          duration: 1.8,
-          ease: 'power3.out',
+          duration: 2.4,
+          ease: 'power2.out',
         }, 0);
+      }
+
+      if (sunbloom) {
+        tl.to(sunbloom, {
+          opacity: 0.8,
+          scale: 1,
+          duration: 2.2,
+          ease: 'power2.out',
+        }, 0.2);
+      }
+
+      if (fog) {
+        tl.to(fog, {
+          opacity: 0.5,
+          duration: 2,
+          ease: 'power1.out',
+        }, 0.3);
       }
 
       if (kicker) {
         tl.to(kicker, {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-        }, 0.3);
+          duration: 1.1,
+          ease: 'power3.out',
+        }, 0.5);
       }
 
       if (primaryTitle) {
         tl.to(primaryTitle, {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 1.3,
           ease: 'power3.out',
-        }, 0.5);
+        }, 0.7);
+      }
+
+      // Signature moment: Golden illumination streak across BULLETSPEED
+      if (streak) {
+        tl.to(streak, {
+          opacity: 0.9,
+          xPercent: 100,
+          duration: 1.4,
+          ease: 'power2.inOut',
+          onComplete: () => {
+            gsap.set(streak, { opacity: 0 });
+          },
+        }, 1.5);
       }
 
       if (secondaryTitle) {
         tl.to(secondaryTitle, {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 1.3,
           ease: 'power3.out',
-        }, 0.7);
+        }, 0.9);
       }
 
       if (cta) {
         tl.to(cta, {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 1.1,
           ease: 'power2.out',
-        }, 0.9);
-      }
-
-      const num1 = container.querySelector('.stat-num-1');
-      const num2 = container.querySelector('.stat-num-2');
-      const num3 = container.querySelector('.stat-num-3');
-
-      const counterObj = { val1: 0, val2: 0, val3: 0 };
-
-      if (stats.length) {
-        tl.to(stats, {
-          opacity: 1,
-          y: 0,
-          stagger: 0.08,
-          duration: 0.8,
-          ease: 'power2.out',
-        }, 1.1);
-
-        tl.to(counterObj, {
-          val1: 12999,
-          val2: 197,
-          val3: 16,
-          duration: 3.6,
-          ease: 'power2.out',
-          onUpdate: () => {
-            if (num1) num1.textContent = `₹${Math.floor(counterObj.val1).toLocaleString('en-IN')}`;
-            if (num2) num2.textContent = `${Math.floor(counterObj.val2)}`;
-            if (num3) num3.textContent = `${Math.floor(counterObj.val3)}`;
-          },
-        }, 1.1);
+        }, 1.3);
       }
 
       if (scrollBtn) {
         tl.to(scrollBtn, {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 1,
           ease: 'power2.out',
-        }, 1.3);
+        }, 1.6);
       }
 
-      // Parallax scroll effect
+      // Smooth parallax scroll scrub
       if (img) {
         gsap.to(img, {
-          yPercent: 18,
+          yPercent: 15,
           ease: 'none',
           scrollTrigger: {
             trigger: container,
@@ -127,24 +128,23 @@ export function useHeroAnimation(containerRef: React.RefObject<Element | null>) 
         });
       }
 
-      // Fade hero content on scroll down
+      // Subtle scroll fade for content
       const content = container.querySelector('.hero-cinematic-content');
-      const bottom = container.querySelector('.hero-cinematic-bottom');
-      if (content && bottom) {
-        gsap.to([content, bottom], {
+      if (content) {
+        gsap.to(content, {
           opacity: 0,
-          y: -20,
+          y: -40,
           ease: 'none',
           scrollTrigger: {
             trigger: container,
-            start: 'top top',
-            end: '50% top',
+            start: 'center top',
+            end: 'bottom top',
             scrub: true,
           },
         });
       }
-    }, container);
+    }, heroRef);
 
     return () => ctx.revert();
-  }, [containerRef]);
-}
+  }, [heroRef]);
+};
