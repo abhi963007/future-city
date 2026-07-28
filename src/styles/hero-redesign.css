@@ -1,0 +1,295 @@
+/* =========================================================
+   FUTURE CITY — CINEMATIC HERO EXPERIENCE REDESIGN
+   ========================================================= */
+
+.hero-cinematic {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 80px 40px;
+  color: #ffffff;
+  background-color: #050608;
+  box-sizing: border-box;
+}
+
+/* Cinematic Background & Overlays */
+.hero-cinematic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-cinematic-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  transform: scale(1.04);
+}
+
+.hero-cinematic-overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(5, 6, 8, 0.85) 0%, rgba(5, 6, 8, 0) 100%);
+  pointer-events: none;
+}
+
+.hero-cinematic-overlay-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  background: linear-gradient(90deg, rgba(5, 6, 8, 0.9) 0%, rgba(5, 6, 8, 0.5) 60%, rgba(5, 6, 8, 0) 100%);
+  pointer-events: none;
+}
+
+.hero-cinematic-overlay-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(0deg, rgba(5, 6, 8, 0.9) 0%, rgba(5, 6, 8, 0) 100%);
+  pointer-events: none;
+}
+
+/* Center Left Main Content Area */
+.hero-cinematic-content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 900px;
+}
+
+.hero-cinematic-kicker {
+  font-family: 'Sono', 'Bricolage Grotesque', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c5a059;
+  margin-bottom: 24px;
+}
+
+.hero-cinematic-headline {
+  margin: 0;
+  padding: 0;
+  line-height: 1.05;
+}
+
+.hero-cinematic-title-primary {
+  display: block;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.hero-cinematic-title-secondary {
+  display: block;
+  font-family: 'NyghtSerif', serif;
+  font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c5a059;
+  margin-top: 4px;
+}
+
+.hero-cinematic-cta-wrap {
+  margin-top: 44px;
+}
+
+.hero-cinematic-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Sono', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.hero-cinematic-cta:hover {
+  color: #c5a059;
+}
+
+.hero-cinematic-cta-arrow {
+  width: 32px;
+  height: 1px;
+  background-color: currentColor;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.hero-cinematic-cta-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.hero-cinematic-cta:hover .hero-cinematic-cta-arrow {
+  width: 46px;
+}
+
+/* Bottom Bar Area */
+.hero-cinematic-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* Bottom Left Stats */
+.hero-cinematic-stats {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.hero-cinematic-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-cinematic-stat-number {
+  font-family: 'NyghtSerif', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.hero-cinematic-stat-label {
+  font-family: 'Sono', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c5a059;
+  margin-top: 6px;
+}
+
+.hero-cinematic-stat-divider {
+  width: 1px;
+  height: 42px;
+  background-color: rgba(197, 160, 89, 0.35);
+}
+
+/* Bottom Right Scroll Indicator */
+.hero-cinematic-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hero-cinematic-scroll-label {
+  font-family: 'Sono', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c5a059;
+}
+
+.hero-cinematic-scroll-pill {
+  width: 16px;
+  height: 28px;
+  border: 1px solid rgba(197, 160, 89, 0.6);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.hero-cinematic-scroll-dot {
+  width: 3px;
+  height: 7px;
+  background-color: #c5a059;
+  border-radius: 2px;
+  animation: heroScrollPulse 2s infinite ease-in-out;
+}
+
+@keyframes heroScrollPulse {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .hero-cinematic {
+    padding: 50px 40px 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-cinematic {
+    padding: 40px 30px 24px;
+  }
+  .hero-cinematic-overlay-left {
+    width: 80%;
+  }
+  .hero-cinematic-stats {
+    gap: 20px;
+  }
+  .hero-cinematic-stat-divider {
+    height: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-cinematic {
+    padding: 30px 20px 20px;
+    height: 100vh;
+    min-height: 620px;
+  }
+  .hero-cinematic-overlay-left {
+    width: 100%;
+  }
+  .hero-cinematic-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .hero-cinematic-scroll {
+    align-self: flex-end;
+    margin-top: -30px;
+  }
+}

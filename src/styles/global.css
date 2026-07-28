@@ -6,6 +6,7 @@
 @import './webflow-shared.min.css';
 @import './webflow-page.min.css';
 @import './lenis.css';
+@import './hero-redesign.css';
 
 /* NyghtSerif — local fonts */
 @font-face {

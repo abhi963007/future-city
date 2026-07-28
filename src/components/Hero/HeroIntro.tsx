@@ -6,54 +6,68 @@ const HeroIntro: React.FC = () => {
 
   useHeroAnimation(heroRef);
 
+  const scrollToNextSection = () => {
+    const nextSection = document.querySelector('.section-about-grid');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div ref={heroRef} className="hero-intro">
-      <div className="hero-intro-title">
-        <h1 className="heading is-home-hero">BULLETSPEED YOUR INVESTMENTS</h1>
+    <div ref={heroRef} className="hero-cinematic">
+      {/* Background Image & Vignette Overlays */}
+      <div className="hero-cinematic-bg">
+        <img
+          loading="eager"
+          src="/images/hero-background.png"
+          alt="Codename Future City — Hyderabad's Fourth City AI-driven urban ecosystem masterplan"
+          className="hero-cinematic-img"
+        />
+        <div className="hero-cinematic-overlay-top"></div>
+        <div className="hero-cinematic-overlay-left"></div>
+        <div className="hero-cinematic-overlay-bottom"></div>
       </div>
-      <div className="hero-intro-content">
-        <div className="hero-intro-stats-wrap">
-          <div className="hero-intro-stats w-dyn-list">
-            <div role="list" className="hero-intro-stats-list w-dyn-items">
-              <div role="listitem" className="hero-intro-stat w-dyn-item">
-                <div className="hero-intro-number">₹12,999</div>
-                <div className="label-text">Per Sq Yard</div>
-              </div>
-              <div role="listitem" className="hero-intro-stat w-dyn-item">
-                <div className="hero-intro-number">197</div>
-                <div className="label-text">Villa Plots</div>
-              </div>
-              <div role="listitem" className="hero-intro-stat w-dyn-item">
-                <div className="hero-intro-number">16 Acres</div>
-                <div className="label-text">Masterplan</div>
-              </div>
-            </div>
-          </div>
-          <div className="stats-blur-bg"></div>
-        </div>
-        <div className="hero-intro-about">
-          <div className="hero-intro-desc">
-            <div className="hero-intro-text-max">
-              <p className="hero-intro-about-text">
-                Secure Your Stake in Hyderabad's Fourth City — Invest before the boom. Not after it.
-              </p>
-            </div>
-            <div className="hero-intro-line"></div>
-            <p className="hero-intro-about-text">Scroll</p>
-          </div>
+
+      {/* Center Left Main Headline Content */}
+      <div className="hero-cinematic-content">
+        <div className="hero-cinematic-kicker">INVEST BEFORE THE BOOM.</div>
+        <h1 className="hero-cinematic-headline">
+          <span className="hero-cinematic-title-primary">BULLETSPEED</span>
+          <span className="hero-cinematic-title-secondary">YOUR INVESTMENTS</span>
+        </h1>
+        <div className="hero-cinematic-cta-wrap">
+          <button type="button" onClick={scrollToNextSection} className="hero-cinematic-cta">
+            <span>DISCOVER THE FUTURE</span>
+            <span className="hero-cinematic-cta-arrow"></span>
+          </button>
         </div>
       </div>
-      <div className="hero-intro-bg">
-        <div className="hero-intro-bg-size">
-          <div className="hero-intro-gradient"></div>
-          <div className="hero-intro-overlay"></div>
-          <img
-            loading="eager"
-            src="/images/69f33e4ed787feeb78d1b49e_hero-image.avif"
-            alt="Codename Future City — Hyderabad's Fourth City AI-driven urban ecosystem masterplan"
-            className="hero-intro-image"
-          />
+
+      {/* Bottom Bar: Stats & Scroll Indicator */}
+      <div className="hero-cinematic-bottom">
+        <div className="hero-cinematic-stats">
+          <div className="hero-cinematic-stat-item">
+            <span className="hero-cinematic-stat-number">₹12,999</span>
+            <span className="hero-cinematic-stat-label">PER SQ YARD</span>
+          </div>
+          <div className="hero-cinematic-stat-divider"></div>
+          <div className="hero-cinematic-stat-item">
+            <span className="hero-cinematic-stat-number">197</span>
+            <span className="hero-cinematic-stat-label">VILLA PLOTS</span>
+          </div>
+          <div className="hero-cinematic-stat-divider"></div>
+          <div className="hero-cinematic-stat-item">
+            <span className="hero-cinematic-stat-number">16</span>
+            <span className="hero-cinematic-stat-label">ACRES</span>
+          </div>
         </div>
+
+        <button type="button" onClick={scrollToNextSection} className="hero-cinematic-scroll" aria-label="Scroll to explore">
+          <span className="hero-cinematic-scroll-label">SCROLL TO EXPLORE</span>
+          <div className="hero-cinematic-scroll-pill">
+            <div className="hero-cinematic-scroll-dot"></div>
+          </div>
+        </button>
       </div>
     </div>
   );
