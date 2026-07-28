@@ -5,15 +5,15 @@ import { gsap } from '../../utils/gsap';
 import { ROUTES } from '../../utils/constants';
 
 const navMenuItems = [
-  { href: ROUTES.HOME, label: 'Home' },
-  { href: ROUTES.PROJECT, label: 'Project' },
-  { href: ROUTES.VISION, label: 'Future City Vision' },
-  { href: ROUTES.CONNECTIVITY, label: 'Connectivity' },
-  { href: ROUTES.LOCATION, label: 'Location' },
-  { href: ROUTES.INVESTMENT, label: 'Investment Potential' },
-  { href: ROUTES.GALLERY, label: 'Gallery' },
-  { href: ROUTES.CONTACT, label: 'Contact' },
-  { href: ROUTES.CONSULTATION, label: 'Book Site Visit' },
+  { href: ROUTES.HOME, label: 'Home', selector: '.hero-cinematic' },
+  { href: ROUTES.PROJECT, label: 'Project', selector: '.section-project-listing' },
+  { href: ROUTES.VISION, label: 'Future City Vision', selector: '.section-solutions-showcase' },
+  { href: ROUTES.CONNECTIVITY, label: 'Connectivity', selector: '.section-about-grid' },
+  { href: ROUTES.LOCATION, label: 'Location', selector: '.section-about-grid' },
+  { href: ROUTES.INVESTMENT, label: 'Investment Potential', selector: '.section-statement-reveal' },
+  { href: ROUTES.GALLERY, label: 'Gallery', selector: '.section-image-split' },
+  { href: ROUTES.CONTACT, label: 'Contact', selector: '.section-consultation' },
+  { href: ROUTES.CONSULTATION, label: 'Book Site Visit', selector: '.section-consultation' },
 ];
 
 const Navbar: React.FC = () => {
@@ -68,15 +68,40 @@ const Navbar: React.FC = () => {
     });
   };
 
+  const handleNavClick = (e: React.MouseEvent, href: string, selector?: string) => {
+    const isHomePage = location.pathname === '/' || location.pathname === ROUTES.HOME;
+
+    if (isHomePage) {
+      if (selector) {
+        const targetEl = document.querySelector(selector);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+          if (isMenuOpen) closeMenu();
+          return;
+        }
+      }
+      if (href === ROUTES.HOME) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (isMenuOpen) closeMenu();
+        return;
+      }
+    }
+
+    if (isMenuOpen) closeMenu();
+  };
+
   const isActive = (href: string) => location.pathname === href;
 
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
-        {/* Top Left Logo Block with Placeholder */}
+        {/* Top Left Logo Link to Home */}
         <div className="nav-logo">
           <Link
             to={ROUTES.HOME}
+            onClick={(e) => handleNavClick(e, ROUTES.HOME, '.hero-cinematic')}
             aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
             className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
           >
@@ -98,7 +123,11 @@ const Navbar: React.FC = () => {
 
         {/* Top Right Actions: Book Site Visit CTA + Burger Menu */}
         <div className="nav-actions">
-          <Link to={ROUTES.CONSULTATION} className="nav-site-visit-btn">
+          <Link
+            to={ROUTES.CONSULTATION}
+            onClick={(e) => handleNavClick(e, ROUTES.CONSULTATION, '.section-consultation')}
+            className="nav-site-visit-btn"
+          >
             BOOK SITE VISIT
           </Link>
 
@@ -132,22 +161,40 @@ const Navbar: React.FC = () => {
                   <Link
                     key={link.href}
                     to={link.href}
+                    onClick={(e) => handleNavClick(e, link.href, link.selector)}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                     className={`menu-main-link${isActive(link.href) ? ' w--current' : ''}`}
-                    onClick={closeMenu}
                   >
                     {link.label}
                   </Link>
                 ))}
               </div>
               <div className="menu-additional-links">
-                <Link to={ROUTES.CONTACT} className="menu-additional-link" onClick={closeMenu}>Contact</Link>
-                <Link to={ROUTES.CONSULTATION} className="menu-additional-link" onClick={closeMenu}>Book Site Visit</Link>
+                <Link
+                  to={ROUTES.CONTACT}
+                  onClick={(e) => handleNavClick(e, ROUTES.CONTACT, '.section-consultation')}
+                  className="menu-additional-link"
+                >
+                  Contact
+                </Link>
+                <Link
+                  to={ROUTES.CONSULTATION}
+                  onClick={(e) => handleNavClick(e, ROUTES.CONSULTATION, '.section-consultation')}
+                  className="menu-additional-link"
+                >
+                  Book Site Visit
+                </Link>
               </div>
             </div>
             <div className="menu-credit-links">
               <span className="menu-credit-link">Codename Future City</span>
-              <Link to={ROUTES.CONSULTATION} onClick={closeMenu} className="menu-credit-link is-buy">Book Site Visit</Link>
+              <Link
+                to={ROUTES.CONSULTATION}
+                onClick={(e) => handleNavClick(e, ROUTES.CONSULTATION, '.section-consultation')}
+                className="menu-credit-link is-buy"
+              >
+                Book Site Visit
+              </Link>
             </div>
             <div ref={menuBgRef} className="menu-background"></div>
           </div>
