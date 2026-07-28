@@ -323,21 +323,23 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 .testimonials-background {
-  padding-top: 6vw;
+  padding-top: 5vw;
   padding-bottom: 5vw;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
   border-radius: 2rem;
   background-color: #0f1115;
   color: #f8f7f3;
   position: relative;
   overflow: hidden;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 96vw !important;
+  max-width: 96vw !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .testimonials_absolute-small-texts-top {
-  padding: 2vw 3vw;
+  padding: 2vw 4vw;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -350,7 +352,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 .testimonials_absolute-small-texts {
-  padding: 2vw 3vw;
+  padding: 2vw 4vw;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -364,11 +366,12 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 .testimonials_grid {
   margin: 4vw auto 3vw;
-  grid-column-gap: 1.5vw;
+  grid-column-gap: 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 95%;
+  max-width: 1700px;
 }
 
 .testimonials_image-wrap {

@@ -1,78 +1,78 @@
 import React, { useRef, useState } from 'react';
 import { useTestimonialsAnimation } from '../../hooks/useTestimonialsAnimation';
 
-interface TestimonialItem {
+interface PillarItem {
   id: string;
   imageSrc: string;
   alt: string;
-  logoText: string;
-  quote: string;
-  author: string;
-  role: string;
+  badgeText: string;
+  title: string;
+  description: string;
+  metric: string;
   positionClass: string;
 }
 
-const testimonialsData: TestimonialItem[] = [
+const pillarsData: PillarItem[] = [
   {
     id: 'dtcp',
     imageSrc: '/images/grid-image-12.webp',
-    alt: 'DTCP & RERA Approved Villa Plots',
-    logoText: 'DTCP APPROVED',
-    quote:
-      '“Investing in Future City gave us complete peace of mind. 100% clear title, spot registration readiness, and bank loan approvals made the process smooth and transparent.”',
-    author: 'Rajesh Varma',
-    role: 'NRI Investor · Hyderabad',
+    alt: 'DTCP & RERA Approved Villa Plotting',
+    badgeText: '100% VERIFIED',
+    title: 'DTCP & RERA Approved Layouts',
+    description:
+      '100% clear title documentation with instant spot registration readiness and approved bank loan facilities across major financial institutions.',
+    metric: 'IMMEDIATE REGISTRATION',
     positionClass: 'is-left',
   },
   {
     id: 'ai-hub',
     imageSrc: '/images/grid-image-04.webp',
     alt: 'AI City Tech Hub Corridor',
-    logoText: 'AI CITY HUB',
-    quote:
-      '“Positioned right next to the upcoming 200-acre AI Hub and Skill University. The infrastructure plan and future growth trajectory here are unmatched in Telangana.”',
-    author: 'Dr. Ananya Reddy',
-    role: 'Tech Executive & Plot Owner',
+    badgeText: 'AI HUB ACCESS',
+    title: '200-Acre AI City & Skills Corridor',
+    description:
+      'Strategically positioned adjacent to the proposed Young India Skills University and 200-acre AI Hub for high-tech economic growth.',
+    metric: 'TECH CORRIDOR',
     positionClass: 'is-left-two',
   },
   {
-    id: 'main-vision',
+    id: 'fourth-city',
     imageSrc: '/images/grid-image-05.webp',
     alt: 'Future City Masterplan Vision',
-    logoText: 'FOURTH CITY',
-    quote:
-      '“Hyderabad’s Fourth City is set to become the premier economic engine of the state. Future City offers the strategic early-mover advantage for maximum ROI.”',
-    author: 'K. Sunder Rao',
-    role: 'Real Estate Analyst',
+    badgeText: 'FOURTH CITY',
+    title: 'Hyderabad’s Fourth Economic City',
+    description:
+      'Pioneering the transformation of Hyderabad’s southern corridor into an international destination for mega infrastructure and smart urbanization.',
+    metric: '10X CAPITAL GROWTH',
     positionClass: 'is-middle',
   },
   {
     id: 'rrr-highway',
     imageSrc: '/images/grid-image-11.webp',
     alt: 'Regional Ring Road Connectivity',
-    logoText: 'RRR EXPRESSWAY',
-    quote:
-      '“Direct connectivity to the 6-lane Srisailam Highway and Regional Ring Road ensures effortless commute to ORR and RGIA Airport within minutes.”',
-    author: 'Siddharth Mehta',
-    role: 'Infrastructure Consultant',
+    badgeText: '6-LANE HIGHWAY',
+    title: 'Regional Ring Road & Highway Link',
+    description:
+      'Direct access to the 6-lane Srisailam Highway and Regional Ring Road (RRR) providing express transit to ORR and RGIA Airport within minutes.',
+    metric: 'EXPRESS TRANSIT',
     positionClass: 'is-right-two',
   },
   {
     id: 'pharma-city',
     imageSrc: '/images/grid-image-08.webp',
-    alt: 'Pharma City Cluster Growth',
-    logoText: 'PHARMA CLUSTER',
-    quote:
-      '“Surrounded by a 14,000-acre life sciences hub generating over 500,000 jobs. High rental yield potential and rapid land appreciation make this the top choice.”',
-    author: 'Priya Sharma',
-    role: 'Portfolio Investor',
+    alt: 'Pharma City Cluster Proximity',
+    badgeText: 'LIFE SCIENCES',
+    title: '14,000-Acre Pharma City Proximity',
+    description:
+      'Surrounded by the world’s largest pharmaceutical and life sciences cluster, projected to generate over 500,000 employment opportunities.',
+    metric: '500K+ JOBS CLUSTER',
     positionClass: 'is-right',
   },
 ];
 
 const TestimonialsSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState<number>(2); // Default middle card
+  const [activeIndex, setActiveIndex] = useState<number>(2); // Default middle pillar card
 
   useTestimonialsAnimation(containerRef, setActiveIndex);
 
@@ -81,32 +81,32 @@ const TestimonialsSection: React.FC = () => {
       {/* Animated Section Header */}
       <div className="section_animated-heading">
         <div className="animated-heading_wrap">
-          <h2 className="animated-scroll-heading is-first">Why investors</h2>
-          <h2 className="animated-scroll-heading is-middle">Choose Future City</h2>
-          <h2 className="animated-scroll-heading is-last">For Growth</h2>
+          <h2 className="animated-scroll-heading is-first">Strategic Pillars of</h2>
+          <h2 className="animated-scroll-heading is-middle">Future City</h2>
+          <h2 className="animated-scroll-heading is-last">Growth</h2>
         </div>
       </div>
 
-      {/* Dark Testimonials Box Container */}
+      {/* Dark Box Container */}
       <div className="section_testimonials">
         <div className="container-large">
           <div className="testimonials-background">
             {/* Top labels */}
             <div className="testimonials_absolute-small-texts-top">
-              <div className="label-small">INVESTOR CORRIDOR</div>
+              <div className="label-small">FUTURE CITY PILLARS</div>
               <div className="label-small">HYDERABAD FOURTH CITY</div>
             </div>
 
             {/* 5 Card Fan-Out Grid */}
             <div className="testimonials_grid">
-              {testimonialsData.map((item, idx) => (
+              {pillarsData.map((item, idx) => (
                 <div
                   key={item.id}
                   className={`testimonials_image-wrap ${item.positionClass}`}
                   onMouseEnter={() => setActiveIndex(idx)}
                 >
                   <img src={item.imageSrc} loading="lazy" alt={item.alt} className="testimonials_image" />
-                  <div className="testimonials_logo-tile">{item.logoText}</div>
+                  <div className="testimonials_logo-tile">{item.badgeText}</div>
                   <div
                     className="testimonials_image-overlay"
                     style={{ opacity: activeIndex === idx ? 0.1 : 0.45 }}
@@ -115,9 +115,9 @@ const TestimonialsSection: React.FC = () => {
               ))}
             </div>
 
-            {/* Quote & Author Texts (switches actively) */}
+            {/* Pillar Content & Metric Details (switches actively on hover/scroll) */}
             <div className="testimonials_master-texts">
-              {testimonialsData.map((item, idx) => (
+              {pillarsData.map((item, idx) => (
                 <div
                   key={item.id}
                   className="testimonials_text-single"
@@ -126,11 +126,16 @@ const TestimonialsSection: React.FC = () => {
                     opacity: activeIndex === idx ? 1 : 0,
                   }}
                 >
-                  <div className="testimonials_top-text">{item.quote}</div>
+                  <div className="testimonials_top-text" style={{ fontSize: 'clamp(1.2rem, 2vw, 2.2rem)', fontWeight: 500 }}>
+                    {item.title}
+                  </div>
+                  <p className="paragraph is-small" style={{ maxWidth: '42rem', opacity: 0.85, margin: 0 }}>
+                    {item.description}
+                  </p>
                   <div className="testimonials_person-wrap">
-                    <div className="text-size-small">{item.author}</div>
-                    <div className="testimonials_circle-divider"></div>
-                    <div className="text-size-small">{item.role}</div>
+                    <div className="text-size-small" style={{ letterSpacing: '0.1em', fontWeight: 600 }}>
+                      {item.metric}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -138,8 +143,8 @@ const TestimonialsSection: React.FC = () => {
 
             {/* Bottom labels */}
             <div className="testimonials_absolute-small-texts">
-              <div className="label-small">TESTIMONIALS & TRUST</div>
-              <div className="label-small">100% DTCP & RERA APPROVED</div>
+              <div className="label-small">CORE INVESTMENT HIGHLIGHTS</div>
+              <div className="label-small">HYDERABAD FOURTH CITY MASTERPLAN</div>
             </div>
           </div>
         </div>
