@@ -643,15 +643,37 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 .footer-minimal_cta {
-  padding: 6vw 4vw;
+  padding: 8vw 4vw;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.03), transparent 70%);
+  position: relative;
+  overflow: hidden;
+  min-height: 440px;
+}
+
+.footer-minimal_cta-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.04);
+}
+
+.footer-minimal_cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(11, 13, 14, 0.42) 0%, rgba(11, 13, 14, 0.72) 100%),
+              linear-gradient(180deg, rgba(11, 13, 14, 0.3) 0%, rgba(11, 13, 14, 0.82) 100%);
+  z-index: 1;
 }
 
 .footer-minimal_cta-content {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   width: 100%;
   display: flex;

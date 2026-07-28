@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../common/Button/Button';
 import { useFooterAnimation } from '../../hooks/useFooterAnimation';
 import { ROUTES } from '../../utils/constants';
 
@@ -11,16 +10,26 @@ const Footer: React.FC = () => {
 
   return (
     <footer ref={containerRef} className="footer-minimal">
-      {/* Top CTA Banner */}
+      {/* Top CTA Banner with Visible Background Image & Soft Shade */}
       <div className="footer-minimal_cta">
+        <img
+          src="/images/69f33e4ed787feeb78d1b49e_hero-image.avif"
+          loading="lazy"
+          alt="Codename Future City Landscape Horizon"
+          className="footer-minimal_cta-bg"
+        />
+        <div className="footer-minimal_cta-overlay"></div>
+
         <div className="footer-minimal_cta-content">
           <h2 className="footer-minimal_title">
             Secure your stake in Hyderabad's Fourth City today
           </h2>
-          <Button href={ROUTES.CONSULTATION} variant="primary">
-            <div className="button-text is-1st">Book Site Visit</div>
-            <div className="button-text is-2nd">Book Site Visit</div>
-          </Button>
+
+          {/* Custom Pill Button matching upper section style */}
+          <Link to={ROUTES.CONSULTATION} className="project-clean_cta-btn" style={{ marginTop: 0 }}>
+            <span>Book Site Visit</span>
+            <span className="cta-arrow">→</span>
+          </Link>
         </div>
       </div>
 
