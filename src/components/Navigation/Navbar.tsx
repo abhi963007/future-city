@@ -4,6 +4,16 @@ import { useNavbarAnimation } from '../../hooks/useNavbarAnimation';
 import { gsap } from '../../utils/gsap';
 import { ROUTES } from '../../utils/constants';
 
+const navHeaderLinks = [
+  { href: ROUTES.PROJECT, label: 'Project', selector: '.section-project-listing' },
+  { href: ROUTES.VISION, label: 'Vision', selector: '.section-solutions-showcase' },
+  { href: ROUTES.CONNECTIVITY, label: 'Connectivity', selector: '.section-about-grid' },
+  { href: ROUTES.LOCATION, label: 'Location', selector: '.section-about-grid' },
+  { href: ROUTES.INVESTMENT, label: 'Investment', selector: '.section-statement-reveal' },
+  { href: ROUTES.GALLERY, label: 'Gallery', selector: '.section-image-split' },
+  { href: ROUTES.CONTACT, label: 'Contact', selector: '.section-consultation' },
+];
+
 const navMenuItems = [
   { href: ROUTES.HOME, label: 'Home', selector: '.hero-cinematic' },
   { href: ROUTES.PROJECT, label: 'Project', selector: '.section-project-listing' },
@@ -97,7 +107,7 @@ const Navbar: React.FC = () => {
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
-        {/* Top Left Logo Link to Home */}
+        {/* Top Left Logo Link */}
         <div className="nav-logo">
           <Link
             to={ROUTES.HOME}
@@ -105,7 +115,7 @@ const Navbar: React.FC = () => {
             aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
             className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
           >
-            {/* LOGO ICON PLACEHOLDER — Swap src attribute below when you provide your final logo asset */}
+            {/* LOGO ICON PLACEHOLDER */}
             <div className="logo-icon-wrap">
               <img
                 src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg"
@@ -119,6 +129,20 @@ const Navbar: React.FC = () => {
               <div className="brand-slogan">HYDERABAD'S FOURTH CITY</div>
             </div>
           </Link>
+        </div>
+
+        {/* Top Center Horizontal Nav Links */}
+        <div className="nav-main-links">
+          {navHeaderLinks.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              onClick={(e) => handleNavClick(e, item.href, item.selector)}
+              className="nav-header-link"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         {/* Top Right Actions: Book Site Visit CTA + Burger Menu */}
