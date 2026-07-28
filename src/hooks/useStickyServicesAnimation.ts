@@ -1,37 +1,48 @@
 import { useLayoutEffect } from 'react';
 import { gsap } from '../utils/gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
+/**
+ * 3D Sticky Stacking Cards Animation for Infrastructure section
+ * (Matching section_services-home & timeline t-0d1a17be from Webflow animation reference):
+ *
+ * As each card sticky-stacks at the top of the viewport and the next card comes up,
+ * the active card shrinks in scale (1 → 0.82), fades opacity (1 → 0), and tilts (rotationX: 0deg → -40deg).
+ */
 export function useStickyServicesAnimation(containerRef: React.RefObject<Element | null>) {
   useLayoutEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const ctx = gsap.context(() => {
-      const mediaList = container.querySelectorAll('.service-grid-media');
-      const imagesList = container.querySelectorAll('.service-grid-image');
-      const linkBgs = container.querySelectorAll('.services-listing-link-bg');
+      const cards = container.querySelectorAll<HTMLElement>('.services-home_single');
 
-      if (mediaList.length) gsap.set(mediaList, { visibility: 'visible' });
-      if (imagesList.length) gsap.set(imagesList, { visibility: 'visible' });
-      if (linkBgs.length) gsap.set(linkBgs, { visibility: 'visible' });
+      cards.forEach((card, index) => {
+        gsap.set(card, { visibility: 'visible' });
 
-      // Stagger items on scroll
-      const items = container.querySelectorAll('.service-grid-item');
-      if (items.length) {
-        gsap.from(items, {
-          opacity: 0,
-          y: 40,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: container,
-            start: 'top 70%',
-          },
-        });
-      }
+        // Apply scroll-driven 3D stack-and-flip effect to cards except the last one
+        if (index < cards.length - 1) {
+          gsap.to(card, {
+            scale: 0.85,
+            opacity: 0.2,
+            rotationX: -25,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 12vh',
+              end: 'bottom 12vh',
+              scrub: true,
+            },
+          });
+        }
+      });
     }, container);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.vars.trigger === container) t.kill();
+      });
+    };
   }, [containerRef]);
 }

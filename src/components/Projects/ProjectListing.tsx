@@ -1,66 +1,64 @@
 import React, { useRef } from 'react';
 import Button from '../common/Button/Button';
-import ParallaxImage from '../common/ParallaxImage/ParallaxImage';
-import Label from '../common/Label/Label';
 import { useProjectsAnimation } from '../../hooks/useProjectsAnimation';
 import { ROUTES } from '../../utils/constants';
 
-interface ProjectDetail {
+interface SectorSpec {
   label: string;
   value: string;
 }
 
-interface ProjectItem {
-  href: string;
-  title: string;
-  desc: string;
+interface SectorItem {
+  id: string;
   year: string;
   category: string;
+  title: string;
+  desc: string;
   imageSrc: string;
-  details: ProjectDetail[];
+  specs: SectorSpec[];
 }
 
-const sectorsData: ProjectItem[] = [
+const sectorsData: SectorItem[] = [
   {
-    href: ROUTES.CONSULTATION,
+    id: 'sector-a',
+    year: '2026',
+    category: 'EXECUTIVE PLOTS',
     title: 'Sector A — Executive Villa Plots',
     desc: "150 to 300 Sq Yds premium plots situated closest to the main 60' masterplan entrance avenue.",
-    year: '2026',
-    category: 'Executive Plots',
     imageSrc: '/images/69f7267845fb02b60a644c64_propera-12.avif',
-    details: [
-      { label: 'Location', value: 'Yacharam, Hyderabad' },
-      { label: 'Units', value: '65 Plots' },
-      { label: 'Status', value: 'Available' },
-      { label: 'Approval', value: 'DTCP Approved' },
+    specs: [
+      { label: 'LOCATION', value: 'Yacharam, Hyderabad' },
+      { label: 'UNITS', value: '65 Plots' },
+      { label: 'STATUS', value: 'Available' },
+      { label: 'APPROVAL', value: 'DTCP Approved' },
     ],
   },
   {
-    href: ROUTES.CONSULTATION,
+    id: 'sector-b',
+    year: '2026',
+    category: 'PREMIUM BOULEVARD',
     title: 'Sector B — Premium Boulevard Plots',
     desc: 'East & West facing plots overlooking central park, avenue greens, and walking tracks.',
-    year: '2026',
-    category: 'Park Facing',
     imageSrc: '/images/69ea1826148e95c2e327330a_propera-7.avif',
-    details: [
-      { label: 'Location', value: 'Yacharam, Hyderabad' },
-      { label: 'Units', value: '82 Plots' },
-      { label: 'Status', value: 'Available' },
-      { label: 'Approval', value: 'RERA Approved' },
+    specs: [
+      { label: 'LOCATION', value: 'Yacharam, Hyderabad' },
+      { label: 'UNITS', value: '82 Plots' },
+      { label: 'STATUS', value: 'Available' },
+      { label: 'APPROVAL', value: 'RERA Approved' },
     ],
   },
   {
-    href: ROUTES.CONSULTATION,
+    id: 'sector-c',
+    year: '2026',
+    category: 'COMMERCIAL HUBS',
     title: 'Sector C — Commercial & Corner Plots',
     desc: 'High-visibility corner and main road facing plots ideal for long-term commercial value.',
-    year: '2026',
-    category: 'Commercial',
     imageSrc: '/images/69f726a334302475a11a6e24_propera-24.avif',
-    details: [
-      { label: 'Location', value: 'Yacharam, Hyderabad' },
-      { label: 'Units', value: '50 Plots' },
-      { label: 'Status', value: 'High Demand' },
-      { label: 'Approval', value: 'Clear Title' },
+    specs: [
+      { label: 'LOCATION', value: 'Yacharam, Hyderabad' },
+      { label: 'UNITS', value: '50 Plots' },
+      { label: 'STATUS', value: 'High Demand' },
+      { label: 'APPROVAL', value: '100% Clear Title' },
     ],
   },
 ];
@@ -71,40 +69,47 @@ const ProjectListing: React.FC = () => {
   useProjectsAnimation(containerRef);
 
   return (
-    <div ref={containerRef} className="section-project-listing">
-      <div className="projects-wrap w-dyn-list">
-        <div role="list" className="projects-list w-dyn-items">
-          {sectorsData.map((sector, index) => (
-            <div key={index} role="listitem" className="project-item w-dyn-item">
-              <div className="project-listing-image">
-                <div className="project-image-size">
-                  <ParallaxImage alt={sector.title} src={sector.imageSrc} variant="small" />
-                </div>
+    <div ref={containerRef} className="section_project-clean-listing">
+      <div className="project-clean_container">
+        {sectorsData.map((sector) => (
+          <div key={sector.id} className="project-clean_row">
+            {/* Left Image Column */}
+            <div className="project-clean_image-wrap">
+              <img src={sector.imageSrc} loading="lazy" alt={sector.title} className="project-clean_image" />
+            </div>
+
+            {/* Right Text Column */}
+            <div className="project-clean_content">
+              <div className="project-clean_badge">
+                <span>{sector.year}</span>
+                <span className="badge-sep">•</span>
+                <span>{sector.category}</span>
               </div>
-              <div className="col-2">
-                <div className="project-listing-about">
-                  <Label parts={[sector.year, sector.category]} variant="light" />
-                  <h2 className="heading is-medium">{sector.title}</h2>
-                  <p className="paragraph">{sector.desc}</p>
-                  <div className="project-details">
-                    {sector.details.map((detail, dIdx) => (
-                      <div key={dIdx} className="project-detail-block">
-                        <div className="label-text with-opacity">{detail.label}</div>
-                        <div className="label-text">{detail.value}</div>
-                      </div>
-                    ))}
+
+              <h3 className="project-clean_title">{sector.title}</h3>
+
+              <p className="project-clean_desc">{sector.desc}</p>
+
+              {/* Specs Table */}
+              <div className="project-clean_specs-table">
+                {sector.specs.map((spec, sIdx) => (
+                  <div key={sIdx} className="project-clean_spec-row">
+                    <span className="spec-label">{spec.label}</span>
+                    <span className="spec-value">{spec.value}</span>
                   </div>
-                  <div className="project-listing-action">
-                    <Button href={sector.href} variant="secondary">
-                      <div className="button-text is-1st">Book Site Visit</div>
-                      <div className="button-text is-2nd">Book Site Visit</div>
-                    </Button>
-                  </div>
-                </div>
+                ))}
+              </div>
+
+              {/* Action Button */}
+              <div className="project-clean_action">
+                <Button href={ROUTES.CONSULTATION} variant="secondary">
+                  <div className="button-text is-1st">Book Site Visit</div>
+                  <div className="button-text is-2nd">Book Site Visit</div>
+                </Button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

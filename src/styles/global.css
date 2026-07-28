@@ -324,6 +324,259 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
+   SERVICES HOME / STICKY INFRASTRUCTURE — 3D Stacking Cards
+   (Exact replica of section_services-home from animation reference)
+   ========================================================= */
+
+.section_services-home {
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+  position: relative;
+  overflow: clip;
+  width: 100%;
+}
+
+.services-home_master {
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  position: relative;
+  width: 96vw !important;
+  max-width: 96vw !important;
+  margin: 0 auto;
+}
+
+.services-home_single {
+  top: 12vh;
+  padding: 4vw 4vw 5vw;
+  border-radius: 2rem;
+  background-color: #0f1115;
+  color: #f8f7f3;
+  transform-origin: 50% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75vh;
+  min-height: 480px;
+  position: sticky;
+  overflow: hidden;
+  transform: perspective(2000px);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.services-home_single.is-second {
+  background-color: #14171c;
+}
+
+.services-home_single.is-third {
+  background-color: #1a1e24;
+}
+
+.services-home_single.is-fourth {
+  background-color: #0f1115;
+}
+
+.services-home_top {
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5vw;
+}
+
+.services-home_number {
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: clamp(2rem, 4vw, 4rem);
+  opacity: 0.4;
+}
+
+.services-home_title {
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.services-home_bottom {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 42rem;
+  position: relative;
+}
+
+.services-home_subtitle {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 500;
+  margin: 0;
+}
+
+.services-home_desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.services-home_background-image-wrap {
+  z-index: 1;
+  position: absolute;
+  inset: 0%;
+  overflow: hidden;
+}
+
+.services-home_image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.services-home_overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 17, 21, 0.7) 0%,
+    rgba(15, 17, 21, 0.15) 35%,
+    rgba(15, 17, 21, 0.15) 65%,
+    rgba(15, 17, 21, 0.8) 100%
+  );
+  position: absolute;
+  inset: 0%;
+  z-index: 2;
+}
+
+/* =========================================================
+   PROJECT CLEAN LISTING — Borderless 2-Column Row Layout
+   (Matching reference animation video)
+   ========================================================= */
+
+.section_project-clean-listing {
+  padding-top: 6vw;
+  padding-bottom: 6vw;
+  width: 100%;
+}
+
+.project-clean_container {
+  display: flex;
+  flex-direction: column;
+  gap: 7vw;
+  width: 96vw !important;
+  max-width: 96vw !important;
+  margin: 0 auto;
+}
+
+.project-clean_row {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 5vw;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .project-clean_row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.project-clean_image-wrap {
+  border-radius: 1.2rem;
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .project-clean_image-wrap {
+    height: 280px;
+  }
+}
+
+.project-clean_image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.project-clean_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+
+.project-clean_badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.badge-sep {
+  opacity: 0.4;
+}
+
+.project-clean_title {
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+  line-height: 1.15;
+  margin: 0;
+  color: #111315;
+}
+
+.project-clean_desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin: 0;
+  max-width: 36rem;
+}
+
+.project-clean_specs-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 36rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin-top: 0.5rem;
+}
+
+.project-clean_spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.spec-label {
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.spec-value {
+  font-weight: 500;
+  opacity: 0.9;
+  letter-spacing: 0.08em;
+}
+
+.project-clean_action {
+  margin-top: 0.8rem;
+}
+
+/* =========================================================
    FOOTER MINIMAL — Sleek Dark Luxury Layout
    ========================================================= */
 

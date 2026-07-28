@@ -1,52 +1,52 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
-import Label from '../common/Label/Label';
 import { useStickyServicesAnimation } from '../../hooks/useStickyServicesAnimation';
-import { ROUTES } from '../../utils/constants';
 
-interface FeatureItem {
-  href: string;
+interface InfrastructureCard {
+  number: string;
   title: string;
+  subtitle: string;
   desc: string;
   imgSrc: string;
-  srcset?: string;
   alt: string;
+  variantClass: string;
 }
 
-const featuresData: FeatureItem[] = [
+const infrastructureCards: InfrastructureCard[] = [
   {
-    href: ROUTES.PROJECT,
-    title: "30' & 40' Blacktop Roads",
-    desc: 'Heavy-duty internal road network with underground drainage and LED cabling.',
+    number: '01',
+    title: 'Blacktop Roads',
+    subtitle: "30' & 40' Heavy-Duty Internal Roads",
+    desc: 'Heavy-duty internal road network with underground drainage, LED street cabling, and wide avenue access across the 16-acre masterplan.',
     imgSrc: '/images/69ea170d9416fbbec2a6517b_propera-service-4.avif',
-    srcset:
-      '/images/69ea170d9416fbbec2a6517b_propera-service-4-p-500.avif 500w, /images/69ea170d9416fbbec2a6517b_propera-service-4-p-800.avif 800w, /images/69ea170d9416fbbec2a6517b_propera-service-4-p-1080.avif 1080w, /images/69ea170d9416fbbec2a6517b_propera-service-4.avif 2752w',
     alt: 'Wide Internal Roads',
+    variantClass: '',
   },
   {
-    href: ROUTES.PROJECT,
-    title: 'Gated Security & Entrance Arch',
-    desc: '24/7 CCTV surveillance, grand entry arch, and perimeter fencing across 16 acres.',
+    number: '02',
+    title: 'Gated Security',
+    subtitle: 'Gated Security & Grand Entry Arch',
+    desc: '24/7 CCTV surveillance, grand entry archway, manned security checkpost, and high perimeter fencing protecting all villa plot owners.',
     imgSrc: '/images/69ea171e88eece9f8199cfc8_propera-service-23.avif',
-    srcset:
-      '/images/69ea171e88eece9f8199cfc8_propera-service-23-p-500.avif 500w, /images/69ea171e88eece9f8199cfc8_propera-service-23-p-800.avif 800w, /images/69ea171e88eece9f8199cfc8_propera-service-23-p-1080.avif 1080w, /images/69ea171e88eece9f8199cfc8_propera-service-23-p-1600.avif 1600w, /images/69ea171e88eece9f8199cfc8_propera-service-23.avif 2752w',
     alt: 'Gated Community Entrance',
+    variantClass: 'is-second',
   },
   {
-    href: ROUTES.PROJECT,
-    title: 'Avenue Plantation & Parks',
-    desc: 'Landscaped green parks, jogging tracks, and dedicated children play zones.',
+    number: '03',
+    title: 'Green Parks',
+    subtitle: 'Avenue Plantation & Landscaped Parks',
+    desc: 'Lush green parks, jogging tracks, dedicated children play zones, and avenue plantation lining every major internal corridor.',
     imgSrc: '/images/69ea1734e9c846e525c837a3_propera-service-8.avif',
-    srcset:
-      '/images/69ea1734e9c846e525c837a3_propera-service-8-p-500.avif 500w, /images/69ea1734e9c846e525c837a3_propera-service-8-p-800.avif 800w, /images/69ea1734e9c846e525c837a3_propera-service-8-p-1080.avif 1080w, /images/69ea1734e9c846e525c837a3_propera-service-8.avif 2752w',
     alt: 'Parks and Landscapes',
+    variantClass: 'is-third',
   },
   {
-    href: ROUTES.PROJECT,
-    title: 'Underground Utilities Grid',
-    desc: 'Direct water supply connection to every plot, underground electricity, and storm drains.',
+    number: '04',
+    title: 'Utilities Grid',
+    subtitle: 'Underground Utilities Grid & Water Supply',
+    desc: 'Direct water supply connection to every plot, underground electricity grid, storm water management, and internet optical fiber readiness.',
     imgSrc: '/images/6a0206389fe3babd75823870_office-space.avif',
     alt: 'Underground Utilities',
+    variantClass: 'is-fourth',
   },
 ];
 
@@ -56,59 +56,35 @@ const StickyServices: React.FC = () => {
   useStickyServicesAnimation(containerRef);
 
   return (
-    <div
-      ref={containerRef}
-      data-wf-component-id="1a329848-d548-65e9-c96d-d09b9e5395fe"
-      data-wf-variant-state="base"
-      className="section-services-sticky-listing"
-    >
-      <div className="services-listing-grid">
-        <div id="w-node-_1a329848-d548-65e9-c96d-d09b9e539600-9e5395fe" className="sticky-service-block">
-          <div className="services-listing-wrap">
-            <Label parts={['Project', 'Features']} variant="dark" />
-            <div className="services-listing-title">
-              <h2 className="heading is-xlarge">Infrastructure engineered for the future</h2>
+    <div ref={containerRef} className="section_services-home">
+      {/* Animated Section Header */}
+      <div className="section_animated-heading">
+        <div className="animated-heading_wrap">
+          <h2 className="animated-scroll-heading is-first">Infrastructure</h2>
+          <h2 className="animated-scroll-heading is-middle">Engineered For The</h2>
+          <h2 className="animated-scroll-heading is-last">Future</h2>
+        </div>
+      </div>
+
+      {/* 3D Sticky Stacking Cards */}
+      <div className="services-home_master">
+        {infrastructureCards.map((card) => (
+          <div key={card.number} className={`services-home_single ${card.variantClass}`}>
+            <div className="services-home_top">
+              <h3 className="services-home_title">{card.title}</h3>
+            </div>
+
+            <div className="services-home_bottom">
+              <h4 className="services-home_subtitle">{card.subtitle}</h4>
+              <p className="services-home_desc">{card.desc}</p>
+            </div>
+
+            <div className="services-home_background-image-wrap">
+              <img src={card.imgSrc} loading="lazy" alt={card.alt} className="services-home_image" />
+              <div className="services-home_overlay"></div>
             </div>
           </div>
-          <Link to={ROUTES.CONSULTATION} className="services-listing-link w-inline-block">
-            <div className="label-text">Download Brochure</div>
-            <img
-              src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg"
-              loading="lazy"
-              alt="Arrow icon"
-              className="services-listing-icon"
-            />
-            <div className="services-listing-link-bg"></div>
-          </Link>
-        </div>
-        <div id="w-node-_1a329848-d548-65e9-c96d-d09b9e539610-9e5395fe" className="service-wrap w-dyn-list">
-          <div role="list" className="service-grid w-dyn-items">
-            {featuresData.map((feature, index) => (
-              <div key={index} role="listitem" className="service-grid-item w-dyn-item">
-                <Link to={feature.href} className="service-grid-link w-inline-block">
-                  <div className="service-grid-media">
-                    <div className="service-image-animation-color"></div>
-                    <img
-                      alt={feature.alt}
-                      loading="lazy"
-                      src={feature.imgSrc}
-                      sizes="100vw"
-                      srcSet={feature.srcset}
-                      className="service-grid-image"
-                    />
-                  </div>
-                  <div className="service-block">
-                    <div className="label-text">Infrastructure</div>
-                    <div className="service-max">
-                      <h2 className="heading is-medium">{feature.title}</h2>
-                      <p className="paragraph">{feature.desc}</p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
