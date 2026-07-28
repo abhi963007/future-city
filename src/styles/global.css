@@ -666,8 +666,8 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 .footer-minimal_cta-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(11, 13, 14, 0.42) 0%, rgba(11, 13, 14, 0.72) 100%),
-              linear-gradient(180deg, rgba(11, 13, 14, 0.3) 0%, rgba(11, 13, 14, 0.82) 100%);
+  background: radial-gradient(circle at 50% 50%, rgba(11, 13, 14, 0.25) 0%, rgba(11, 13, 14, 0.55) 100%),
+              linear-gradient(180deg, rgba(11, 13, 14, 0.15) 0%, rgba(11, 13, 14, 0.65) 100%);
   z-index: 1;
 }
 
@@ -691,6 +691,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   color: #f8f7f3;
   margin: 0;
   max-width: 54rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
 }
 
 .footer-minimal_main {
