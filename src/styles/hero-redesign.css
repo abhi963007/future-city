@@ -130,15 +130,15 @@
 .hero-cinematic-headline {
   margin: 0;
   padding: 0;
-  line-height: 0.92;
+  line-height: 0.95;
 }
 
 .hero-cinematic-title-primary {
   display: block;
-  font-family: 'Pathway Gothic One', sans-serif;
+  font-family: 'Big Shoulders Stencil', sans-serif;
   font-size: clamp(3rem, 6.8vw, 7.2rem);
-  font-weight: 300;
-  letter-spacing: 0.14em;
+  font-weight: 200;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #ffffff;
   white-space: nowrap;
@@ -148,11 +148,11 @@
 
 .hero-cinematic-title-secondary {
   display: block;
-  font-family: 'Arizonia', cursive;
-  font-size: clamp(3.5rem, 8vw, 8.5rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: none;
+  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-size: clamp(3rem, 6.8vw, 7.2rem);
+  font-weight: 200;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #c5a059;
   white-space: nowrap;
   margin-top: 2px;
