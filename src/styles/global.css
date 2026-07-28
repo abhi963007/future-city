@@ -764,15 +764,21 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   gap: 1rem;
 }
 
-.footer-minimal_link {
+.footer-minimal_link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   color: #f8f7f3;
   opacity: 0.7;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  text-decoration: none;
 }
 
-.footer-minimal_link:hover {
+.footer-minimal_link-btn:hover {
   opacity: 1;
   transform: translateX(4px);
 }

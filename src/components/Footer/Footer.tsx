@@ -1,21 +1,26 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { useFooterAnimation } from '../../hooks/useFooterAnimation';
-import { ROUTES } from '../../utils/constants';
 
 const Footer: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useFooterAnimation(containerRef);
 
+  const scrollToSection = (selector: string) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer ref={containerRef} className="footer-minimal">
-      {/* Top CTA Banner with Visible Background Image & Soft Shade */}
+      {/* Top CTA Banner with Background Image & Soft Shade */}
       <div className="footer-minimal_cta">
         <img
           src="/images/69f33e4ed787feeb78d1b49e_hero-image.avif"
           loading="lazy"
-          alt="Codename Future City Landscape Horizon"
+          alt="Future City Landscape Horizon"
           className="footer-minimal_cta-bg"
         />
         <div className="footer-minimal_cta-overlay"></div>
@@ -25,11 +30,15 @@ const Footer: React.FC = () => {
             Secure your stake in Hyderabad's Fourth City today
           </h2>
 
-          {/* Custom Pill Button matching upper section style */}
-          <Link to={ROUTES.CONSULTATION} className="project-clean_cta-btn" style={{ marginTop: 0 }}>
+          <button
+            type="button"
+            onClick={() => scrollToSection('.section_project-clean-listing')}
+            className="project-clean_cta-btn"
+            style={{ marginTop: 0, cursor: 'pointer' }}
+          >
             <span>Book Site Visit</span>
             <span className="cta-arrow">→</span>
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -38,7 +47,7 @@ const Footer: React.FC = () => {
         <div className="footer-minimal_grid">
           {/* Brand Column */}
           <div className="footer-minimal_brand">
-            <div className="footer-minimal_logo">CODENAME FUTURE CITY</div>
+            <div className="footer-minimal_logo">FUTURE CITY</div>
             <p className="footer-minimal_tagline">
               Hyderabad's premier Fourth City economic corridor featuring DTCP & RERA approved villa plotting layouts.
             </p>
@@ -51,19 +60,67 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Navigation Links Column */}
+          {/* Quick Navigation Links (Smooth Scroll) */}
           <div className="footer-minimal_nav">
             <div className="footer-minimal_nav-column">
-              <Link to={ROUTES.HOME} className="footer-minimal_link">Home</Link>
-              <Link to={ROUTES.PROJECT} className="footer-minimal_link">Project</Link>
-              <Link to={ROUTES.VISION} className="footer-minimal_link">Future City Vision</Link>
-              <Link to={ROUTES.LOCATION} className="footer-minimal_link">Location</Link>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.hero-cinematic')}
+                className="footer-minimal_link-btn"
+              >
+                Home
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.section-about-grid')}
+                className="footer-minimal_link-btn"
+              >
+                Overview
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.section-typo-titles')}
+                className="footer-minimal_link-btn"
+              >
+                Future City Vision
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.solution-showcase')}
+                className="footer-minimal_link-btn"
+              >
+                Strategic Growth
+              </button>
             </div>
             <div className="footer-minimal_nav-column">
-              <Link to={ROUTES.CONNECTIVITY} className="footer-minimal_link">Connectivity</Link>
-              <Link to={ROUTES.INVESTMENT} className="footer-minimal_link">Investment</Link>
-              <Link to={ROUTES.GALLERY} className="footer-minimal_link">Gallery</Link>
-              <Link to={ROUTES.CONTACT} className="footer-minimal_link">Contact</Link>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.section_testimonials')}
+                className="footer-minimal_link-btn"
+              >
+                Growth Pillars
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.section_services-home')}
+                className="footer-minimal_link-btn"
+              >
+                Infrastructure
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.section_project-clean-listing')}
+                className="footer-minimal_link-btn"
+              >
+                Layout Sectors
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('.footer-minimal_cta')}
+                className="footer-minimal_link-btn"
+              >
+                Site Visit
+              </button>
             </div>
           </div>
 
@@ -92,7 +149,7 @@ const Footer: React.FC = () => {
 
         {/* Subfooter Bottom Bar */}
         <div className="footer-minimal_bottom">
-          <div>© 2026 Codename Future City. All Rights Reserved.</div>
+          <div>© 2026 Future City. All Rights Reserved.</div>
           <div className="footer-minimal_bottom-right">
             <span>HYDERABAD FOURTH CITY</span>
           </div>

@@ -27,7 +27,7 @@ export const BREAKPOINTS = {
 } as const;
 
 export const SITE_META = {
-  title: "Codename Future City | Premium Villa Plots at Yacharam, Hyderabad",
+  title: "Future City | Premium Villa Plots at Yacharam, Hyderabad",
   description:
     "Invest in Hyderabad's Fourth City with premium DTCP & RERA approved villa plots strategically located near the Future City and Pharma City corridor.",
   ogImage: '/images/69f33e4ed787feeb78d1b49e_hero-image.avif',
