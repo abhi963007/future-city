@@ -32,22 +32,22 @@ const Home: React.FC = () => {
       <AboutGrid />
       <TypoTitles
         variant="without-image"
-        title1="Real Estate "
-        title2="Solutions"
-        title3="For developers"
-        subtitle="We combine insight, design thinking, and execution to deliver high-quality outcomes"
+        title1="Future City "
+        title2="Vision"
+        title3="Fourth City"
+        subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
       />
       <SolutionsShowcase />
       <StatementReveal />
       <StickyServices />
       <TypoTitles
         variant="base"
-        title1="Selected"
-        title2="property"
-        title3="developments"
-        subtitle="Explore a curated selection of our residential and development projects"
+        title1="Strategic"
+        title2="Location"
+        title3="Connectivity"
+        subtitle="Connected directly to Rajiv Gandhi International Airport, ORR, and the Regional Ring Road"
         imageSrc="/images/69f1e37cb735948465f81b86_vert-5.avif"
-        imageAlt="Modern business meeting in a minimalist office interior with natural light and contemporary workspace design."
+        imageAlt="Future City Regional Connectivity Corridor"
         bgColorClass="is-light-strong"
       />
       <ProjectListing />

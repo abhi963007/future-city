@@ -19,18 +19,18 @@ const Footer: React.FC = () => {
     >
       <div className="footer-action">
         <div className="footer-cta-size">
-          <h2 className="heading is-cta-title">Explore the right approach for your next move</h2>
+          <h2 className="heading is-cta-title">Secure your stake in Hyderabad's Fourth City today</h2>
           <div className="fotoer-cta-action">
             <Button href={ROUTES.CONSULTATION} variant="primary">
-              <div className="button-text is-1st">Consultation</div>
-              <div className="button-text is-2nd">Consultation</div>
+              <div className="button-text is-1st">Book Site Visit</div>
+              <div className="button-text is-2nd">Book Site Visit</div>
             </Button>
           </div>
           <div className="footer-cta-image">
             <img
               src="/images/69f33e4ed787feeb78d1b49e_hero-image.avif"
               loading="lazy"
-              alt="Modern residential architecture with minimalist brick facade and contemporary balcony design at dusk."
+              alt="Codename Future City Landscape"
               className="cover-image"
             />
             <div className="cta-reveal-color"></div>
@@ -44,101 +44,67 @@ const Footer: React.FC = () => {
               <Link to={ROUTES.HOME} className="footer-main-link w--current">
                 Home
               </Link>
-              <Link to={ROUTES.SOLUTIONS} className="footer-main-link">
-                Solutions
+              <Link to={ROUTES.PROJECT} className="footer-main-link">
+                Project
               </Link>
-              <Link to={ROUTES.SERVICES} className="footer-main-link">
-                Services
+              <Link to={ROUTES.VISION} className="footer-main-link">
+                Future City Vision
               </Link>
-              <Link to={ROUTES.ABOUT} className="footer-main-link">
-                About
+              <Link to={ROUTES.CONNECTIVITY} className="footer-main-link">
+                Connectivity
               </Link>
-              <Link to={ROUTES.PROJECTS} className="footer-main-link">
-                Projects
+              <Link to={ROUTES.LOCATION} className="footer-main-link">
+                Location
               </Link>
-              <Link to={ROUTES.PROPERTIES} className="footer-main-link">
-                Properties
-              </Link>
-              <Link to={ROUTES.BLOG} className="footer-main-link">
-                Blog
+              <Link to={ROUTES.INVESTMENT} className="footer-main-link">
+                Investment
               </Link>
               <Link to={ROUTES.GALLERY} className="footer-main-link">
                 Gallery
               </Link>
-              <Link to={ROUTES.LOCATIONS} className="footer-main-link">
-                Locations
-              </Link>
-              <Link to={ROUTES.CONSULTATION} className="footer-main-link">
-                Consultation
-              </Link>
               <Link to={ROUTES.CONTACT} className="footer-main-link">
                 Contact
               </Link>
+              <Link to={ROUTES.CONSULTATION} className="footer-main-link">
+                Book Site Visit
+              </Link>
             </div>
             <div className="footer-main-actions">
-              <a href="mailto:contact@example.com" className="contact-link w-inline-block">
+              <a href="mailto:info@futurecityhyderabad.in" className="contact-link w-inline-block">
                 <img
                   loading="lazy"
                   src="/images/6a021e6360a90e1f8b6c6540_email.svg"
                   alt="Contact icon"
                   className="contact-icon"
                 />
-                <p className="contact-link-text">contact@example.com</p>
+                <p className="contact-link-text">info@futurecityhyderabad.in</p>
                 <div className="contact-bg"></div>
               </a>
-              <a href="tel:+12355456789" className="contact-link w-inline-block">
+              <a href="tel:+919876543210" className="contact-link w-inline-block">
                 <img
                   loading="lazy"
                   src="/images/6a021edc8a324b1bda7f358b_calling.svg"
                   alt="Contact icon"
                   className="contact-icon"
                 />
-                <p className="contact-link-text">+123 (55) 456 789</p>
+                <p className="contact-link-text">+91 98765 43210</p>
                 <div className="contact-bg"></div>
               </a>
             </div>
           </div>
           <div className="subfooter-credits">
             <div className="footer-small-links is-left">
-              <Link to={ROUTES.STYLE_GUIDE} className="footer-small-link">
-                Style guide
-              </Link>
-              <Link to="/instructions" className="footer-small-link">
-                Instructions
-              </Link>
-              <Link to="/licenses" className="footer-small-link">
-                Licences
-              </Link>
+              <span className="footer-small-link">DTCP Approved</span>
+              <span className="footer-small-link">RERA Approved</span>
+              <span className="footer-small-link">100% Clear Title</span>
             </div>
             <div className="footer-small-links is-right">
-              <a
-                href="https://www.webflow.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-small-link"
-              >
-                Powered by Webflow
-              </a>
-              <a
-                href="https://www.metrik.studio/webflow-templates"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-small-link"
-              >
-                Webflow Templates
-              </a>
-              <a
-                href="https://webflow.com/templates/designers/metrik"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-small-link"
-              >
-                Made by metrik.studio
-              </a>
+              <span className="footer-small-link">Yacharam, Hyderabad</span>
+              <span className="footer-small-link">Srisailam Highway</span>
             </div>
           </div>
           <div className="subfooter-copyright">
-            <div className="footer-copyright-text">Harroway Webflow CMS template</div>
+            <div className="footer-copyright-text">© 2026 Codename Future City. All Rights Reserved.</div>
           </div>
         </div>
         <div className="footer-background">
@@ -148,7 +114,7 @@ const Footer: React.FC = () => {
             <img
               src="/images/69f1ed5bf45d323a5b46b04e_default-image-tiny-3.avif"
               loading="lazy"
-              alt="Modern residential architecture with minimalist brick facade and contemporary balcony design at dusk."
+              alt="Codename Future City Masterplan Horizon"
               className="parallax-image"
             />
           </div>

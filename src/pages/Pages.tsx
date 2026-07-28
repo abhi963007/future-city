@@ -1,90 +1,66 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-export const AboutPage: React.FC = () => (
+export const ProjectPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>About - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">About Harroway</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Full-service real estate representation and property management solutions.</p>
+    <Helmet><title>Project Overview - Codename Future City</title></Helmet>
+    <h1 className="heading is-xlarge">16-Acre Masterplanned Villa Plots</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>DTCP & RERA approved premium layout at Yacharam, Hyderabad.</p>
   </div>
 );
 
-export const ServicesPage: React.FC = () => (
+export const VisionPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Services - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Our Services</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Services for a changing city.</p>
+    <Helmet><title>Future City Vision - Fourth City Hyderabad</title></Helmet>
+    <h1 className="heading is-xlarge">AI Hub & Skills University Corridor</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Positioned in India's premier AI-driven urban ecosystem.</p>
   </div>
 );
 
-export const SolutionsPage: React.FC = () => (
+export const ConnectivityPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Solutions - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Real Estate Solutions</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Tailored real estate solutions for developers, buyers, and investors.</p>
+    <Helmet><title>Regional Connectivity - Codename Future City</title></Helmet>
+    <h1 className="heading is-xlarge">6-Lane Srisailam Highway & RRR</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Direct access to Rajiv Gandhi International Airport & ORR.</p>
   </div>
 );
 
-export const ProjectsPage: React.FC = () => (
+export const LocationPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Projects - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Our Projects</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Explore a curated selection of our residential and development projects.</p>
+    <Helmet><title>Location Advantage - Yacharam, Hyderabad</title></Helmet>
+    <h1 className="heading is-xlarge">Yacharam Growth Hub</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Next to the 14,000-acre Pharma City cluster.</p>
   </div>
 );
 
-export const PropertiesPage: React.FC = () => (
+export const InvestmentPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Properties - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Properties</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Prime London residential property portfolio.</p>
+    <Helmet><title>Investment Potential - 10X ROI</title></Helmet>
+    <h1 className="heading is-xlarge">BULLETSPEED YOUR INVESTMENTS</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Invest before the boom. Not after it. Launch price ₹12,999 per sq yd.</p>
   </div>
 );
 
 export const GalleryPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Gallery - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Gallery</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Visual showcase of our architectural and design work.</p>
-  </div>
-);
-
-export const BlogPage: React.FC = () => (
-  <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Blog - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Insights & News</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Latest market insights, development news, and opinion pieces.</p>
+    <Helmet><title>Project Gallery - Codename Future City</title></Helmet>
+    <h1 className="heading is-xlarge">Project Visual Showcase</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Masterplan renders, infrastructure developments, and site views.</p>
   </div>
 );
 
 export const ContactPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Contact - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Contact Us</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Get in touch with our team of real estate experts.</p>
+    <Helmet><title>Contact Us - Codename Future City</title></Helmet>
+    <h1 className="heading is-xlarge">Contact Future City Team</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Reach out for site visit bookings, plot availability, and pricing.</p>
   </div>
 );
 
 export const ConsultationPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Consultation - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Book a Private Consultation</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Schedule a meeting to discuss your property requirements.</p>
-  </div>
-);
-
-export const LocationsPage: React.FC = () => (
-  <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Locations - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Our Locations</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Operating across Greater London and the Home Counties.</p>
-  </div>
-);
-
-export const StyleGuidePage: React.FC = () => (
-  <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Style Guide - Harroway</title></Helmet>
-    <h1 className="heading is-xlarge">Style Guide</h1>
-    <p className="paragraph" style={{ marginTop: '20px' }}>Typography, colors, and design tokens specification.</p>
+    <Helmet><title>Book Site Visit - Codename Future City</title></Helmet>
+    <h1 className="heading is-xlarge">Schedule a Private Site Visit</h1>
+    <p className="paragraph" style={{ marginTop: '20px' }}>Complimentary luxury car pick-up and drop-off available.</p>
   </div>
 );

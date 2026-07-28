@@ -18,9 +18,9 @@ const ConsultationSection: React.FC = () => {
       <div data-current={activeTab} className="tabs-cta w-tabs">
         <div className="tabs-menu w-tab-menu">
           {[
-            { id: 'Form', label: 'Form' },
+            { id: 'Form', label: 'Site Visit Form' },
             { id: 'FAQ', label: 'FAQ' },
-            { id: 'Managements', label: 'Management' },
+            { id: 'Managements', label: 'Project Highlights' },
           ].map((tab) => (
             <button
               key={tab.id}

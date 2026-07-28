@@ -18,27 +18,27 @@ interface StatItem {
   alt: string;
 }
 
-const teamPhotos: TeamMemberPhoto[] = [
+const masterplanPhotos: TeamMemberPhoto[] = [
   {
-    name: 'Edward Ashworth',
+    name: 'Future City Masterplan 1',
     src: '/images/69f0d23c613ebaa58b5e5abd_portrait-3.avif',
     srcset:
       '/images/69f0d23c613ebaa58b5e5abd_portrait-3-p-500.avif 500w, /images/69f0d23c613ebaa58b5e5abd_portrait-3-p-800.avif 800w, /images/69f0d23c613ebaa58b5e5abd_portrait-3.avif 1623w',
   },
   {
-    name: 'Charlotte Reid',
+    name: 'Future City Masterplan 2',
     src: '/images/69f0d24d657f94035313b9f6_portrait-2.avif',
     srcset:
       '/images/69f0d24d657f94035313b9f6_portrait-2-p-500.avif 500w, /images/69f0d24d657f94035313b9f6_portrait-2-p-800.avif 800w, /images/69f0d24d657f94035313b9f6_portrait-2.avif 1641w',
   },
   {
-    name: 'Jessica Sutton',
+    name: 'Future City Masterplan 3',
     src: '/images/69f0d271ada7f395ba809b6f_portrait-5.avif',
     srcset:
       '/images/69f0d271ada7f395ba809b6f_portrait-5-p-500.avif 500w, /images/69f0d271ada7f395ba809b6f_portrait-5-p-800.avif 800w, /images/69f0d271ada7f395ba809b6f_portrait-5-p-1080.avif 1080w, /images/69f0d271ada7f395ba809b6f_portrait-5.avif 2048w',
   },
   {
-    name: 'Priya Mehta',
+    name: 'Future City Masterplan 4',
     src: '/images/69f0d2571158f60b904d2833_portrait-6.avif',
     srcset:
       '/images/69f0d2571158f60b904d2833_portrait-6-p-500.avif 500w, /images/69f0d2571158f60b904d2833_portrait-6-p-800.avif 800w, /images/69f0d2571158f60b904d2833_portrait-6.avif 2048w',
@@ -47,25 +47,25 @@ const teamPhotos: TeamMemberPhoto[] = [
 
 const statsData: StatItem[] = [
   {
-    about: "Founded in 2006, Harroway has built a specialist presence in London's prime residential markets over 18 years.",
-    number: '18+',
-    label: 'Years in London',
+    about: 'Positioned in Yacharam along Srisailam highway with maximum early-stage appreciation potential.',
+    number: '₹12,999',
+    label: 'Launch Price Per Sq Yd',
     iconSrc: '/images/69f257acedf62dbe012620cd_blueprint.svg',
-    alt: 'Years in London',
+    alt: 'Price Per Sq Yard',
   },
   {
-    about: 'Measured across developer, buyer, landlord, and block manag clients through post-instruction surveys.',
-    number: '98%',
-    label: 'Client satisfaction',
+    about: 'Exclusively designed 16-acre masterplanned gated community layout with wide internal roads.',
+    number: '197',
+    label: 'Premium Villa Plots',
     iconSrc: '/images/69f257b3e12e045e07cd5a12_house-key.svg',
-    alt: 'Client satisfaction',
+    alt: 'Villa Plots Count',
   },
   {
-    about: 'Cumulative gross development value across new residential schemes instructed to Harroway since 2006.',
-    number: '£4.2bn',
-    label: 'Development value advised',
+    about: 'Located next to the 200-acre AI Hub, Skills University, and 14,000-acre Pharma City corridor.',
+    number: '10X',
+    label: 'Growth Potential',
     iconSrc: '/images/69f257c0fc6d025147a1d1a0_mortgage.svg',
-    alt: 'Development value advised',
+    alt: 'Growth Potential',
   },
 ];
 
@@ -84,21 +84,21 @@ const TeamStats: React.FC = () => {
       <div className="stats-col is-title-col">
         <div className="stats-layout-2">
           <div className="sticky-team-title">
-            <Label parts={['Our', 'Team']} variant="dark" />
-            <h2 className="heading is-xlarge">Meet the experts behind our work</h2>
+            <Label parts={['Project', 'Metrics']} variant="dark" />
+            <h2 className="heading is-xlarge">Growth parameters & investment overview</h2>
           </div>
         </div>
         <div className="stats-action">
-          <Button href={ROUTES.ABOUT} variant="primary">
-            <div className="button-text is-1st">Company</div>
-            <div className="button-text is-2nd">Company</div>
+          <Button href={ROUTES.LOCATION} variant="primary">
+            <div className="button-text is-1st">Explore Location</div>
+            <div className="button-text is-2nd">Explore Location</div>
           </Button>
         </div>
       </div>
       <div className="stats-col">
         <div className="stats-cms-image-wrapper w-dyn-list">
           <div role="list" className="stats-cms-image-list w-dyn-items">
-            {teamPhotos.map((photo, i) => (
+            {masterplanPhotos.map((photo, i) => (
               <div key={i} role="listitem" className="stats-cms-image-item w-dyn-item">
                 <img
                   alt={photo.name}

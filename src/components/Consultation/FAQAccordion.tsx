@@ -10,27 +10,27 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: 'What services does Harroway offer?',
+    question: 'Where is Codename Future City located?',
     answer:
-      'Harroway provides new development sales, block and estate management, residential sales and lettings, buyer representation, investment advisory, development consultancy, and relocation services across Greater London and the Home Counties. Our primary focus is new residential development and prime London residential property.',
+      'Codename Future City is located at Yacharam along the 6-lane Srisailam Highway, Hyderabad, directly adjacent to the upcoming Future City corridor, 200-acre AI Hub, and 14,000-acre Pharma City.',
   },
   {
     id: 2,
-    question: 'How long does the process take?',
+    question: 'Are the villa plots DTCP and RERA approved?',
     answer:
-      "Timelines vary by service. A new development sales programme typically runs 12 to 24 months from launch through to final legal completion. A residential sale in the prime London market typically takes 8 to 16 weeks from instruction to completion. Block management instructions are ongoing. We provide a clear timeline estimate at the initial consultation for every engagement.",
+      'Yes, 100% DTCP and RERA approved layout with clear title, spot registration readiness, and bank loan approvals from major nationalized banks.',
   },
   {
     id: 3,
-    question: 'How does the onboarding process work?',
+    question: 'What is the current launch price per square yard?',
     answer:
-      "Every engagement begins with an initial consultation to understand the client's objectives, timeline, and constraints. For developers, this typically involves a scheme appraisal meeting. For buyers and landlords, it begins with a brief and requirements review. From there, we prepare a tailored proposal covering our recommended approach, fees, and timeline for approval before we proceed.",
+      'Initial launch pricing starts at ₹12,999 per sq yard with plot sizes ranging from 150 Sq Yds to 300+ Sq Yds.',
   },
   {
     id: 4,
-    question: 'Do you work with international buyers?',
+    question: 'Is complimentary site visit transport available?',
     answer:
-      'Yes. Harroway works with international buyers across the full purchase process, from initial market orientation and property search through to legal completion and post-purchase management. We can introduce clients to specialist UK property solicitors, mortgage advisers, currency transfer services, and block management providers as required. We have particular experience working with buyers from the UAE, Singapore, Hong Kong, and across mainland Europe.',
+      'Yes! We provide complimentary luxury car pick-up and drop-off from anywhere in Hyderabad for your scheduled site visit.',
   },
 ];
 

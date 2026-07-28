@@ -1,19 +1,23 @@
 export const ROUTES = {
   HOME: '/',
-  ABOUT: '/about',
+  PROJECT: '/project',
+  VISION: '/vision',
+  CONNECTIVITY: '/connectivity',
+  LOCATION: '/location',
+  INVESTMENT: '/investment',
+  GALLERY: '/gallery',
+  CONTACT: '/contact',
+  CONSULTATION: '/consultation',
+  PROPERTIES: '/properties',
   SERVICES: '/services',
   SOLUTIONS: '/solutions',
   PROJECTS: '/projects',
-  PROPERTIES: '/properties',
-  GALLERY: '/gallery',
   BLOG: '/blog',
-  CONTACT: '/contact',
-  CONSULTATION: '/consultation',
   LOCATIONS: '/locations',
   STYLE_GUIDE: '/style-guide',
 } as const;
 
-// Webflow breakpoints — must match exactly
+// Webflow breakpoints — matching original layout
 export const BREAKPOINTS = {
   MOBILE: 479,
   TABLET: 767,
@@ -23,9 +27,9 @@ export const BREAKPOINTS = {
 } as const;
 
 export const SITE_META = {
-  title: 'Harroway - Real Estate Template',
+  title: "Codename Future City | Premium Villa Plots at Yacharam, Hyderabad",
   description:
-    'Premium real estate business, development agencies, prime residential brokerages, and block management companies.',
-  ogImage: '/images/69e7c7b0c8b5b85fe79566ed_804cb071252be5768b3055ac03c981a5_og-image.jpg',
-  canonical: 'https://harroway-real-estate-template.webflow.io',
+    "Invest in Hyderabad's Fourth City with premium DTCP & RERA approved villa plots strategically located near the Future City and Pharma City corridor.",
+  ogImage: '/images/69f33e4ed787feeb78d1b49e_hero-image.avif',
+  canonical: 'https://futurecityhyderabad.in',
 } as const;

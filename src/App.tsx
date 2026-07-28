@@ -3,17 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import {
-  AboutPage,
-  ServicesPage,
-  SolutionsPage,
-  ProjectsPage,
-  PropertiesPage,
+  ProjectPage,
+  VisionPage,
+  ConnectivityPage,
+  LocationPage,
+  InvestmentPage,
   GalleryPage,
-  BlogPage,
   ContactPage,
   ConsultationPage,
-  LocationsPage,
-  StyleGuidePage,
 } from './pages/Pages';
 
 const App: React.FC = () => {
@@ -21,18 +18,24 @@ const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<AboutPage />} />
-        <Route path="services" element={<ServicesPage />} />
-        <Route path="solutions" element={<SolutionsPage />} />
-        <Route path="projects" element={<ProjectsPage />} />
-        <Route path="properties" element={<PropertiesPage />} />
+        <Route path="project" element={<ProjectPage />} />
+        <Route path="vision" element={<VisionPage />} />
+        <Route path="connectivity" element={<ConnectivityPage />} />
+        <Route path="location" element={<LocationPage />} />
+        <Route path="investment" element={<InvestmentPage />} />
         <Route path="gallery" element={<GalleryPage />} />
-        <Route path="blog" element={<BlogPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="consultation" element={<ConsultationPage />} />
-        <Route path="locations" element={<LocationsPage />} />
-        <Route path="style-guide" element={<StyleGuidePage />} />
-        {/* Fallback to Home */}
+
+        {/* Alias routes for existing links */}
+        <Route path="about" element={<ProjectPage />} />
+        <Route path="services" element={<VisionPage />} />
+        <Route path="solutions" element={<InvestmentPage />} />
+        <Route path="projects" element={<ProjectPage />} />
+        <Route path="properties" element={<ProjectPage />} />
+        <Route path="locations" element={<LocationPage />} />
+
+        {/* Fallback */}
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

@@ -1,45 +1,37 @@
 import React from 'react';
 
-interface TeamMember {
-  name: string;
-  role: string;
+interface HighlightItem {
+  title: string;
+  subtitle: string;
   photoSrc: string;
   srcset: string;
-  bio: string;
-  socialLink: string;
-  email: string;
+  desc: string;
 }
 
-const teamMembers: TeamMember[] = [
+const highlights: HighlightItem[] = [
   {
-    name: 'Edward Ashworth',
-    role: 'Founder & Managing Director',
+    title: 'Yacharam Growth Hub',
+    subtitle: 'High Appreciation Corridor',
     photoSrc: '/images/69f0d23c613ebaa58b5e5abd_portrait-3.avif',
     srcset:
       '/images/69f0d23c613ebaa58b5e5abd_portrait-3-p-500.avif 500w, /images/69f0d23c613ebaa58b5e5abd_portrait-3-p-800.avif 800w, /images/69f0d23c613ebaa58b5e5abd_portrait-3.avif 1623w',
-    bio: 'Founder of Harroway with 22 years of experience across London new development sales, prime residential advisory, and investment transactions.',
-    socialLink: 'https://www.linkedin.com/in/edward-ashworth',
-    email: 'mailto:edward@example.co.uk',
+    desc: "Located in Hyderabad's fastest appreciating growth corridor along the 6-lane Srisailam Highway with direct airport link.",
   },
   {
-    name: 'Charlotte Reid',
-    role: 'Head of Block & Estate Management',
+    title: 'AI City Infrastructure',
+    subtitle: 'Fourth City Tech Ecosystem',
     photoSrc: '/images/69f0d24d657f94035313b9f6_portrait-2.avif',
     srcset:
       '/images/69f0d24d657f94035313b9f6_portrait-2-p-500.avif 500w, /images/69f0d24d657f94035313b9f6_portrait-2-p-800.avif 800w, /images/69f0d24d657f94035313b9f6_portrait-2.avif 1641w',
-    bio: 'Block and estate management specialist with 16 years of experience overseeing residential developments across Greater London and the Home Counties.',
-    socialLink: 'https://www.linkedin.com/in/charlotte-reid',
-    email: 'mailto:charlotte@example.co.uk',
+    desc: 'Positioned adjacent to the proposed 200-acre AI Hub, Young India Skills University, and Pharma City.',
   },
   {
-    name: 'Priya Mehta',
-    role: 'Head of Investment Advisory',
+    title: '100% Legal Assurance',
+    subtitle: 'DTCP & RERA Approved',
     photoSrc: '/images/69f0d2571158f60b904d2833_portrait-6.avif',
     srcset:
       '/images/69f0d2571158f60b904d2833_portrait-6-p-500.avif 500w, /images/69f0d2571158f60b904d2833_portrait-6-p-800.avif 800w, /images/69f0d2571158f60b904d2833_portrait-6.avif 2048w',
-    bio: 'London residential investment specialist with 14 years of experience advising private investors, family offices, and international buyers across Greater London.',
-    socialLink: 'https://www.linkedin.com/in/priya-mehta',
-    email: 'mailto:priya@example.co.uk',
+    desc: 'Complete legal transparency with clear title documentation, spot registration readiness, and bank loan support.',
   },
 ];
 
@@ -47,7 +39,7 @@ const TeamGrid: React.FC = () => {
   return (
     <div className="team-grid-wrap w-dyn-list">
       <div role="list" className="team-list w-dyn-items">
-        {teamMembers.map((member, index) => (
+        {highlights.map((item, index) => (
           <div key={index} id="w-node-a117a19b-8e79-f009-5be3-bbe9957277be-0aee85ab" role="listitem" className="team-grid-item w-dyn-item">
             <div
               data-wf--team-card--variant="dark"
@@ -56,25 +48,24 @@ const TeamGrid: React.FC = () => {
               className="team-card"
             >
               <div className="team-card-name">
-                <div className="paragraph is-large">{member.name}</div>
-                <div className="label-text">{member.role}</div>
+                <div className="paragraph is-large">{item.title}</div>
+                <div className="label-text">{item.subtitle}</div>
               </div>
               <div className="team-card-photo">
                 <img
-                  alt={member.name}
+                  alt={item.title}
                   loading="lazy"
-                  src={member.photoSrc}
+                  src={item.photoSrc}
                   sizes="100vw"
-                  srcSet={member.srcset}
+                  srcSet={item.srcset}
                   className="team-photography"
                 />
               </div>
               <div className="team-card-about">
-                <p className="paragraph-bold is-xsmall">{member.bio}</p>
+                <p className="paragraph-bold is-xsmall">{item.desc}</p>
                 <div className="team-card-contact">
-                  <a href={member.email} className="team-contact-link">About</a>
-                  <a href={member.socialLink} target="_blank" rel="noopener noreferrer" className="team-contact-link">Social</a>
-                  <a href={member.email} className="team-contact-link">Email</a>
+                  <span className="team-contact-link">Future City</span>
+                  <span className="team-contact-link">Hyderabad</span>
                 </div>
               </div>
               <img

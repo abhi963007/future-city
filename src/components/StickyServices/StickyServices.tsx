@@ -4,7 +4,7 @@ import Label from '../common/Label/Label';
 import { useStickyServicesAnimation } from '../../hooks/useStickyServicesAnimation';
 import { ROUTES } from '../../utils/constants';
 
-interface ServiceItem {
+interface FeatureItem {
   href: string;
   title: string;
   desc: string;
@@ -13,40 +13,40 @@ interface ServiceItem {
   alt: string;
 }
 
-const servicesData: ServiceItem[] = [
+const featuresData: FeatureItem[] = [
   {
-    href: '/service/property-sales',
-    title: 'New Development Sales',
-    desc: 'Expert sales representation from launch through to legal completion',
+    href: ROUTES.PROJECT,
+    title: "30' & 40' Blacktop Roads",
+    desc: 'Heavy-duty internal road network with underground drainage and LED cabling.',
     imgSrc: '/images/69ea170d9416fbbec2a6517b_propera-service-4.avif',
     srcset:
       '/images/69ea170d9416fbbec2a6517b_propera-service-4-p-500.avif 500w, /images/69ea170d9416fbbec2a6517b_propera-service-4-p-800.avif 800w, /images/69ea170d9416fbbec2a6517b_propera-service-4-p-1080.avif 1080w, /images/69ea170d9416fbbec2a6517b_propera-service-4.avif 2752w',
-    alt: 'New Development Sales',
+    alt: 'Wide Internal Roads',
   },
   {
-    href: '/service/property-management',
-    title: 'Block & Estate Management',
-    desc: 'Professional block and estate management for residential developments',
+    href: ROUTES.PROJECT,
+    title: 'Gated Security & Entrance Arch',
+    desc: '24/7 CCTV surveillance, grand entry arch, and perimeter fencing across 16 acres.',
     imgSrc: '/images/69ea171e88eece9f8199cfc8_propera-service-23.avif',
     srcset:
       '/images/69ea171e88eece9f8199cfc8_propera-service-23-p-500.avif 500w, /images/69ea171e88eece9f8199cfc8_propera-service-23-p-800.avif 800w, /images/69ea171e88eece9f8199cfc8_propera-service-23-p-1080.avif 1080w, /images/69ea171e88eece9f8199cfc8_propera-service-23-p-1600.avif 1600w, /images/69ea171e88eece9f8199cfc8_propera-service-23.avif 2752w',
-    alt: 'Block & Estate Management',
+    alt: 'Gated Community Entrance',
   },
   {
-    href: '/service/hoa-management',
-    title: 'Buyer Representation',
-    desc: 'Access to the best new and resale properties before they reach the open market',
+    href: ROUTES.PROJECT,
+    title: 'Avenue Plantation & Parks',
+    desc: 'Landscaped green parks, jogging tracks, and dedicated children play zones.',
     imgSrc: '/images/69ea1734e9c846e525c837a3_propera-service-8.avif',
     srcset:
       '/images/69ea1734e9c846e525c837a3_propera-service-8-p-500.avif 500w, /images/69ea1734e9c846e525c837a3_propera-service-8-p-800.avif 800w, /images/69ea1734e9c846e525c837a3_propera-service-8-p-1080.avif 1080w, /images/69ea1734e9c846e525c837a3_propera-service-8.avif 2752w',
-    alt: 'Buyer Representation',
+    alt: 'Parks and Landscapes',
   },
   {
-    href: '/service/buyer-representation',
-    title: 'Residential Letting',
-    desc: 'Maximising rental income from prime London residential investments',
+    href: ROUTES.PROJECT,
+    title: 'Underground Utilities Grid',
+    desc: 'Direct water supply connection to every plot, underground electricity, and storm drains.',
     imgSrc: '/images/6a0206389fe3babd75823870_office-space.avif',
-    alt: 'Residential Letting',
+    alt: 'Underground Utilities',
   },
 ];
 
@@ -65,13 +65,13 @@ const StickyServices: React.FC = () => {
       <div className="services-listing-grid">
         <div id="w-node-_1a329848-d548-65e9-c96d-d09b9e539600-9e5395fe" className="sticky-service-block">
           <div className="services-listing-wrap">
-            <Label parts={['Our', 'Offerings']} variant="dark" />
+            <Label parts={['Project', 'Features']} variant="dark" />
             <div className="services-listing-title">
-              <h2 className="heading is-xlarge">Services for a changing city</h2>
+              <h2 className="heading is-xlarge">Infrastructure engineered for the future</h2>
             </div>
           </div>
-          <Link to={ROUTES.SERVICES} className="services-listing-link w-inline-block">
-            <div className="label-text">All services</div>
+          <Link to={ROUTES.CONSULTATION} className="services-listing-link w-inline-block">
+            <div className="label-text">Download Brochure</div>
             <img
               src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg"
               loading="lazy"
@@ -83,25 +83,25 @@ const StickyServices: React.FC = () => {
         </div>
         <div id="w-node-_1a329848-d548-65e9-c96d-d09b9e539610-9e5395fe" className="service-wrap w-dyn-list">
           <div role="list" className="service-grid w-dyn-items">
-            {servicesData.map((service, index) => (
+            {featuresData.map((feature, index) => (
               <div key={index} role="listitem" className="service-grid-item w-dyn-item">
-                <Link to={service.href} className="service-grid-link w-inline-block">
+                <Link to={feature.href} className="service-grid-link w-inline-block">
                   <div className="service-grid-media">
                     <div className="service-image-animation-color"></div>
                     <img
-                      alt={service.alt}
+                      alt={feature.alt}
                       loading="lazy"
-                      src={service.imgSrc}
+                      src={feature.imgSrc}
                       sizes="100vw"
-                      srcSet={service.srcset}
+                      srcSet={feature.srcset}
                       className="service-grid-image"
                     />
                   </div>
                   <div className="service-block">
-                    <div className="label-text">Service</div>
+                    <div className="label-text">Infrastructure</div>
                     <div className="service-max">
-                      <h2 className="heading is-medium">{service.title}</h2>
-                      <p className="paragraph">{service.desc}</p>
+                      <h2 className="heading is-medium">{feature.title}</h2>
+                      <p className="paragraph">{feature.desc}</p>
                     </div>
                   </div>
                 </Link>

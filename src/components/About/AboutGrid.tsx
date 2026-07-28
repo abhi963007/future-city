@@ -17,17 +17,17 @@ const AboutGrid: React.FC = () => {
     >
       <div className="about-grid-block">
         <div className="about-block">
-          <h2 className="heading is-large">Modern Real Estate Solutions & Properties</h2>
+          <h2 className="heading is-large">Hyderabad's Fourth City & AI Ecosystem</h2>
         </div>
         <div className="about-block">
           <p className="paragraph is-large">
-            Our team delivers integrated property and development services, combining local expertise with a global perspective.
+            Strategically located in Yacharam along the Srisailam Highway, Future City represents India's next major urban growth corridor, adjacent to the 14,000-acre Pharma City and upcoming AI Hub.
           </p>
         </div>
         <div className="about-block">
-          <Button href={ROUTES.ABOUT} variant="secondary">
-            <div className="button-text is-1st">About</div>
-            <div className="button-text is-2nd">About</div>
+          <Button href={ROUTES.PROJECT} variant="secondary">
+            <div className="button-text is-1st">View Masterplan</div>
+            <div className="button-text is-2nd">View Masterplan</div>
           </Button>
         </div>
       </div>
@@ -35,7 +35,7 @@ const AboutGrid: React.FC = () => {
         <img
           src="/images/69ecfb756f9c8f6a30c4a9c9_01ab18978e1037db8e36de819ec758c5_profile-pic.avif"
           loading="lazy"
-          alt="Professional real estate agent portrait"
+          alt="Codename Future City Masterplan Development"
           className="cover-image is-portrait-position"
         />
       </div>
@@ -44,17 +44,17 @@ const AboutGrid: React.FC = () => {
           <img
             loading="lazy"
             src="/images/69edd20b05a3f6da31ad600e_round%20%281%29.svg"
-            alt="Architecture plan icon"
+            alt="Infrastructure plan icon"
             className="about-grid-icon"
           />
         </div>
         <div className="about-block">
           <p className="paragraph-bold is-small">
-            Our team delivers integrated property and development services, combining local expertise with a global perspective.
+            Designed for rapid capital appreciation, seamless regional connectivity, and multi-generational wealth creation.
           </p>
         </div>
         <div className="about-block">
-          <div className="label-text">Charlotte Reid</div>
+          <div className="label-text">Project Overview</div>
         </div>
       </div>
       <div className="section-about-bg"></div>

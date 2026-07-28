@@ -4,19 +4,16 @@ import { useNavbarAnimation } from '../../hooks/useNavbarAnimation';
 import { gsap } from '../../utils/gsap';
 import { ROUTES } from '../../utils/constants';
 
-const megaMenuLinks = [
+const navMenuItems = [
   { href: ROUTES.HOME, label: 'Home' },
-  { href: ROUTES.SOLUTIONS, label: 'Solutions' },
-  { href: ROUTES.SERVICES, label: 'Services' },
-  { href: ROUTES.ABOUT, label: 'About' },
-  { href: ROUTES.PROPERTIES, label: 'Properties' },
-  { href: ROUTES.PROJECTS, label: 'Projects' },
-  { href: ROUTES.BLOG, label: 'Blog' },
+  { href: ROUTES.PROJECT, label: 'Project' },
+  { href: ROUTES.VISION, label: 'Future City Vision' },
+  { href: ROUTES.CONNECTIVITY, label: 'Connectivity' },
+  { href: ROUTES.LOCATION, label: 'Location' },
+  { href: ROUTES.INVESTMENT, label: 'Investment Potential' },
   { href: ROUTES.GALLERY, label: 'Gallery' },
   { href: ROUTES.CONTACT, label: 'Contact' },
-  { href: ROUTES.CONSULTATION, label: 'Consultation' },
-  { href: ROUTES.LOCATIONS, label: 'Locations' },
-  { href: ROUTES.STYLE_GUIDE, label: 'Style Guide' },
+  { href: ROUTES.CONSULTATION, label: 'Book Site Visit' },
 ];
 
 const Navbar: React.FC = () => {
@@ -86,8 +83,8 @@ const Navbar: React.FC = () => {
                 aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
                 className={`nav-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
               >
-                <div className="nav-text is-1st">Pages</div>
-                <div className="nav-text is-2nd">Pages</div>
+                <div className="nav-text is-1st">Navigation</div>
+                <div className="nav-text is-2nd">Navigation</div>
                 <div className="nav-icon-wrap">
                   <img src="/images/69e8dafe2b2ad885270bec2d_angle-small-down.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
                 </div>
@@ -97,7 +94,7 @@ const Navbar: React.FC = () => {
               <div className="mega-menu-trigger">
                 <div className="mega-menu-layout">
                   <div className="mega-menu-actions">
-                    {megaMenuLinks.map((link) => (
+                    {navMenuItems.map((link) => (
                       <Link
                         key={link.href}
                         to={link.href}
@@ -115,9 +112,9 @@ const Navbar: React.FC = () => {
               </div>
             </div>
 
-            <Link to={ROUTES.SERVICES} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Services</div>
-              <div className="nav-text is-2nd">Services</div>
+            <Link to={ROUTES.PROJECT} className="nav-link w-inline-block">
+              <div className="nav-text is-1st">Project</div>
+              <div className="nav-text is-2nd">Project</div>
               <div className="nav-icon-wrap">
                 <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
               </div>
@@ -125,9 +122,9 @@ const Navbar: React.FC = () => {
               <div className="nav-link-bg-animation"></div>
             </Link>
 
-            <Link to={ROUTES.SOLUTIONS} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Solutions</div>
-              <div className="nav-text is-2nd">Solutions</div>
+            <Link to={ROUTES.CONNECTIVITY} className="nav-link w-inline-block">
+              <div className="nav-text is-1st">Connectivity</div>
+              <div className="nav-text is-2nd">Connectivity</div>
               <div className="nav-icon-wrap">
                 <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
               </div>
@@ -144,27 +141,27 @@ const Navbar: React.FC = () => {
             aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
             className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
           >
-            <img src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg" loading="lazy" alt="Logo symbol" className="brand-logo-image" />
-            <div className="brand-name-text">Harroway</div>
-            <div className="brand-slogan">Real Estate template</div>
+            <img src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg" loading="lazy" alt="Future City Logo" className="brand-logo-image" />
+            <div className="brand-name-text">Future City</div>
+            <div className="brand-slogan">Fourth City Hyderabad</div>
           </Link>
         </div>
 
         {/* Right nav actions */}
         <div className="nav-actions">
           <div className="nav-links-wrap is-2nd">
-            <Link to={ROUTES.ABOUT} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">About</div>
-              <div className="nav-text is-2nd">About</div>
+            <Link to={ROUTES.INVESTMENT} className="nav-link w-inline-block">
+              <div className="nav-text is-1st">Investment</div>
+              <div className="nav-text is-2nd">Investment</div>
               <div className="nav-icon-wrap">
                 <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
               </div>
               <div className="nav-link-blur"></div>
               <div className="nav-link-bg-animation"></div>
             </Link>
-            <Link to={ROUTES.PROJECTS} className="nav-link w-inline-block">
-              <div className="nav-text is-1st">Projects</div>
-              <div className="nav-text is-2nd">Projects</div>
+            <Link to={ROUTES.CONSULTATION} className="nav-link w-inline-block">
+              <div className="nav-text is-1st">Book Site Visit</div>
+              <div className="nav-text is-2nd">Book Site Visit</div>
               <div className="nav-icon-wrap">
                 <img src="/images/69e7c7b0c8b5b85fe79564d2_arrow-right.svg" loading="lazy" alt="Nav link icon" className="nav-link-icon" />
               </div>
@@ -199,17 +196,7 @@ const Navbar: React.FC = () => {
           <div ref={menuRef} className="menu-wrap">
             <div className="menu-main">
               <div className="menu-main-links">
-                {[
-                  { href: ROUTES.HOME, label: 'Home' },
-                  { href: ROUTES.SOLUTIONS, label: 'Solutions' },
-                  { href: ROUTES.SERVICES, label: 'Services' },
-                  { href: ROUTES.ABOUT, label: 'About' },
-                  { href: ROUTES.PROJECTS, label: 'Projects' },
-                  { href: ROUTES.PROPERTIES, label: 'Properties' },
-                  { href: ROUTES.BLOG, label: 'Blog' },
-                  { href: ROUTES.GALLERY, label: 'Gallery' },
-                  { href: ROUTES.LOCATIONS, label: 'Locations' },
-                ].map((link) => (
+                {navMenuItems.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
@@ -223,12 +210,12 @@ const Navbar: React.FC = () => {
               </div>
               <div className="menu-additional-links">
                 <Link to={ROUTES.CONTACT} className="menu-additional-link" onClick={closeMenu}>Contact</Link>
-                <Link to={ROUTES.CONSULTATION} className="menu-additional-link" onClick={closeMenu}>Consultation</Link>
+                <Link to={ROUTES.CONSULTATION} className="menu-additional-link" onClick={closeMenu}>Book Site Visit</Link>
               </div>
             </div>
             <div className="menu-credit-links">
-              <a href="https://www.metrik.studio" target="_blank" rel="noopener noreferrer" className="menu-credit-link">Made by metrik.studio</a>
-              <a href="https://webflow.com/templates/designers/metrik" target="_blank" rel="noopener noreferrer" className="menu-credit-link is-buy">Buy a template</a>
+              <span className="menu-credit-link">Codename Future City</span>
+              <Link to={ROUTES.CONSULTATION} onClick={closeMenu} className="menu-credit-link is-buy">Book Site Visit</Link>
             </div>
             <div ref={menuBgRef} className="menu-background"></div>
           </div>
