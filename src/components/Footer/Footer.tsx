@@ -47,7 +47,10 @@ const Footer: React.FC = () => {
         <div className="footer-minimal_grid">
           {/* Brand Column */}
           <div className="footer-minimal_brand">
-            <div className="footer-minimal_logo">FUTURE CITY</div>
+            <div className="footer-minimal_logo_wrap" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <img src="/logo.svg" loading="lazy" alt="Future City Logo" style={{ height: '32px', width: 'auto' }} />
+              <div className="footer-minimal_logo">FUTURE CITY</div>
+            </div>
             <p className="footer-minimal_tagline">
               Hyderabad's premier Fourth City economic corridor featuring DTCP & RERA approved villa plotting layouts.
             </p>

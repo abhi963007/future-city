@@ -105,12 +105,12 @@ const Navbar: React.FC = () => {
             aria-current={isActive(ROUTES.HOME) ? 'page' : undefined}
             className={`logo-link w-inline-block${isActive(ROUTES.HOME) ? ' w--current' : ''}`}
           >
-            {/* LOGO ICON PLACEHOLDER */}
+            {/* BRAND LOGO ICON */}
             <div className="logo-icon-wrap">
               <img
-                src="/images/69e7c7b0c8b5b85fe7956664_676903cfe541dabf465087316840dcf0_logo-symbol.svg"
+                src="/logo.svg"
                 loading="eager"
-                alt="Future City Logo Placeholder"
+                alt="Future City Logo"
                 className="brand-logo-image"
               />
             </div>
