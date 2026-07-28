@@ -1,19 +1,99 @@
-# React + TypeScript + Vite
+# Harroway React
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern React application built with TypeScript, Vite, and advanced animation libraries for creating smooth, interactive web experiences.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Smooth Scrolling**: Lenis integration for buttery smooth scroll experiences
+- **Advanced Animations**: GSAP with ScrollTrigger for complex scroll-based animations
+- **Modern React**: Built with React 19 and TypeScript for type safety
+- **Routing**: React Router for client-side navigation
+- **SEO Ready**: React Helmet Async for managing document head
+- **Custom Components**: Reusable UI components including buttons and parallax images
+- **Custom Hooks**: Specialized hooks for animations, scroll triggers, and window interactions
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Animation**: GSAP (GreenSock Animation Platform)
+- **Smooth Scroll**: Lenis
+- **Routing**: React Router DOM
+- **SEO**: React Helmet Async
+- **Linting**: Oxlint
+- **Styling**: CSS with Webflow-inspired classes
 
-## Expanding the Oxlint configuration
+## Installation
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+```bash
+# Install dependencies
+npm install
+```
+
+## Usage
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── common/
+│       ├── Button/          # Reusable button component with variants
+│       ├── Label/           # Label component
+│       └── ParallaxImage/   # Parallax image component
+├── hooks/
+│   ├── useLenis.ts          # Lenis smooth scroll hook
+│   ├── useNavbarAnimation.ts # Navbar animation hook
+│   ├── useScrollTrigger.ts  # GSAP ScrollTrigger hook
+│   ├── useSplitText.ts      # Text splitting animation hook
+│   └── useWindowSize.ts     # Window size tracking hook
+├── styles/
+│   ├── global.css           # Global styles
+│   ├── lenis.css            # Lenis specific styles
+│   ├── webflow-page.min.css # Webflow page styles
+│   └── webflow-shared.min.css # Webflow shared styles
+├── utils/
+│   ├── constants.ts         # Application constants
+│   ├── gsap.ts              # GSAP configuration
+│   └── helpers.ts           # Utility functions
+├── App.tsx                  # Main application component
+├── main.tsx                 # Application entry point
+└── index.css                # Base styles
+```
+
+## Key Features
+
+### Smooth Scrolling with Lenis
+The application uses Lenis for smooth scrolling, integrated with GSAP's ticker for optimal performance. The `useLenis` hook provides a singleton instance across the application.
+
+### GSAP Animations
+Custom hooks make it easy to implement GSAP animations:
+- `useScrollTrigger`: Set up scroll-based animations with automatic cleanup
+- `useSplitText`: Animate text by splitting it into characters/words
+- `useNavbarAnimation`: Animate navbar elements on scroll
+
+### Reusable Components
+- **Button**: Primary and secondary variants with hover animations
+- **ParallaxImage**: Images with parallax scroll effects in multiple sizes
+
+## Development
+
+The project uses Oxlint for fast linting. To enable type-aware linting, install `oxlint-tsgolint` and update `.oxlintrc.json`:
 
 ```json
 {
@@ -29,4 +109,10 @@ If you are developing a production application, we recommend enabling type-aware
 }
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## React Compiler
+
+The React Compiler is not enabled by default. To add it, see the [React Compiler documentation](https://react.dev/learn/react-compiler/installation).
+
+## License
+
+This project is private and proprietary.
