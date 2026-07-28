@@ -9,7 +9,6 @@ import StickyServices from '../components/StickyServices/StickyServices';
 import ProjectListing from '../components/Projects/ProjectListing';
 import ImageSplit from '../components/ImageSplit/ImageSplit';
 import ConsultationSection from '../components/Consultation/ConsultationSection';
-import TeamStats from '../components/Team/TeamStats';
 import { SITE_META } from '../utils/constants';
 
 const Home: React.FC = () => {
@@ -40,20 +39,9 @@ const Home: React.FC = () => {
       <SolutionsShowcase />
       <StatementReveal />
       <StickyServices />
-      <TypoTitles
-        variant="base"
-        title1="Strategic"
-        title2="Location"
-        title3="Connectivity"
-        subtitle="Connected directly to Rajiv Gandhi International Airport, ORR, and the Regional Ring Road"
-        imageSrc="/images/69f1e37cb735948465f81b86_vert-5.avif"
-        imageAlt="Future City Regional Connectivity Corridor"
-        bgColorClass="is-light-strong"
-      />
       <ProjectListing />
       <ImageSplit />
       <ConsultationSection />
-      <TeamStats />
     </>
   );
 };
