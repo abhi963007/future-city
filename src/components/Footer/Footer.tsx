@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer ref={containerRef} className="footer-minimal">
-      {/* Top CTA Banner with Background Image & Soft Shade */}
+      {/* Top CTA Banner with Visible Background Image & Soft Shade */}
       <div className="footer-minimal_cta">
         <img
           src="/images/69f33e4ed787feeb78d1b49e_hero-image.avif"
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Navigation Links (Smooth Scroll) */}
+          {/* Clean Single-Page Navigation */}
           <div className="footer-minimal_nav">
             <div className="footer-minimal_nav-column">
               <button
@@ -79,27 +79,13 @@ const Footer: React.FC = () => {
               </button>
               <button
                 type="button"
-                onClick={() => scrollToSection('.section-typo-titles')}
-                className="footer-minimal_link-btn"
-              >
-                Future City Vision
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollToSection('.solution-showcase')}
-                className="footer-minimal_link-btn"
-              >
-                Strategic Growth
-              </button>
-            </div>
-            <div className="footer-minimal_nav-column">
-              <button
-                type="button"
                 onClick={() => scrollToSection('.section_testimonials')}
                 className="footer-minimal_link-btn"
               >
-                Growth Pillars
+                Strategic Pillars
               </button>
+            </div>
+            <div className="footer-minimal_nav-column">
               <button
                 type="button"
                 onClick={() => scrollToSection('.section_services-home')}
@@ -112,14 +98,14 @@ const Footer: React.FC = () => {
                 onClick={() => scrollToSection('.section_project-clean-listing')}
                 className="footer-minimal_link-btn"
               >
-                Layout Sectors
+                Masterplan Sectors
               </button>
               <button
                 type="button"
                 onClick={() => scrollToSection('.footer-minimal_cta')}
                 className="footer-minimal_link-btn"
               >
-                Site Visit
+                Book Site Visit
               </button>
             </div>
           </div>
