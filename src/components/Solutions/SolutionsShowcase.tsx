@@ -8,8 +8,8 @@ interface SolutionItem {
   title: string;
   desc: string;
   clientCount: string;
-  imageSrc: string;
-  srcset: string;
+  imageSrc?: string;
+  srcset?: string;
 }
 
 const solutionsData: SolutionItem[] = [
@@ -18,36 +18,32 @@ const solutionsData: SolutionItem[] = [
     title: 'AI City Corridor',
     desc: 'Specialist plotting adjacent to the proposed 200-acre AI Hub and Young India Skills University.',
     clientCount: '10X Potential',
-    imageSrc: '/images/69f1e465817d0d47ef738f2d_propera-service-31.avif',
-    srcset:
-      '/images/69f1e465817d0d47ef738f2d_propera-service-31-p-500.avif 500w, /images/69f1e465817d0d47ef738f2d_propera-service-31-p-800.avif 800w, /images/69f1e465817d0d47ef738f2d_propera-service-31-p-1080.avif 1080w, /images/69f1e465817d0d47ef738f2d_propera-service-31.avif 2752w',
+    imageSrc: '/images/main-card-1.png',
+    srcset: '/images/main-card-1.png 1920w',
   },
   {
     href: ROUTES.LOCATION,
     title: 'Pharma City Hub',
     desc: "Positioned next to the world's largest 14,000-acre pharmaceutical and life sciences cluster.",
     clientCount: '500k+ Jobs',
-    imageSrc: '/images/69ea07b728150dd0b3685ee2_propera-service-24.avif',
-    srcset:
-      '/images/69ea07b728150dd0b3685ee2_propera-service-24-p-500.avif 500w, /images/69ea07b728150dd0b3685ee2_propera-service-24-p-800.avif 800w, /images/69ea07b728150dd0b3685ee2_propera-service-24-p-1080.avif 1080w, /images/69ea07b728150dd0b3685ee2_propera-service-24.avif 2752w',
+    imageSrc: '/images/main-card-2.png',
+    srcset: '/images/main-card-2.png 1920w',
   },
   {
     href: ROUTES.CONNECTIVITY,
     title: 'RRR Highway Link',
     desc: 'Direct access to the Regional Ring Road (RRR) and 6-lane Srisailam Highway corridor.',
     clientCount: '100% Express',
-    imageSrc: '/images/69ea07cc2c86599b34f48149_propera-service-21.avif',
-    srcset:
-      '/images/69ea07cc2c86599b34f48149_propera-service-21-p-500.avif 500w, /images/69ea07cc2c86599b34f48149_propera-service-21-p-800.avif 800w, /images/69ea07cc2c86599b34f48149_propera-service-21-p-1080.avif 1080w, /images/69ea07cc2c86599b34f48149_propera-service-21.avif 2752w',
+    imageSrc: '/images/main-card-3.png',
+    srcset: '/images/main-card-3.png 1920w',
   },
   {
     href: ROUTES.PROJECT,
     title: 'DTCP & RERA Approved',
     desc: '100% clear title, bank loan eligible, with immediate spot registration readiness.',
     clientCount: '100% Verified',
-    imageSrc: '/images/69ea07d745cb0fb5f423ad4d_propera-service-2.avif',
-    srcset:
-      '/images/69ea07d745cb0fb5f423ad4d_propera-service-2-p-500.avif 500w, /images/69ea07d745cb0fb5f423ad4d_propera-service-2-p-800.avif 800w, /images/69ea07d745cb0fb5f423ad4d_propera-service-2-p-1080.avif 1080w, /images/69ea07d745cb0fb5f423ad4d_propera-service-2.avif 2752w',
+    imageSrc: '/images/main-card-4.png',
+    srcset: '/images/main-card-4.png 1920w',
   },
 ];
 
@@ -73,8 +69,8 @@ const SolutionsShowcase: React.FC = () => {
               className="solution-showcase-item w-dyn-item"
             >
               <Link to={item.href} className="solution-showcase-link w-inline-block">
-                <h2 className="heading is-xlarge">{item.title}</h2>
-                <div className="solution-showcase-about">
+                {/* <h2 className="heading is-xlarge">{item.title}</h2> */}
+                {/* <div className="solution-showcase-about">
                   <p className="paragraph is-small">{item.desc}</p>
                   <div className="plus-icon-with-text">
                     <img
@@ -85,27 +81,29 @@ const SolutionsShowcase: React.FC = () => {
                     />
                     <div className="label-text">Details</div>
                   </div>
-                </div>
+                </div> */}
                 <div className="solution-showcase-bg-color"></div>
               </Link>
-              <div className="solutions-showcase-highlight">
+              {/* <div className="solutions-showcase-highlight">
                 <div className="solutions-showcase-line"></div>
                 <div className="label-text">Growth Metric</div>
                 <div className="solutions-showcase-number">{item.clientCount}</div>
-              </div>
-              <div className="solutions-showcase-bg">
-                <div className="parallax-wrap">
-                  <img
-                    src={item.imageSrc}
-                    loading="lazy"
-                    alt={item.title}
-                    sizes="(max-width: 1920px) 100vw, 1920px"
-                    srcSet={item.srcset}
-                    className="parallax-image"
-                  />
+              </div> */}
+              {item.imageSrc && (
+                <div className="solutions-showcase-bg">
+                  <div className="parallax-wrap">
+                    <img
+                      src={item.imageSrc}
+                      loading="lazy"
+                      alt={item.title}
+                      sizes="(max-width: 1920px) 100vw, 1920px"
+                      srcSet={item.srcset}
+                      className="parallax-image"
+                    />
+                  </div>
+                  <div className="solutions-showcase-gradient"></div>
                 </div>
-                <div className="solutions-showcase-gradient"></div>
-              </div>
+              )}
             </div>
           ))}
         </div>
