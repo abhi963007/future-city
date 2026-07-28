@@ -114,7 +114,8 @@
   z-index: 2;
   margin-top: auto;
   margin-bottom: auto;
-  max-width: 900px;
+  transform: translateY(50px);
+  max-width: 950px;
 }
 
 .hero-cinematic-kicker {
