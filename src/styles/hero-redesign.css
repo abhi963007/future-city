@@ -85,28 +85,28 @@
 .hero-cinematic-headline {
   margin: 0;
   padding: 0;
-  line-height: 1.05;
+  line-height: 0.95;
 }
 
 .hero-cinematic-title-primary {
   display: block;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(3.2rem, 6.5vw, 6.5rem);
-  font-weight: 300;
-  letter-spacing: 0.12em;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: clamp(3.8rem, 8vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #ffffff;
 }
 
 .hero-cinematic-title-secondary {
   display: block;
-  font-family: 'NyghtSerif', serif;
-  font-size: clamp(3.2rem, 6.5vw, 6.5rem);
-  font-weight: 300;
-  letter-spacing: 0.12em;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: clamp(3.8rem, 8vw, 8rem);
+  font-weight: 400;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #c5a059;
-  margin-top: 4px;
+  margin-top: -4px;
 }
 
 .hero-cinematic-cta-wrap {
