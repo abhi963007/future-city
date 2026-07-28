@@ -1,0 +1,73 @@
+/* =========================================================
+   GLOBAL STYLES — Harroway React Migration
+   =========================================================
+   Imports all Webflow CSS as-is. Do NOT modify Webflow CSS.
+   ========================================================= */
+
+/* NyghtSerif — local fonts */
+@font-face {
+  font-family: 'NyghtSerif';
+  src: url('/fonts/69e8b2b68f482c4a867cbaf4_NyghtSerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NyghtSerif';
+  src: url('/fonts/69e8b2b6bf22b25f09ad6e0a_NyghtSerif-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NyghtSerif';
+  src: url('/fonts/69e8b2b6361d81e7bab660af_NyghtSerif-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Webflow shared base styles */
+@import './webflow-shared.min.css';
+
+/* Webflow page-specific styles */
+@import './webflow-page.min.css';
+
+/* Lenis smooth scroll */
+@import './lenis.css';
+
+/* Preloader: hide GSAP-animated elements until JS initialises them */
+html.w-mod-js :is(
+  .parallax-image, .hero-reveal-large-text, .hero-stack-overlay,
+  .hero-stack-background, .location-icon, .contact-link-text, .contact-bg,
+  .brand-slogan, .faq-accordion-item, .accordion-dropdown, .mega-menu-trigger,
+  .mega-menu-layout, .hero-thumbnails, .heading.is-hero-slider-title,
+  .slider-image.is-2nd, .hero-thumbnail-image.is-1st, .slider-image.is-3rd,
+  .slider-image.is-4th, .button-text.is-2nd, .button-bg-animation, .button-icon,
+  .lightbox-icon, [animation-reveal="true"], .menu-full-background, .menu-background,
+  .slider-icon-background, .nav-text.is-2nd, .nav-link-icon, .heading,
+  .paragraph-bold, .stat-large-overlay, .stat-background-image,
+  .services-cms-listing-title-bg, .service-bg-animation, .label-text,
+  .service-grid-media, .service-grid-image, .paragraph, .large-listing-bg,
+  .large-listing-media, .statement-reveal-visual, .image-split-left,
+  .cta-reveal-color, .cover-image, .footer-cta-image, .fotoer-cta-action,
+  .team-card-about, .team-card-contact, .hero-typo-line-animation,
+  .full-parallax-image, .full-parallax-wrap, .hero-editorial-image,
+  .hero-editorial-bg-layout, .hero-editorial-text, .nav,
+  .heading.is-typo-open-title, .hero-typo-bg-animation, .hero-typo-bg-overlay,
+  .hero-typo-title, .hero-typo-lines, .hero-typo-heading, .hero-typo-detail-block,
+  .hero-display-heading, .heading.is-hero-display-title, .hero-display-bg,
+  .hero-display-feature, .hero-display-line, .hero-display-about-block,
+  .typo-title-image, .heading.is-typo-title, .typo-text, .plus-icon-with-text,
+  .solution-showcase-bg-color, .mega-menu-link-line-1st, .mega-menu-link-line-2nd,
+  .mega-menu-link-icon, .nav-link-bg-animation, .about-block,
+  .about-grid-block.is-image, .section-about-bg, .services-listing-link-bg,
+  .social-proof-label, .social-proof-about, .social-proof-action,
+  .blog-listing-bg-animation, .burger-menu-line.is-2nd, .burger-menu-line-2.is-2nd,
+  .burger-menu-bg.for-animation, .tab-link-bg, .listing-color-animation,
+  .heading.is-home-hero, .hero-intro-title, [home-preload="true"],
+  .hero-intro-content, .hero-intro-bg-size, .hero-intro-image, .hero-intro-stat,
+  .stats-blur-bg
+) {
+  visibility: hidden !important;
+}
