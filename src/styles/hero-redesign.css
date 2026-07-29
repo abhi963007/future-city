@@ -553,15 +553,114 @@
 
 @media (max-width: 767px) {
   .hero-cinematic {
-    padding: 30px 20px 20px;
-    height: 100vh;
-    min-height: 620px;
+    padding: 5.5rem 1.25rem 1.5rem;
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
   }
+
+  .hero-cinematic-img {
+    object-position: center center;
+  }
+
   .hero-cinematic-overlay-left {
     width: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(5, 6, 8, 0.72) 0%,
+      rgba(5, 6, 8, 0.35) 70%,
+      rgba(5, 6, 8, 0.15) 100%
+    );
   }
+
+  .hero-cinematic-content {
+    margin-top: auto;
+    margin-bottom: auto;
+    max-width: 100%;
+    width: 100%;
+    padding-top: 0;
+    padding-right: 0.15rem;
+    box-sizing: border-box;
+  }
+
+  .hero-cinematic-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.85rem;
+    max-width: 100%;
+  }
+
+  .hero-cinematic-headline {
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.02;
+  }
+
+  .hero-cinematic-title-primary,
+  .hero-cinematic-title-secondary {
+    font-size: clamp(1.35rem, 7.4vw, 2rem);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .hero-cinematic-title-primary {
+    overflow: hidden;
+  }
+
+  .hero-cinematic-title-secondary {
+    margin-top: 0.15rem;
+  }
+
+  .hero-cinematic-cta-wrap {
+    margin-top: 1.35rem;
+    width: 100%;
+  }
+
+  .hero-cinematic-cta {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    gap: 0.65rem;
+    max-width: 100%;
+  }
+
+  .hero-cinematic-cta-arrow {
+    width: 24px;
+    flex-shrink: 0;
+  }
+
   .hero-cinematic-bottom {
     justify-content: flex-end;
+    padding-bottom: 0.25rem;
+  }
+
+  .hero-cinematic-scroll-minimal {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 379px) {
+  .hero-cinematic {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-cinematic-title-primary,
+  .hero-cinematic-title-secondary {
+    font-size: clamp(1.2rem, 6.8vw, 1.7rem);
+    letter-spacing: 0;
+  }
+
+  .hero-cinematic-kicker {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-cinematic-cta {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
   }
 }
 
