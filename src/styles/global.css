@@ -1,5 +1,5 @@
 /* =========================================================
-   GLOBAL STYLES — Codename Future City
+   GLOBAL STYLES â€” Codename Future City
    ========================================================= */
 
 /* Imports must be at top */
@@ -8,7 +8,7 @@
 @import './lenis.css';
 @import './hero-redesign.css';
 
-/* NyghtSerif — local fonts */
+/* NyghtSerif â€” local fonts */
 @font-face {
   font-family: 'NyghtSerif';
   src: url('./fonts/69e8b2b68f482c4a867cbaf4_NyghtSerif-Regular.woff2') format('woff2');
@@ -68,7 +68,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
-   HOME GRID SECTION — exact replication of animation reference
+   HOME GRID SECTION â€” exact replication of animation reference
    (Algarve Studio sticky 3D-flip image grid + video zoom-to-fullscreen)
    ========================================================= */
 
@@ -78,7 +78,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   --grid--border-radius: 1.11vw;
 }
 
-/* ── Outer wrapper (scroll driver: 400 vh gives plenty of scrub room) */
+/* â”€â”€ Outer wrapper (scroll driver: 400 vh gives plenty of scrub room) */
 .section_grid-home {
   background-color: #f8f7f3;
   height: 400vh;
@@ -86,7 +86,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   overflow: clip;
 }
 
-/* ── Sticky viewport — overflow:hidden so the video can grow
+/* â”€â”€ Sticky viewport â€” overflow:hidden so the video can grow
    beyond the paddings rect without triggering a scrollbar */
 .sticky_grid-home {
   width: 100vw;
@@ -96,7 +96,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   overflow: hidden;
 }
 
-/* ── Padded content area */
+/* â”€â”€ Padded content area */
 .home-grid_paddings {
   padding: var(--grid--page-padding);
   width: 100%;
@@ -104,7 +104,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   position: relative;
 }
 
-/* ── CSS Grid (5 cols × 3 rows, perspective for 3D flip) */
+/* â”€â”€ CSS Grid (5 cols Ã— 3 rows, perspective for 3D flip) */
 .home-grid_grid {
   grid-column-gap: var(--grid--column-gap);
   grid-row-gap: var(--grid--column-gap);
@@ -118,7 +118,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: grid;
 }
 
-/* ── Image cells */
+/* â”€â”€ Image cells */
 .home-grid_image-wrap {
   border-radius: var(--grid--border-radius);
   backface-visibility: hidden;
@@ -127,7 +127,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   overflow: clip;
 }
 
-/* transform-origin per position — drives 3D flip direction */
+/* transform-origin per position â€” drives 3D flip direction */
 .home-grid_image-wrap.is-topleft      { transform-origin: 0 0; }
 .home-grid_image-wrap.is-top          { transform-origin: 50% 0; }
 .home-grid_image-wrap.is-top-right    { transform-origin: 100% 0; }
@@ -144,11 +144,11 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: block;
 }
 
-/* ── Centre video panel ─────────────────────────────────────────────
-   Position: absolute + inset:0% + margin:auto  →  centred in the grid.
-   Starts small (60% wide, ~33% tall); GSAP zooms it to 100vw × 100vh.
+/* â”€â”€ Centre video panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   Position: absolute + inset:0% + margin:auto  â†’  centred in the grid.
+   Starts small (60% wide, ~33% tall); GSAP zooms it to 100vw Ã— 100vh.
    z-index:10 ensures it renders on top of all image cells when expanded.
-   ─────────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .home-grid_video-wrap {
   border-radius: var(--grid--border-radius);
   width: calc(60% - 0.4vw);
@@ -161,7 +161,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   z-index: 10;
 }
 
-/* Inner video layer — fills the wrap */
+/* Inner video layer â€” fills the wrap */
 .home-grid_video {
   transform-origin: 50%;
   width: 100%;
@@ -177,7 +177,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: block;
 }
 
-/* ── Lightbox overlay ("play  +  showreel") */
+/* â”€â”€ Lightbox overlay ("play  +  showreel") */
 .home-grid_lightbox {
   gap: 1vw;
   color: #f8f7f3;
@@ -212,7 +212,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
-   SOLUTIONS SHOWCASE — scale-based full-screen zoom
+   SOLUTIONS SHOWCASE â€” scale-based full-screen zoom
    Cards are always 100vw; GSAP scaleX/scaleY creates the
    visual narrowing & expanding effect without CSS conflicts.
    ========================================================= */
@@ -286,7 +286,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   opacity: 0 !important;
 }
 
-/* Solutions showcase — mobile: stack all 4 cards vertically */
+/* Solutions showcase â€” mobile: stack all 4 cards vertically */
 @media (max-width: 767px) {
   .section-solutions-showcase {
     width: 100% !important;
@@ -398,7 +398,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   TESTIMONIALS SECTION — Exact replica of animation reference
+   TESTIMONIALS SECTION â€” Exact replica of animation reference
    (Dark rounded box + 5 card fan-out & text reveal)
    ========================================================= */
 
@@ -435,7 +435,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
-   SERVICES HOME / STICKY INFRASTRUCTURE — 3D Stacking Cards
+   SERVICES HOME / STICKY INFRASTRUCTURE â€” 3D Stacking Cards
    (Exact replica of section_services-home from animation reference)
    ========================================================= */
 
@@ -562,7 +562,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   z-index: 2;
 }
 
-/* Infrastructure heading + sticky cards — mobile optimisation */
+/* Infrastructure heading + sticky cards â€” mobile optimisation */
 @media (max-width: 767px) {
   .section_services-home {
     padding-top: 1.5rem;
@@ -637,7 +637,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   PROJECT CLEAN LISTING — Borderless 2-Column Row Layout
+   PROJECT CLEAN LISTING â€” Borderless 2-Column Row Layout
    (Matching reference animation video)
    ========================================================= */
 
@@ -814,7 +814,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   letter-spacing: 0.04em;
 }
 
-/* Masterplan sectors — mobile optimisation */
+/* Masterplan sectors â€” mobile optimisation */
 @media (max-width: 767px) {
   .section_project-clean-listing {
     padding-top: 1.25rem;
@@ -934,7 +934,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   FOOTER MINIMAL — Sleek Dark Luxury Layout
+   FOOTER MINIMAL â€” Sleek Dark Luxury Layout
    ========================================================= */
 
 .footer-minimal {
@@ -1128,7 +1128,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   letter-spacing: 0.05em;
 }
 
-/* Minimal footer — mobile / tablet only (desktop unchanged) */
+/* Minimal footer â€” mobile / tablet only (desktop unchanged) */
 @media (max-width: 767px) {
   .footer-minimal_cta {
     min-height: 280px;
@@ -1348,7 +1348,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   border-radius: 50%;
 }
 
-/* Pillars section — mobile optimisation */
+/* Pillars section â€” mobile optimisation */
 @media (max-width: 767px) {
   .section_animated-heading {
     padding: 2.5rem 1rem 1.25rem;
@@ -1449,3 +1449,319 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   }
 }
 
+
+/* =========================================================
+   BOOK VISIT MODAL — Desktop + Mobile
+   ========================================================= */
+
+html.book-visit-modal-open,
+html.book-visit-modal-open body {
+  overflow: hidden !important;
+}
+
+.book-visit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.book-visit-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: rgba(5, 6, 8, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.book-visit-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  max-height: min(90vh, 900px);
+  overflow-y: auto;
+  background: #0f1115;
+  color: #f8f7f3;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2rem 2rem 1.75rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  animation: bookVisitPanelIn 0.28s ease-out;
+}
+
+@keyframes bookVisitPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.book-visit-modal__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.9rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8f7f3;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.book-visit-modal__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(197, 160, 89, 0.5);
+}
+
+.book-visit-modal__header {
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.book-visit-modal__eyebrow {
+  margin: 0 0 0.55rem;
+  font-family: 'Sono', 'Bricolage Grotesque', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c5a059;
+}
+
+.book-visit-modal__title {
+  margin: 0 0 0.55rem;
+  font-family: var(--_typography---display-font, 'Nyght Serif', 'NyghtSerif', serif);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  line-height: 1.15;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.book-visit-modal__subtitle {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.book-visit-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.book-visit-modal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.book-visit-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.book-visit-modal__field label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.book-visit-modal__field input,
+.book-visit-modal__field select,
+.book-visit-modal__field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8f7f3;
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.85rem 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.book-visit-modal__field textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.book-visit-modal__field input::placeholder,
+.book-visit-modal__field textarea::placeholder {
+  color: rgba(248, 247, 243, 0.35);
+}
+
+.book-visit-modal__field input:focus,
+.book-visit-modal__field select:focus,
+.book-visit-modal__field textarea:focus {
+  border-color: rgba(197, 160, 89, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.book-visit-modal__field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #c5a059 50%),
+    linear-gradient(135deg, #c5a059 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.2rem;
+}
+
+.book-visit-modal__field select option {
+  background: #0f1115;
+  color: #f8f7f3;
+}
+
+.book-visit-modal__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.book-visit-modal__consent input {
+  margin-top: 0.2rem;
+  accent-color: #c5a059;
+  flex-shrink: 0;
+}
+
+.book-visit-modal__error {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #e8a0a0;
+}
+
+.book-visit-modal__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.35rem;
+  border: none;
+  border-radius: 100px;
+  padding: 0.95rem 1.4rem;
+  background: #c5a059;
+  color: #0b0d0e;
+  font-family: 'Sono', 'Bricolage Grotesque', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.book-visit-modal__submit:hover {
+  background: #d4b36f;
+  transform: translateY(-1px);
+}
+
+.book-visit-modal__success {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.book-visit-modal__success-title {
+  margin: 0;
+  font-family: var(--_typography---display-font, 'Nyght Serif', 'NyghtSerif', serif);
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.book-visit-modal__success-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  opacity: 0.75;
+}
+
+@media (max-width: 767px) {
+  .book-visit-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .book-visit-modal__panel {
+    width: 100%;
+    max-height: 92svh;
+    border-radius: 1.15rem 1.15rem 0 0;
+    padding: 1.5rem 1.2rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    animation: bookVisitSheetIn 0.3s ease-out;
+  }
+
+  @keyframes bookVisitSheetIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .book-visit-modal__row {
+    grid-template-columns: 1fr;
+  }
+
+  .book-visit-modal__title {
+    font-size: 1.45rem;
+  }
+
+  .book-visit-modal__subtitle {
+    font-size: 0.86rem;
+  }
+
+  .book-visit-modal__field input,
+  .book-visit-modal__field select,
+  .book-visit-modal__field textarea {
+    font-size: 1rem;
+    padding: 0.9rem 0.95rem;
+  }
+}
+
+button.menu-additional-link,
+button.menu-credit-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+button.project-clean_cta-btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}

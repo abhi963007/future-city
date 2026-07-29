@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import { useFooterAnimation } from '../../hooks/useFooterAnimation';
+import { useBookVisit } from '../../context/BookVisitContext';
 
 const Footer: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { openBookVisit } = useBookVisit();
 
   useFooterAnimation(containerRef);
 
@@ -32,7 +34,7 @@ const Footer: React.FC = () => {
 
           <button
             type="button"
-            onClick={() => scrollToSection('.section_project-clean-listing')}
+            onClick={openBookVisit}
             className="project-clean_cta-btn"
             style={{ marginTop: 0, cursor: 'pointer' }}
           >
@@ -102,7 +104,7 @@ const Footer: React.FC = () => {
               </button>
               <button
                 type="button"
-                onClick={() => scrollToSection('.footer-minimal_cta')}
+                onClick={openBookVisit}
                 className="footer-minimal_link-btn"
               >
                 Book Site Visit

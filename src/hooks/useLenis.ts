@@ -4,6 +4,10 @@ import { gsap } from '../utils/gsap';
 
 let lenisInstance: Lenis | null = null;
 
+export function getLenis(): Lenis | null {
+  return lenisInstance;
+}
+
 export function useLenis(): Lenis | null {
   const lenisRef = useRef<Lenis | null>(null);
 

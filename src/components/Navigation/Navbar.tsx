@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavbarAnimation } from '../../hooks/useNavbarAnimation';
+import { useBookVisit } from '../../context/BookVisitContext';
 import { gsap } from '../../utils/gsap';
 import { ROUTES } from '../../utils/constants';
 
@@ -13,7 +14,6 @@ const navMenuItems = [
   { href: ROUTES.INVESTMENT, label: 'Investment Potential', selector: '.section-statement-reveal' },
   { href: ROUTES.GALLERY, label: 'Gallery', selector: '.section-image-split' },
   { href: ROUTES.CONTACT, label: 'Contact', selector: '.section-consultation' },
-  { href: ROUTES.CONSULTATION, label: 'Book Site Visit', selector: '.section-consultation' },
 ];
 
 const Navbar: React.FC = () => {
@@ -23,6 +23,7 @@ const Navbar: React.FC = () => {
   const menuFullBgRef = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { openBookVisit } = useBookVisit();
 
   useNavbarAnimation(navRef);
 
@@ -39,20 +40,28 @@ const Navbar: React.FC = () => {
     const tl = gsap.timeline();
     tl.to(fullBg, { opacity: 1, duration: 0.4, ease: 'power2.out' })
       .to(bg, { scaleY: 1, duration: 0.5, ease: 'power3.out', transformOrigin: 'top center' }, 0.1)
-      .from(menu.querySelectorAll('.menu-main-link'), {
-        opacity: 0,
-        y: 20,
-        stagger: 0.06,
-        duration: 0.5,
-        ease: 'power2.out',
-      }, 0.3)
-      .from(menu.querySelectorAll('.menu-additional-link'), {
-        opacity: 0,
-        y: 10,
-        stagger: 0.05,
-        duration: 0.4,
-        ease: 'power2.out',
-      }, 0.5);
+      .from(
+        menu.querySelectorAll('.menu-main-link'),
+        {
+          opacity: 0,
+          y: 20,
+          stagger: 0.06,
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        0.3
+      )
+      .from(
+        menu.querySelectorAll('.menu-additional-link'),
+        {
+          opacity: 0,
+          y: 10,
+          stagger: 0.05,
+          duration: 0.4,
+          ease: 'power2.out',
+        },
+        0.5
+      );
   };
 
   const closeMenu = () => {
@@ -92,31 +101,37 @@ const Navbar: React.FC = () => {
     if (isMenuOpen) closeMenu();
   };
 
+  const handleBookClick = () => {
+    if (isMenuOpen) closeMenu();
+    openBookVisit();
+  };
+
   const isActive = (href: string) => location.pathname === href;
 
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
-        {/* Top Left Logo Link - Removed per user request */}
-
-        {/* Top Right Actions: Book Site Visit CTA + Burger Menu */}
         <div className="nav-actions">
-          <Link
-            to={ROUTES.CONSULTATION}
-            onClick={(e) => handleNavClick(e, ROUTES.CONSULTATION, '.section-consultation')}
-            className="nav-site-visit-btn"
-          >
-            <svg className="nav-site-visit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
-              <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+          <button type="button" onClick={handleBookClick} className="nav-site-visit-btn">
+            <svg
+              className="nav-site-visit-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+              <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
             </svg>
             <span className="nav-site-visit-text">BOOK SITE VISIT</span>
-          </Link>
+          </button>
 
-          {/* Burger menu trigger */}
           <button
             className="burger-menu"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -134,7 +149,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Full-screen menu overlay */}
       <div className="menu" style={{ display: isMenuOpen ? 'flex' : 'none' }}>
         <div className="menu-layout">
           <div ref={menuRef} className="menu-wrap">
@@ -160,24 +174,16 @@ const Navbar: React.FC = () => {
                 >
                   Contact
                 </Link>
-                <Link
-                  to={ROUTES.CONSULTATION}
-                  onClick={(e) => handleNavClick(e, ROUTES.CONSULTATION, '.section-consultation')}
-                  className="menu-additional-link"
-                >
+                <button type="button" onClick={handleBookClick} className="menu-additional-link">
                   Book Site Visit
-                </Link>
+                </button>
               </div>
             </div>
             <div className="menu-credit-links">
               <span className="menu-credit-link">Future City</span>
-              <Link
-                to={ROUTES.CONSULTATION}
-                onClick={(e) => handleNavClick(e, ROUTES.CONSULTATION, '.section-consultation')}
-                className="menu-credit-link is-buy"
-              >
+              <button type="button" onClick={handleBookClick} className="menu-credit-link is-buy">
                 Book Site Visit
-              </Link>
+              </button>
             </div>
             <div ref={menuBgRef} className="menu-background"></div>
           </div>

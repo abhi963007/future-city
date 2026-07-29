@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { useProjectsAnimation } from '../../hooks/useProjectsAnimation';
-import { ROUTES } from '../../utils/constants';
+import { useBookVisit } from '../../context/BookVisitContext';
 
 interface SectorSpec {
   label: string;
@@ -65,6 +64,7 @@ const sectorsData: SectorItem[] = [
 
 const ProjectListing: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { openBookVisit } = useBookVisit();
 
   useProjectsAnimation(containerRef);
 
@@ -90,11 +90,10 @@ const ProjectListing: React.FC = () => {
               <div className="project-clean_subtitle">{sector.subtitle}</div>
               <p className="project-clean_desc">{sector.desc}</p>
 
-              {/* Custom Luxury Pill Button */}
-              <Link to={ROUTES.CONSULTATION} className="project-clean_cta-btn">
+              <button type="button" onClick={openBookVisit} className="project-clean_cta-btn">
                 <span>Book Site Visit</span>
                 <span className="cta-arrow">→</span>
-              </Link>
+              </button>
             </div>
 
             {/* Right Side: Image & Horizontal Specs Grid */}
