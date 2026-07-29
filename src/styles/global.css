@@ -1,5 +1,5 @@
 /* =========================================================
-   GLOBAL STYLES â€” Codename Future City
+   GLOBAL STYLES �?? Codename Future City
    ========================================================= */
 
 /* Imports must be at top */
@@ -8,7 +8,7 @@
 @import './lenis.css';
 @import './hero-redesign.css';
 
-/* NyghtSerif â€” local fonts */
+/* NyghtSerif �?? local fonts */
 @font-face {
   font-family: 'NyghtSerif';
   src: url('./fonts/69e8b2b68f482c4a867cbaf4_NyghtSerif-Regular.woff2') format('woff2');
@@ -68,7 +68,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
-   HOME GRID SECTION â€” exact replication of animation reference
+   HOME GRID SECTION �?? exact replication of animation reference
    (Algarve Studio sticky 3D-flip image grid + video zoom-to-fullscreen)
    ========================================================= */
 
@@ -78,7 +78,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   --grid--border-radius: 1.11vw;
 }
 
-/* â”€â”€ Outer wrapper (scroll driver: 400 vh gives plenty of scrub room) */
+/* �??�?? Outer wrapper (scroll driver: 400 vh gives plenty of scrub room) */
 .section_grid-home {
   background-color: #f8f7f3;
   height: 400vh;
@@ -86,7 +86,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   overflow: clip;
 }
 
-/* â”€â”€ Sticky viewport â€” overflow:hidden so the video can grow
+/* �??�?? Sticky viewport �?? overflow:hidden so the video can grow
    beyond the paddings rect without triggering a scrollbar */
 .sticky_grid-home {
   width: 100vw;
@@ -96,7 +96,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   overflow: hidden;
 }
 
-/* â”€â”€ Padded content area */
+/* �??�?? Padded content area */
 .home-grid_paddings {
   padding: var(--grid--page-padding);
   width: 100%;
@@ -104,7 +104,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   position: relative;
 }
 
-/* â”€â”€ CSS Grid (5 cols Ã— 3 rows, perspective for 3D flip) */
+/* �??�?? CSS Grid (5 cols �? 3 rows, perspective for 3D flip) */
 .home-grid_grid {
   grid-column-gap: var(--grid--column-gap);
   grid-row-gap: var(--grid--column-gap);
@@ -118,7 +118,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: grid;
 }
 
-/* â”€â”€ Image cells */
+/* �??�?? Image cells */
 .home-grid_image-wrap {
   border-radius: var(--grid--border-radius);
   backface-visibility: hidden;
@@ -127,7 +127,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   overflow: clip;
 }
 
-/* transform-origin per position â€” drives 3D flip direction */
+/* transform-origin per position �?? drives 3D flip direction */
 .home-grid_image-wrap.is-topleft      { transform-origin: 0 0; }
 .home-grid_image-wrap.is-top          { transform-origin: 50% 0; }
 .home-grid_image-wrap.is-top-right    { transform-origin: 100% 0; }
@@ -144,11 +144,11 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: block;
 }
 
-/* â”€â”€ Centre video panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-   Position: absolute + inset:0% + margin:auto  â†’  centred in the grid.
-   Starts small (60% wide, ~33% tall); GSAP zooms it to 100vw Ã— 100vh.
+/* �??�?? Centre video panel �??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??
+   Position: absolute + inset:0% + margin:auto  �??  centred in the grid.
+   Starts small (60% wide, ~33% tall); GSAP zooms it to 100vw �? 100vh.
    z-index:10 ensures it renders on top of all image cells when expanded.
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+   �??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�??�?? */
 .home-grid_video-wrap {
   border-radius: var(--grid--border-radius);
   width: calc(60% - 0.4vw);
@@ -161,7 +161,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   z-index: 10;
 }
 
-/* Inner video layer â€” fills the wrap */
+/* Inner video layer �?? fills the wrap */
 .home-grid_video {
   transform-origin: 50%;
   width: 100%;
@@ -177,7 +177,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: block;
 }
 
-/* â”€â”€ Lightbox overlay ("play  +  showreel") */
+/* �??�?? Lightbox overlay ("play  +  showreel") */
 .home-grid_lightbox {
   gap: 1vw;
   color: #f8f7f3;
@@ -212,7 +212,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
-   SOLUTIONS SHOWCASE â€” scale-based full-screen zoom
+   SOLUTIONS SHOWCASE �?? scale-based full-screen zoom
    Cards are always 100vw; GSAP scaleX/scaleY creates the
    visual narrowing & expanding effect without CSS conflicts.
    ========================================================= */
@@ -286,7 +286,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   opacity: 0 !important;
 }
 
-/* Solutions showcase â€” mobile: stack all 4 cards vertically */
+/* Solutions showcase �?? mobile: stack all 4 cards vertically */
 @media (max-width: 767px) {
   .section-solutions-showcase {
     width: 100% !important;
@@ -398,7 +398,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   TESTIMONIALS SECTION â€” Exact replica of animation reference
+   TESTIMONIALS SECTION �?? Exact replica of animation reference
    (Dark rounded box + 5 card fan-out & text reveal)
    ========================================================= */
 
@@ -435,7 +435,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 }
 
 /* =========================================================
-   SERVICES HOME / STICKY INFRASTRUCTURE â€” 3D Stacking Cards
+   SERVICES HOME / STICKY INFRASTRUCTURE �?? 3D Stacking Cards
    (Exact replica of section_services-home from animation reference)
    ========================================================= */
 
@@ -562,7 +562,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   z-index: 2;
 }
 
-/* Infrastructure heading + sticky cards â€” mobile optimisation */
+/* Infrastructure heading + sticky cards �?? mobile optimisation */
 @media (max-width: 767px) {
   .section_services-home {
     padding-top: 1.5rem;
@@ -637,7 +637,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   PROJECT CLEAN LISTING â€” Borderless 2-Column Row Layout
+   PROJECT CLEAN LISTING �?? Borderless 2-Column Row Layout
    (Matching reference animation video)
    ========================================================= */
 
@@ -814,7 +814,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   letter-spacing: 0.04em;
 }
 
-/* Masterplan sectors â€” mobile optimisation */
+/* Masterplan sectors �?? mobile optimisation */
 @media (max-width: 767px) {
   .section_project-clean-listing {
     padding-top: 1.25rem;
@@ -934,7 +934,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   FOOTER MINIMAL â€” Sleek Dark Luxury Layout
+   FOOTER MINIMAL �?? Sleek Dark Luxury Layout
    ========================================================= */
 
 .footer-minimal {
@@ -1128,7 +1128,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   letter-spacing: 0.05em;
 }
 
-/* Minimal footer â€” mobile / tablet only (desktop unchanged) */
+/* Minimal footer �?? mobile / tablet only (desktop unchanged) */
 @media (max-width: 767px) {
   .footer-minimal_cta {
     min-height: 280px;
@@ -1348,7 +1348,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   border-radius: 50%;
 }
 
-/* Pillars section â€” mobile optimisation */
+/* Pillars section �?? mobile optimisation */
 @media (max-width: 767px) {
   .section_animated-heading {
     padding: 2.5rem 1rem 1.25rem;
@@ -1451,7 +1451,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 
 /* =========================================================
-   BOOK VISIT MODAL — Desktop + Mobile
+   BOOK VISIT MODAL ? Desktop + Mobile
    ========================================================= */
 
 html.book-visit-modal-open,
@@ -1706,21 +1706,21 @@ html.book-visit-modal-open body {
 @media (max-width: 767px) {
   .book-visit-modal {
     align-items: flex-end;
-    padding: 0;
+    padding: 0.65rem;
   }
 
   .book-visit-modal__panel {
     width: 100%;
-    max-height: 92svh;
-    border-radius: 1.15rem 1.15rem 0 0;
-    padding: 1.5rem 1.2rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
-    animation: bookVisitSheetIn 0.3s ease-out;
+    max-height: 78svh;
+    border-radius: 1rem;
+    padding: 1.1rem 1rem calc(0.95rem + env(safe-area-inset-bottom, 0px));
+    animation: bookVisitSheetIn 0.28s ease-out;
   }
 
   @keyframes bookVisitSheetIn {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(28px);
     }
     to {
       opacity: 1;
@@ -1728,25 +1728,111 @@ html.book-visit-modal-open body {
     }
   }
 
-  .book-visit-modal__row {
-    grid-template-columns: 1fr;
+  .book-visit-modal__close {
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 1.15rem;
+  }
+
+  .book-visit-modal__header {
+    margin-bottom: 0.85rem;
+    padding-right: 1.75rem;
+  }
+
+  .book-visit-modal__eyebrow {
+    margin-bottom: 0.3rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
   }
 
   .book-visit-modal__title {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
   }
 
   .book-visit-modal__subtitle {
-    font-size: 0.86rem;
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .book-visit-modal__form {
+    gap: 0.65rem;
+  }
+
+  .book-visit-modal__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+  }
+
+  .book-visit-modal__field {
+    gap: 0.25rem;
+  }
+
+  .book-visit-modal__field label {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
   }
 
   .book-visit-modal__field input,
   .book-visit-modal__field select,
   .book-visit-modal__field textarea {
-    font-size: 1rem;
-    padding: 0.9rem 0.95rem;
+    font-size: 0.88rem;
+    padding: 0.62rem 0.72rem;
+    border-radius: 0.5rem;
+  }
+
+  .book-visit-modal__field textarea {
+    min-height: 3.1rem;
+  }
+
+  .book-visit-modal__consent {
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .book-visit-modal__error {
+    font-size: 0.72rem;
+  }
+
+  .book-visit-modal__submit {
+    margin-top: 0.15rem;
+    padding: 0.72rem 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .book-visit-modal__success {
+    gap: 0.6rem;
+  }
+
+  .book-visit-modal__success-title {
+    font-size: 1.2rem;
+  }
+
+  .book-visit-modal__success-text {
+    font-size: 0.82rem;
+    line-height: 1.4;
   }
 }
+
+@media (max-width: 379px) {
+  .book-visit-modal__row {
+    grid-template-columns: 1fr;
+  }
+
+  .book-visit-modal__panel {
+    max-height: 84svh;
+    padding: 0.95rem 0.85rem calc(0.85rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .book-visit-modal__title {
+    font-size: 1.1rem;
+  }
+}
+
 
 button.menu-additional-link,
 button.menu-credit-link {

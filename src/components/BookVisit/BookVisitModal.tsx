@@ -194,7 +194,7 @@ const BookVisitModal: React.FC = () => {
               <textarea
                 id="book-message"
                 name="message"
-                rows={3}
+                rows={2}
                 placeholder="Any specific plot preference or questions"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
