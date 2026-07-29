@@ -132,14 +132,62 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
 }
 
-/* Burger Menu Display Rules: Hidden on Desktop, Visible on Mobile/Tablet */
+/* Icon hidden by default on desktop/tablet — text only */
+.nav-site-visit-icon {
+  display: none;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Mobile: round icon-only button */
+@media (max-width: 767px) {
+  .nav-site-visit-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    justify-content: center;
+    background: rgba(197, 160, 89, 0.15) !important;
+    border-color: rgba(197, 160, 89, 0.5) !important;
+    box-shadow: 0 0 16px rgba(197, 160, 89, 0.2) !important;
+  }
+
+  .nav-site-visit-text {
+    display: none;
+  }
+
+  .nav-site-visit-icon {
+    display: block;
+    color: #c5a059;
+    stroke: #c5a059;
+  }
+
+  .nav-site-visit-btn:hover {
+    background: #c5a059 !important;
+    border-color: #c5a059 !important;
+    transform: translateY(-2px);
+  }
+
+  .nav-site-visit-btn:hover .nav-site-visit-icon {
+    stroke: #000000;
+  }
+}
+
+/* Burger Menu Display Rules: Hidden on Desktop and Mobile, Visible on Tablet only */
 @media (min-width: 992px) {
   .burger-menu {
     display: none !important;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
+  .burger-menu {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
   .burger-menu {
     display: flex !important;
     align-items: center;
@@ -504,16 +552,85 @@
 }
 
 @media (max-width: 767px) {
+  /* ── Hero container */
   .hero-cinematic {
-    padding: 30px 20px 20px;
-    height: 100vh;
-    min-height: 620px;
+    padding: 0 24px 28px;
+    height: 100svh;
+    min-height: 580px;
+    justify-content: flex-end;  /* push content toward bottom on portrait */
   }
+
+  /* ── Stronger left + bottom vignette so text pops on mobile */
   .hero-cinematic-overlay-left {
     width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(5, 6, 8, 0.55) 0%,
+      rgba(5, 6, 8, 0.2) 40%,
+      rgba(5, 6, 8, 0.75) 100%
+    );
   }
+
+  .hero-cinematic-overlay-bottom {
+    height: 55%;
+    background: linear-gradient(0deg, rgba(5, 6, 8, 0.92) 0%, rgba(5, 6, 8, 0) 100%);
+  }
+
+  .hero-cinematic-overlay-top {
+    height: 28%;
+    background: linear-gradient(180deg, rgba(5, 6, 8, 0.65) 0%, rgba(5, 6, 8, 0) 100%);
+  }
+
+  /* ── Content block: sits above the scroll indicator */
+  .hero-cinematic-content {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    max-width: 100%;
+    gap: 0;
+  }
+
+  /* ── Kicker */
+  .hero-cinematic-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 14px;
+  }
+
+  /* ── Primary title — allow wrapping, reduce size to fit */
+  .hero-cinematic-title-primary,
+  .hero-cinematic-title-secondary {
+    font-size: clamp(2rem, 11.5vw, 3rem);
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1;
+  }
+
+  .hero-cinematic-title-secondary {
+    margin-top: 2px;
+  }
+
+  /* Keep streak overlay matching parent */
+  .hero-signature-streak {
+    white-space: normal;
+  }
+
+  /* ── CTA link */
+  .hero-cinematic-cta-wrap {
+    margin-top: 28px;
+  }
+
+  .hero-cinematic-cta {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    gap: 12px;
+  }
+
+  /* ── Bottom bar: scroll button */
   .hero-cinematic-bottom {
     justify-content: flex-end;
+    padding-bottom: 4px;
+    margin-top: 20px;
   }
 }
 
