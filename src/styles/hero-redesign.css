@@ -552,85 +552,16 @@
 }
 
 @media (max-width: 767px) {
-  /* ── Hero container */
   .hero-cinematic {
-    padding: 0 24px 28px;
-    height: 100svh;
-    min-height: 580px;
-    justify-content: flex-end;  /* push content toward bottom on portrait */
+    padding: 30px 20px 20px;
+    height: 100vh;
+    min-height: 620px;
   }
-
-  /* ── Stronger left + bottom vignette so text pops on mobile */
   .hero-cinematic-overlay-left {
     width: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(5, 6, 8, 0.55) 0%,
-      rgba(5, 6, 8, 0.2) 40%,
-      rgba(5, 6, 8, 0.75) 100%
-    );
   }
-
-  .hero-cinematic-overlay-bottom {
-    height: 55%;
-    background: linear-gradient(0deg, rgba(5, 6, 8, 0.92) 0%, rgba(5, 6, 8, 0) 100%);
-  }
-
-  .hero-cinematic-overlay-top {
-    height: 28%;
-    background: linear-gradient(180deg, rgba(5, 6, 8, 0.65) 0%, rgba(5, 6, 8, 0) 100%);
-  }
-
-  /* ── Content block: sits above the scroll indicator */
-  .hero-cinematic-content {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    max-width: 100%;
-    gap: 0;
-  }
-
-  /* ── Kicker */
-  .hero-cinematic-kicker {
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    margin-bottom: 14px;
-  }
-
-  /* ── Primary title — allow wrapping, reduce size to fit */
-  .hero-cinematic-title-primary,
-  .hero-cinematic-title-secondary {
-    font-size: clamp(2rem, 11.5vw, 3rem);
-    white-space: normal;
-    word-break: break-word;
-    line-height: 1;
-  }
-
-  .hero-cinematic-title-secondary {
-    margin-top: 2px;
-  }
-
-  /* Keep streak overlay matching parent */
-  .hero-signature-streak {
-    white-space: normal;
-  }
-
-  /* ── CTA link */
-  .hero-cinematic-cta-wrap {
-    margin-top: 28px;
-  }
-
-  .hero-cinematic-cta {
-    font-size: 0.7rem;
-    letter-spacing: 0.22em;
-    gap: 12px;
-  }
-
-  /* ── Bottom bar: scroll button */
   .hero-cinematic-bottom {
     justify-content: flex-end;
-    padding-bottom: 4px;
-    margin-top: 20px;
   }
 }
 
