@@ -71,7 +71,7 @@ const ProjectListing: React.FC = () => {
   return (
     <div ref={containerRef} className="section_project-clean-listing">
       {/* Section Heading */}
-      <div className="section_animated-heading" style={{ paddingTop: '1vw', paddingBottom: '4vw' }}>
+      <div className="section_animated-heading project-clean_heading">
         <div className="animated-heading_wrap">
           <h2 className="animated-scroll-heading is-first">Masterplan</h2>
           <h2 className="animated-scroll-heading is-middle">Layout Sectors</h2>

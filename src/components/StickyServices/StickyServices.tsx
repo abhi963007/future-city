@@ -56,13 +56,13 @@ const StickyServices: React.FC = () => {
   useStickyServicesAnimation(containerRef);
 
   return (
-    <div ref={containerRef} className="section_services-home" style={{ paddingTop: '0.5vw' }}>
+    <div ref={containerRef} className="section_services-home">
       {/* Animated Section Header */}
-      <div className="section_animated-heading" style={{ paddingTop: '0vw', paddingBottom: '2vw' }}>
+      <div className="section_animated-heading services-home_heading">
         <div className="animated-heading_wrap">
           <h2 className="animated-scroll-heading is-first">Infrastructure</h2>
-          <h2 className="animated-scroll-heading is-middle">Engineered For The</h2>
-          <h2 className="animated-scroll-heading is-last">Future</h2>
+          <h2 className="animated-scroll-heading is-middle">Engineered For</h2>
+          <h2 className="animated-scroll-heading is-last">The Future</h2>
         </div>
       </div>
 

@@ -3,11 +3,9 @@ import { gsap } from '../utils/gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 /**
- * 3D Sticky Stacking Cards Animation for Infrastructure section
- * (Matching section_services-home & timeline t-0d1a17be from Webflow animation reference):
- *
- * As each card sticky-stacks at the top of the viewport and the next card comes up,
- * the active card shrinks in scale (1 → 0.82), fades opacity (1 → 0), and tilts (rotationX: 0deg → -40deg).
+ * 3D Sticky Stacking Cards Animation for Infrastructure section.
+ * Desktop: scale + fade + tilt as next card stacks.
+ * Mobile: lighter stack effect so cards stay readable.
  */
 export function useStickyServicesAnimation(containerRef: React.RefObject<Element | null>) {
   useLayoutEffect(() => {
@@ -16,26 +14,53 @@ export function useStickyServicesAnimation(containerRef: React.RefObject<Element
 
     const ctx = gsap.context(() => {
       const cards = container.querySelectorAll<HTMLElement>('.services-home_single');
+      const mm = gsap.matchMedia();
 
-      cards.forEach((card, index) => {
-        gsap.set(card, { visibility: 'visible' });
+      mm.add('(min-width: 768px)', () => {
+        cards.forEach((card, index) => {
+          gsap.set(card, { visibility: 'visible' });
 
-        // Apply scroll-driven 3D stack-and-flip effect to cards except the last one
-        if (index < cards.length - 1) {
-          gsap.to(card, {
-            scale: 0.85,
-            opacity: 0.2,
-            rotationX: -25,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 12vh',
-              end: 'bottom 12vh',
-              scrub: true,
-            },
-          });
-        }
+          if (index < cards.length - 1) {
+            gsap.to(card, {
+              scale: 0.85,
+              opacity: 0.2,
+              rotationX: -25,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 12vh',
+                end: 'bottom 12vh',
+                scrub: true,
+              },
+            });
+          }
+        });
       });
+
+      mm.add('(max-width: 767px)', () => {
+        cards.forEach((card, index) => {
+          gsap.set(card, { visibility: 'visible', clearProps: 'scale,opacity,rotationX' });
+
+          if (index < cards.length - 1) {
+            gsap.to(card, {
+              scale: 0.94,
+              opacity: 0.45,
+              rotationX: -8,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 8vh',
+                end: 'bottom 8vh',
+                scrub: true,
+              },
+            });
+          }
+        });
+      });
+
+      return () => {
+        mm.revert();
+      };
     }, container);
 
     return () => {

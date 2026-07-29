@@ -104,6 +104,14 @@ const TestimonialsSection: React.FC = () => {
                   key={item.id}
                   className={`testimonials_image-wrap ${item.positionClass}`}
                   onMouseEnter={() => setActiveIndex(idx)}
+                  onClick={() => setActiveIndex(idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') setActiveIndex(idx);
+                  }}
+                  aria-pressed={activeIndex === idx}
+                  aria-label={item.title}
                 >
                   <img src={item.imageSrc} loading="lazy" alt={item.alt} className="testimonials_image" />
                   <div className="testimonials_logo-tile">{item.badgeText}</div>

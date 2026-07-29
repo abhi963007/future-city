@@ -451,6 +451,80 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   z-index: 2;
 }
 
+/* Infrastructure heading + sticky cards — mobile optimisation */
+@media (max-width: 767px) {
+  .section_services-home {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .section_services-home .services-home_heading,
+  .section_services-home .section_animated-heading {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+
+  .section_services-home .animated-heading_wrap {
+    gap: 0.15rem;
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .section_services-home .animated-scroll-heading {
+    font-size: clamp(1.45rem, 7.2vw, 2.1rem);
+    line-height: 1.12;
+    letter-spacing: 0.01em;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .services-home_master {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    gap: 1.25rem;
+  }
+
+  .services-home_single {
+    top: 8vh;
+    padding: 1.35rem 1.2rem 1.5rem;
+    border-radius: 1.25rem;
+    height: auto;
+    min-height: 68vh;
+    max-height: 78vh;
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .services-home_top {
+    padding-bottom: 0.85rem;
+    margin-bottom: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .services-home_title {
+    font-size: clamp(1.35rem, 6.5vw, 1.85rem);
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+  }
+
+  .services-home_bottom {
+    gap: 0.55rem;
+    max-width: 100%;
+    padding-right: 0.15rem;
+  }
+
+  .services-home_subtitle {
+    font-size: clamp(0.95rem, 4vw, 1.15rem);
+    line-height: 1.3;
+  }
+
+  .services-home_desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    opacity: 0.85;
+  }
+}
+
+
 /* =========================================================
    PROJECT CLEAN LISTING — Borderless 2-Column Row Layout
    (Matching reference animation video)
@@ -628,6 +702,125 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   opacity: 0.9;
   letter-spacing: 0.04em;
 }
+
+/* Masterplan sectors — mobile optimisation */
+@media (max-width: 767px) {
+  .section_project-clean-listing {
+    padding-top: 1.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .section_project-clean-listing .project-clean_heading,
+  .section_project-clean-listing .section_animated-heading {
+    padding: 1.25rem 1.25rem 1.75rem;
+  }
+
+  .section_project-clean-listing .animated-heading_wrap {
+    gap: 0.15rem;
+    padding: 0 0.15rem;
+  }
+
+  .section_project-clean-listing .animated-scroll-heading {
+    font-size: clamp(1.45rem, 7.2vw, 2.1rem);
+    line-height: 1.12;
+    letter-spacing: 0.01em;
+  }
+
+  .project-clean_container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1.25rem;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  .project-clean_row {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    padding-bottom: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-clean_row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .project-clean_left {
+    position: static;
+    top: auto;
+    gap: 0.55rem;
+    width: 100%;
+  }
+
+  .project-clean_badge {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .project-clean_title {
+    font-size: clamp(1.4rem, 6.2vw, 1.8rem);
+    line-height: 1.2;
+  }
+
+  .project-clean_subtitle {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.1rem;
+  }
+
+  .project-clean_desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    max-width: 100%;
+    margin-top: 0.15rem;
+  }
+
+  .project-clean_cta-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.65rem;
+    padding: 0.9rem 1.4rem;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  .project-clean_right {
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .project-clean_image-wrap {
+    height: 220px;
+    border-radius: 1rem;
+  }
+
+  .project-clean_specs-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem 1rem;
+    padding: 1rem 0;
+  }
+
+  .spec-label {
+    font-size: 0.65rem;
+  }
+
+  .spec-value {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .project-clean_left {
+    position: static;
+    top: auto;
+  }
+
+  .project-clean_container {
+    gap: 4rem;
+  }
+}
+
 
 /* =========================================================
    FOOTER MINIMAL — Sleek Dark Luxury Layout
@@ -824,6 +1017,69 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   letter-spacing: 0.05em;
 }
 
+/* Minimal footer — mobile / tablet only (desktop unchanged) */
+@media (max-width: 767px) {
+  .footer-minimal_cta {
+    min-height: 280px;
+    padding: 4rem 1.5rem;
+  }
+
+  .footer-minimal_title {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+  }
+
+  .footer-minimal_main {
+    padding: 2.75rem 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .footer-minimal_grid {
+    gap: 2rem;
+    padding-bottom: 2rem;
+    justify-items: center;
+  }
+
+  .footer-minimal_brand {
+    gap: 0;
+    align-items: center;
+  }
+
+  .footer-minimal_logo {
+    letter-spacing: 0.16em;
+  }
+
+  .footer-minimal_tagline,
+  .footer-minimal_badges,
+  .footer-minimal_nav {
+    display: none;
+  }
+
+  .footer-minimal_contact {
+    gap: 1.25rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-minimal_contact-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-minimal_bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding-top: 1.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .footer-minimal_bottom-right {
+    text-align: center;
+  }
+}
+
 .section_testimonials {
   padding-bottom: 6vw;
   width: 100%;
@@ -981,7 +1237,104 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   border-radius: 50%;
 }
 
+/* Pillars section — mobile optimisation */
+@media (max-width: 767px) {
+  .section_animated-heading {
+    padding: 2.5rem 1rem 1.25rem;
+  }
 
+  .animated-scroll-heading {
+    font-size: clamp(1.75rem, 9.5vw, 2.6rem);
+  }
 
+  .section_testimonials {
+    padding-bottom: 3rem;
+  }
 
+  .testimonials-background {
+    padding: 1.75rem 1.15rem 2rem;
+    border-radius: 1.25rem;
+    width: 94vw !important;
+    max-width: 94vw !important;
+  }
+
+  .testimonials_absolute-small-texts-top {
+    position: static;
+    padding: 0 0 1rem;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    opacity: 0.55;
+  }
+
+  .testimonials_absolute-small-texts-top .label-small:last-child {
+    display: none;
+  }
+
+  .testimonials_absolute-small-texts {
+    display: none;
+  }
+
+  .testimonials_grid {
+    margin: 0.25rem auto 1.25rem;
+    gap: 0.35rem;
+    width: 100%;
+    max-width: 100%;
+    min-height: 210px;
+    align-items: stretch;
+  }
+
+  .testimonials_image-wrap {
+    height: 26vh;
+    min-height: 190px;
+    max-height: 240px;
+    border-radius: 0.7rem;
+    flex: 1 1 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  }
+
+  .testimonials_image-wrap:hover {
+    transform: scale(1.04) rotate(0deg) !important;
+  }
+
+  .testimonials_logo-tile {
+    font-size: 0.52rem;
+    letter-spacing: 0.04em;
+    white-space: normal;
+    line-height: 1.15;
+    width: 92%;
+    top: 7%;
+  }
+
+  .testimonials_master-texts {
+    min-height: 0;
+    margin-top: 0.25rem;
+    padding: 0 0.15rem 0.25rem;
+  }
+
+  .testimonials_text-single {
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  .testimonials_top-text {
+    font-size: 1.15rem !important;
+    line-height: 1.3;
+    padding: 0 0.25rem;
+  }
+
+  .testimonials_text-single .paragraph.is-small {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+    padding: 0 0.15rem;
+  }
+
+  .testimonials_person-wrap {
+    margin-top: 0.15rem;
+    opacity: 0.8;
+    font-size: 0.72rem;
+  }
+}
 
