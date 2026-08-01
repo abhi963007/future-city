@@ -82,7 +82,7 @@ const TestimonialsSection: React.FC = () => {
       <div className="section_animated-heading">
         <div className="animated-heading_wrap">
           <h2 className="animated-scroll-heading is-first">Strategic Pillars of</h2>
-          <h2 className="animated-scroll-heading is-middle">Future City</h2>
+          <h2 className="animated-scroll-heading is-middle">Codename Future City</h2>
           <h2 className="animated-scroll-heading is-last">Growth</h2>
         </div>
       </div>
@@ -93,7 +93,7 @@ const TestimonialsSection: React.FC = () => {
           <div className="testimonials-background">
             {/* Top labels */}
             <div className="testimonials_absolute-small-texts-top">
-              <div className="label-small">FUTURE CITY PILLARS</div>
+              <div className="label-small">CODENAME FUTURE CITY PILLARS</div>
               <div className="label-small">HYDERABAD FOURTH CITY</div>
             </div>
 

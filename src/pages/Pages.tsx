@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 export const ProjectPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Project Overview - Future City</title></Helmet>
+    <Helmet><title>Project Overview - Codename Future City</title></Helmet>
     <h1 className="heading is-xlarge">16-Acre Masterplanned Villa Plots</h1>
     <p className="paragraph" style={{ marginTop: '20px' }}>DTCP & RERA approved premium layout at Yacharam, Hyderabad.</p>
   </div>
@@ -11,7 +11,7 @@ export const ProjectPage: React.FC = () => (
 
 export const VisionPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Future City Vision - Fourth City Hyderabad</title></Helmet>
+    <Helmet><title>Codename Future City Vision - Fourth City Hyderabad</title></Helmet>
     <h1 className="heading is-xlarge">AI Hub & Skills University Corridor</h1>
     <p className="paragraph" style={{ marginTop: '20px' }}>Positioned in India's premier AI-driven urban ecosystem.</p>
   </div>
@@ -19,7 +19,7 @@ export const VisionPage: React.FC = () => (
 
 export const ConnectivityPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Regional Connectivity - Future City</title></Helmet>
+    <Helmet><title>Regional Connectivity - Codename Future City</title></Helmet>
     <h1 className="heading is-xlarge">6-Lane Srisailam Highway & RRR</h1>
     <p className="paragraph" style={{ marginTop: '20px' }}>Direct access to Rajiv Gandhi International Airport & ORR.</p>
   </div>
@@ -43,7 +43,7 @@ export const InvestmentPage: React.FC = () => (
 
 export const GalleryPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Project Gallery - Future City</title></Helmet>
+    <Helmet><title>Project Gallery - Codename Future City</title></Helmet>
     <h1 className="heading is-xlarge">Project Visual Showcase</h1>
     <p className="paragraph" style={{ marginTop: '20px' }}>Masterplan renders, infrastructure developments, and site views.</p>
   </div>
@@ -51,15 +51,15 @@ export const GalleryPage: React.FC = () => (
 
 export const ContactPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Contact Us - Future City</title></Helmet>
-    <h1 className="heading is-xlarge">Contact Future City Team</h1>
+    <Helmet><title>Contact Us - Codename Future City</title></Helmet>
+    <h1 className="heading is-xlarge">Contact Codename Future City Team</h1>
     <p className="paragraph" style={{ marginTop: '20px' }}>Reach out for site visit bookings, plot availability, and pricing.</p>
   </div>
 );
 
 export const ConsultationPage: React.FC = () => (
   <div style={{ padding: '120px 20px 60px', textAlign: 'center' }}>
-    <Helmet><title>Book Site Visit - Future City</title></Helmet>
+    <Helmet><title>Book Site Visit - Codename Future City</title></Helmet>
     <h1 className="heading is-xlarge">Schedule a Private Site Visit</h1>
     <p className="paragraph" style={{ marginTop: '20px' }}>Complimentary luxury car pick-up and drop-off available.</p>
   </div>

@@ -29,8 +29,8 @@ const Home: React.FC = () => {
       <AboutGrid />
       <TypoTitles
         variant="without-image"
-        title1="Future City "
-        title2="Vision"
+        title1="Codename "
+        title2="Future City"
         title3="Fourth City"
         subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
       />

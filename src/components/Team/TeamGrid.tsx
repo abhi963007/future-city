@@ -64,7 +64,7 @@ const TeamGrid: React.FC = () => {
               <div className="team-card-about">
                 <p className="paragraph-bold is-xsmall">{item.desc}</p>
                 <div className="team-card-contact">
-                  <span className="team-contact-link">Future City</span>
+                  <span className="team-contact-link">Codename Future City</span>
                   <span className="team-contact-link">Hyderabad</span>
                 </div>
               </div>

@@ -205,7 +205,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             <div className="menu-credit-links">
-              <span className="menu-credit-link">Future City</span>
+              <span className="menu-credit-link">Codename Future City</span>
               <button type="button" onClick={handleBookClick} className="menu-credit-link is-buy">
                 Book Site Visit
               </button>

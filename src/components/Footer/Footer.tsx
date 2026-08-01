@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
         <div className="footer-minimal_grid">
           {/* Brand Column */}
           <div className="footer-minimal_brand">
-            <div className="footer-minimal_logo">FUTURE CITY</div>
+            <div className="footer-minimal_logo">CODENAME FUTURE CITY</div>
             <p className="footer-minimal_tagline">
               Hyderabad's premier Fourth City economic corridor featuring DTCP & RERA approved villa plotting layouts.
             </p>
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
 
         {/* Subfooter Bottom Bar */}
         <div className="footer-minimal_bottom">
-          <div>© 2026 Future City. All Rights Reserved.</div>
+          <div>© 2026 Codename Future City. All Rights Reserved.</div>
           <div className="footer-minimal_bottom-right">
             <span>HYDERABAD FOURTH CITY</span>
           </div>
