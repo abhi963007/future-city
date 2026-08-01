@@ -16,6 +16,13 @@ const navMenuItems = [
   { href: ROUTES.CONTACT, label: 'Contact', selector: '.section-consultation' },
 ];
 
+const headerNavLinks = [
+  { href: ROUTES.HOME, label: 'Home', selector: '.hero-cinematic' },
+  { href: '/about', label: 'About', selector: '.section-about-grid' },
+  { href: ROUTES.PROJECT, label: 'Plots', selector: '.section-project-listing' },
+  { href: ROUTES.LOCATIONS, label: 'Locations', selector: '.section-about-grid' },
+];
+
 const Navbar: React.FC = () => {
   const navRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -106,12 +113,30 @@ const Navbar: React.FC = () => {
     openBookVisit();
   };
 
-  const isActive = (href: string) => location.pathname === href;
+  const isActive = (href: string) => {
+    if (href === ROUTES.HOME) {
+      return location.pathname === '/' || location.pathname === ROUTES.HOME;
+    }
+    return location.pathname === href;
+  };
 
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
         <div className="nav-actions">
+          <div className="nav-inline-links">
+            {headerNavLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={(e) => handleNavClick(e, link.href, link.selector)}
+                className={`nav-inline-link${isActive(link.href) ? ' is-active' : ''}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
           <button type="button" onClick={handleBookClick} className="nav-site-visit-btn">
             <svg
               className="nav-site-visit-icon"
