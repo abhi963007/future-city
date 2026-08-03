@@ -53,54 +53,94 @@ const Footer: React.FC = () => {
       {/* Interactive Google Map Location Showcase */}
       <div id="map-location" className="footer-map_section">
         <div className="footer-map_container">
-          <div className="footer-map_header">
-            <div className="footer-map_badge_tag">
-              <span className="red-pulse-dot"></span>
-              GOOGLE MAPS SITE LOCATION
-            </div>
-            <h3 className="footer-map_heading">Yacharam, Srisailam Highway Corridor</h3>
+
+          {/* Section Badge */}
+          <div className="footer-map_badge_tag">
+            <span className="red-pulse-dot" />
+            SITE LOCATION
           </div>
 
-          <div className="footer-map_card">
-            <iframe
-              title="Codename Future City Google Map Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121980.5283737213!2d78.58359218671874!3d17.044161726715694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bca4587396603a1%3A0xb363ef8088891506!2sYacharam%2C%20Telangana%20501509!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="footer-map_iframe"
-            />
+          {/* Two-column layout: info left, map right */}
+          <div className="footer-map_twocol">
 
-            {/* Custom Google Maps Red Pointer Pin Overlay */}
-            <div className="footer-map_pointer_overlay">
-              <div className="google-red-pin">
-                <svg width="36" height="48" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="red-pin-icon">
-                  <path d="M12 0C5.37 0 0 5.37 0 12C0 21 12 32 12 32C12 32 24 21 24 12C24 5.37 18.63 0 12 0ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" fill="#EA4335"/>
-                  <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
+            {/* LEFT: Location Info Panel */}
+            <div className="footer-map_info-panel">
+              <h2 className="footer-map_heading">Yacharam,<br />Srisailam<br />Highway</h2>
+              <p className="footer-map_desc">
+                Strategically located at the intersection of Hyderabad's fastest-growing industrial and residential corridors. 45 min from the city, a lifetime ahead of the curve.
+              </p>
+
+              {/* Location Stat Cards */}
+              <div className="footer-map_stats">
+                <div className="footer-map_stat">
+                  <span className="footer-map_stat-val">45 min</span>
+                  <span className="footer-map_stat-lbl">From Hyderabad CBD</span>
+                </div>
+                <div className="footer-map_stat-div" />
+                <div className="footer-map_stat">
+                  <span className="footer-map_stat-val">NH-44</span>
+                  <span className="footer-map_stat-lbl">Srisailam Highway</span>
+                </div>
+                <div className="footer-map_stat-div" />
+                <div className="footer-map_stat">
+                  <span className="footer-map_stat-val">RRR</span>
+                  <span className="footer-map_stat-lbl">Ring Road Access</span>
+                </div>
+              </div>
+
+              {/* Address Row */}
+              <div className="footer-map_address">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A24C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
                 </svg>
-                <div className="google-pin-ripple"></div>
+                <span>Samooha Golden Gate, Yacharam, Telangana 501509</span>
               </div>
-            </div>
 
-            {/* Floating Glassmorphic Details Card */}
-            <div className="footer-map_floating_card">
-              <div className="map-card-info">
-                <div className="map-card-title">SAMOOHA GOLDEN GATE</div>
-                <div className="map-card-subtitle">Yacharam, Srisailam Highway, Hyderabad</div>
-              </div>
+              {/* CTA */}
               <a
                 href="https://maps.google.com/?q=Yacharam+Telangana"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="map-card-directions-btn"
+                className="footer-map_cta"
               >
-                <span>Open Google Maps</span>
-                <span className="btn-arrow">↗</span>
+                <span>Get Directions</span>
+                <span className="footer-map_cta-arrow">↗</span>
               </a>
             </div>
+
+            {/* RIGHT: Map Card */}
+            <div className="footer-map_card">
+              <iframe
+                title="Codename Future City Google Map Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121980.5283737213!2d78.58359218671874!3d17.044161726715694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bca4587396603a1%3A0xb363ef8088891506!2sYacharam%2C%20Telangana%20501509!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="footer-map_iframe"
+              />
+
+              {/* Floating badge on map */}
+              <div className="footer-map_floating_card">
+                <div className="map-card-info">
+                  <div className="map-card-title">SAMOOHA GOLDEN GATE</div>
+                  <div className="map-card-subtitle">Yacharam, Srisailam Highway, Hyderabad</div>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=Yacharam+Telangana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="map-card-directions-btn"
+                >
+                  <span>Open Maps</span>
+                  <span className="btn-arrow">↗</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
