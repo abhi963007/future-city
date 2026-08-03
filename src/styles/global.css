@@ -1757,8 +1757,8 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 /* Two-column layout */
 .footer-map_twocol {
   display: grid;
-  grid-template-columns: 1fr 1.65fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
