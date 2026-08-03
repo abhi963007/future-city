@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Interactive Google Map Location Showcase */}
-      <div className="footer-map_section">
+      <div id="map-location" className="footer-map_section">
         <div className="footer-map_container">
           <div className="footer-map_header">
             <div className="footer-map_badge_tag">

@@ -9,7 +9,8 @@ const navMenuItems = [
   { href: '/#hero', label: 'Home', selector: '#hero' },
   { href: '/#about', label: 'About', selector: '#about' },
   { href: '/#plots', label: 'Plots', selector: '#plots' },
-  { href: '/#location', label: 'Location & Infrastructure', selector: '#location' },
+  { href: '/#map-location', label: 'Location Map', selector: '#map-location' },
+  { href: '/#location', label: 'Infrastructure', selector: '#location' },
   { href: '/#vision', label: 'Future City Vision', selector: '#vision' },
 ];
 
@@ -17,7 +18,7 @@ const headerNavLinks = [
   { href: '/#hero', label: 'Home', selector: '#hero' },
   { href: '/#about', label: 'About', selector: '#about' },
   { href: '/#plots', label: 'Plots', selector: '#plots' },
-  { href: '/#location', label: 'Location', selector: '#location' },
+  { href: '/#map-location', label: 'Location', selector: '#map-location' },
 ];
 
 const Navbar: React.FC = () => {
