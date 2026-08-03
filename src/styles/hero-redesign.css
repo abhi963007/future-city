@@ -459,7 +459,13 @@
     border-radius: 0;
     box-shadow: none;
     padding: 110px 24px 44px 24px;
-    background: rgba(7, 18, 33, 0.94);
+    background: linear-gradient(
+      180deg,
+      rgba(7, 18, 33, 0.72) 0%,
+      rgba(7, 18, 33, 0.55) 50%,
+      rgba(7, 18, 33, 0.78) 100%
+    );
+    backdrop-filter: blur(2px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -612,8 +618,9 @@
   .hero-cinematic-dark-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(5, 12, 28, 0.96) 0%,
-      rgba(5, 12, 28, 0.88) 100%
+      rgba(5, 12, 28, 0.65) 0%,
+      rgba(5, 12, 28, 0.35) 50%,
+      rgba(5, 12, 28, 0.70) 100%
     );
   }
 }
