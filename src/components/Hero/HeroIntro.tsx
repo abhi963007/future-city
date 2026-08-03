@@ -1,10 +1,51 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useHeroAnimation } from '../../hooks/useHeroAnimation';
 
 const HeroIntro: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useHeroAnimation(heroRef);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.loop = true;
+
+      const playVideo = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch((err) => {
+            console.warn('Autoplay waiting for interaction:', err);
+          });
+        }
+      };
+
+      playVideo();
+
+      const handleInteraction = () => {
+        if (video.paused) {
+          playVideo();
+        }
+        window.removeEventListener('click', handleInteraction);
+        window.removeEventListener('touchstart', handleInteraction);
+        window.removeEventListener('scroll', handleInteraction);
+      };
+
+      window.addEventListener('click', handleInteraction);
+      window.addEventListener('touchstart', handleInteraction);
+      window.addEventListener('scroll', handleInteraction);
+
+      return () => {
+        window.removeEventListener('click', handleInteraction);
+        window.removeEventListener('touchstart', handleInteraction);
+        window.removeEventListener('scroll', handleInteraction);
+      };
+    }
+  }, []);
 
   const scrollToNextSection = () => {
     const nextSection =
@@ -23,23 +64,21 @@ const HeroIntro: React.FC = () => {
       {/* ── Full-bleed background video ── */}
       <div className="hero-cinematic-bg">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          src="/media/hero%20video.mp4"
-          poster="/images/hero-dusk-gate.png"
+          src="/media/hero-video.mp4"
           className="hero-cinematic-bg-img"
           style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-          onLoadedData={(e) => e.currentTarget.play()}
         >
-          <source src="/media/hero%20video.mp4" type="video/mp4" />
+          <source src="/media/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Left-heavy dark vignette gradient over video */}
         <div className="hero-cinematic-dark-overlay" />
       </div>
-
 
       {/* ── Left Content Panel ── */}
       <div className="hero-curved-panel">
