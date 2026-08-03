@@ -229,7 +229,7 @@
 /* ── 11. Right Side Bottom: STRATEGICALLY POSITIONED ── */
 .hero-strategic-widget {
   position: absolute;
-  right: 120px;
+  right: 80px;
   bottom: 50px;
   z-index: 20;
   display: flex;
@@ -269,7 +269,7 @@
 .hero-strategic-grid {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
 }
 
 .hero-strategic-col {
