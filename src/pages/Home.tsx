@@ -51,7 +51,6 @@ const Home: React.FC = () => {
 
       {/* About Section */}
       <section id="about">
-        <AboutGrid />
         <TypoTitles
           variant="without-image"
           title1="Codename "
@@ -59,6 +58,7 @@ const Home: React.FC = () => {
           title3="Fourth City"
           subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
         />
+        <AboutGrid />
       </section>
 
       {/* Location & Infrastructure Section */}
