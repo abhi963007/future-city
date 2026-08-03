@@ -141,8 +141,7 @@
   transition: width 0.3s ease;
 }
 
-.nav-inline-link:hover::after,
-.nav-inline-link.is-active::after {
+.nav-inline-link:hover::after {
   width: 100%;
 }
 
