@@ -20,17 +20,8 @@ const HeroIntro: React.FC = () => {
 
   return (
     <div ref={heroRef} className="hero-cinematic">
-      {/* Layer 1: Background Image/Video Container & Vignette Overlays */}
+      {/* Layer 1: Background Container & Vignette Overlays */}
       <div className="hero-cinematic-bg">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="hero-cinematic-img"
-        >
-          <source src="/images/hero video.mp4" type="video/mp4" />
-        </video>
         {/* Layer 2: Soft Atmospheric Fog */}
         <div className="hero-cinematic-fog"></div>
 
