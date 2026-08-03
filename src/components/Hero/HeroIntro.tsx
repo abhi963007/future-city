@@ -27,11 +27,14 @@ const HeroIntro: React.FC = () => {
           loop
           muted
           playsInline
+          preload="auto"
+          src="/media/hero%20video.mp4"
           poster="/images/hero-dusk-gate.png"
           className="hero-cinematic-bg-img"
           style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+          onLoadedData={(e) => e.currentTarget.play()}
         >
-          <source src="/media/hero video.mp4" type="video/mp4" />
+          <source src="/media/hero%20video.mp4" type="video/mp4" />
         </video>
         {/* Left-heavy dark vignette gradient over video */}
         <div className="hero-cinematic-dark-overlay" />
