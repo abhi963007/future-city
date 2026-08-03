@@ -1994,33 +1994,79 @@ html.w-mod-js:not(.w-mod-ix3) :is(
 
 /* Mobile */
 @media (max-width: 900px) {
+  .footer-map_section {
+    padding: 48px 5vw 48px;
+  }
+
   .footer-map_twocol {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .footer-map_info-panel {
-    padding: 1rem 0 2rem;
+    padding: 0;
+    gap: 1.25rem;
   }
 
+  .footer-map_heading {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    line-height: 1.1;
+  }
+
+  .footer-map_desc {
+    font-size: 13.5px;
+    max-width: 100%;
+  }
+
+  /* Stats: hide dividers, use 3-column grid */
+  .footer-map_stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem 0;
+  }
+
+  .footer-map_stat-div {
+    display: none;
+  }
+
+  .footer-map_stat-val {
+    font-size: 1.25rem;
+  }
+
+  .footer-map_stat-lbl {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+
+  /* CTA full-width on mobile */
+  .footer-map_cta {
+    align-self: stretch;
+    justify-content: center;
+    padding: 13px 24px;
+    text-align: center;
+  }
+
+  /* Map card */
   .footer-map_card {
-    height: 380px;
-    border-radius: 16px;
-    border-bottom: 1.5px solid rgba(212, 162, 76, 0.25);
+    height: 300px;
+    border-radius: 14px;
+    border: 1.5px solid rgba(212, 162, 76, 0.25);
   }
 
   .footer-map_floating_card {
     left: 12px;
     right: 12px;
     bottom: 12px;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-    padding: 12px 16px;
-    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 10px 14px;
+    gap: 10px;
   }
 
   .map-card-directions-btn {
-    justify-content: center;
+    flex-shrink: 0;
   }
 }
 
