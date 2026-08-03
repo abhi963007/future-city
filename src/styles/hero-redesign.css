@@ -342,53 +342,7 @@
   margin-bottom: -3px;
 }
 
-/* ── 11. Primary CTA Button ──
-   More visual weight: taller, wider, 1.5px border */
-.hero-panel-cta-wrap {
-  display: flex;
-}
 
-.hero-panel-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  padding: 20px 42px;
-  background: transparent;
-  border: 1.5px solid rgba(212, 162, 76, 0.55);
-  border-radius: 999px;
-  color: #F4F3EF;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition:
-    background 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-    color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.38s ease,
-    box-shadow 0.38s ease,
-    transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-panel-cta:hover {
-  background: #D4A24C;
-  color: #071221;
-  border-color: #D4A24C;
-  box-shadow: 0 8px 32px rgba(212, 162, 76, 0.32);
-  transform: translateY(-3px);
-}
-
-.hero-cta-arrow {
-  font-size: 1.05rem;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-flex;
-  align-items: center;
-}
-
-.hero-panel-cta:hover .hero-cta-arrow {
-  transform: translateX(6px);
-}
 
 /* =========================================================
    NAVIGATION — Floating over hero
