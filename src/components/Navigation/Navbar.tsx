@@ -3,24 +3,22 @@ import { Link, useLocation } from 'react-router-dom';
 import { useNavbarAnimation } from '../../hooks/useNavbarAnimation';
 import { useBookVisit } from '../../context/BookVisitContext';
 import { gsap } from '../../utils/gsap';
-import { ROUTES } from '../../utils/constants';
+import { getLenis } from '../../hooks/useLenis';
 
 const navMenuItems = [
-  { href: ROUTES.HOME, label: 'Home', selector: '.hero-cinematic' },
-  { href: ROUTES.PROJECT, label: 'Project', selector: '.section-project-listing' },
-  { href: ROUTES.VISION, label: 'Future City Vision', selector: '.section-solutions-showcase' },
-  { href: ROUTES.CONNECTIVITY, label: 'Connectivity', selector: '.section-about-grid' },
-  { href: ROUTES.LOCATION, label: 'Location', selector: '.section-about-grid' },
-  { href: ROUTES.INVESTMENT, label: 'Investment Potential', selector: '.section-statement-reveal' },
-  { href: ROUTES.GALLERY, label: 'Gallery', selector: '.section-image-split' },
-  { href: ROUTES.CONTACT, label: 'Contact', selector: '.section-consultation' },
+  { href: '/#hero', label: 'Home', selector: '#hero' },
+  { href: '/#about', label: 'About', selector: '#about' },
+  { href: '/#plots', label: 'Plots', selector: '#plots' },
+  { href: '/#location', label: 'Location & Infrastructure', selector: '#location' },
+  { href: '/#vision', label: 'Future City Vision', selector: '#vision' },
+  { href: '/#contact', label: 'Contact & Site Visit', selector: '#contact' },
 ];
 
 const headerNavLinks = [
-  { href: ROUTES.HOME, label: 'Home', selector: '.hero-cinematic' },
-  { href: '/about', label: 'About', selector: '.section-about-grid' },
-  { href: ROUTES.PROJECT, label: 'Plots', selector: '.section-project-listing' },
-  { href: ROUTES.LOCATIONS, label: 'Locations', selector: '.section-about-grid' },
+  { href: '/#hero', label: 'Home', selector: '#hero' },
+  { href: '/#about', label: 'About', selector: '#about' },
+  { href: '/#plots', label: 'Plots', selector: '#plots' },
+  { href: '/#location', label: 'Location', selector: '#location' },
 ];
 
 const Navbar: React.FC = () => {
@@ -85,24 +83,48 @@ const Navbar: React.FC = () => {
   };
 
   const handleNavClick = (e: React.MouseEvent, href: string, selector?: string) => {
-    const isHomePage = location.pathname === '/' || location.pathname === ROUTES.HOME;
+    let targetSelector = selector;
+    if (!targetSelector && href.includes('#')) {
+      targetSelector = '#' + href.split('#')[1];
+    }
 
-    if (isHomePage) {
-      if (selector) {
-        const targetEl = document.querySelector(selector);
-        if (targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-          if (isMenuOpen) closeMenu();
-          return;
-        }
-      }
-      if (href === ROUTES.HOME) {
+    const isHomePage = location.pathname === '/' || location.pathname === '/home';
+
+    if (targetSelector) {
+      const targetEl = document.querySelector<HTMLElement>(targetSelector);
+      if (targetEl) {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const lenis = getLenis();
+        if (lenis) {
+          lenis.scrollTo(targetEl, { duration: 1.2 });
+        } else {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (!isHomePage) {
+          window.location.href = '/' + targetSelector;
+        } else {
+          window.history.pushState(null, '', targetSelector);
+        }
         if (isMenuOpen) closeMenu();
         return;
       }
+    }
+
+    if (href === '/' || href === '/#hero') {
+      e.preventDefault();
+      const lenis = getLenis();
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      if (!isHomePage) {
+        window.location.href = '/';
+      } else {
+        window.history.pushState(null, '', '/');
+      }
+      if (isMenuOpen) closeMenu();
+      return;
     }
 
     if (isMenuOpen) closeMenu();
@@ -114,8 +136,11 @@ const Navbar: React.FC = () => {
   };
 
   const isActive = (href: string) => {
-    if (href === ROUTES.HOME) {
-      return location.pathname === '/' || location.pathname === ROUTES.HOME;
+    if (href === '/#hero' || href === '/') {
+      return location.pathname === '/' && (!location.hash || location.hash === '#hero');
+    }
+    if (href.includes('#')) {
+      return location.hash === href.substring(href.indexOf('#'));
     }
     return location.pathname === href;
   };
@@ -193,8 +218,8 @@ const Navbar: React.FC = () => {
               </div>
               <div className="menu-additional-links">
                 <Link
-                  to={ROUTES.CONTACT}
-                  onClick={(e) => handleNavClick(e, ROUTES.CONTACT, '.section-consultation')}
+                  to="/#contact"
+                  onClick={(e) => handleNavClick(e, '/#contact', '#contact')}
                   className="menu-additional-link"
                 >
                   Contact

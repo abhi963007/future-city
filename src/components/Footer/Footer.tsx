@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useFooterAnimation } from '../../hooks/useFooterAnimation';
 import { useBookVisit } from '../../context/BookVisitContext';
+import { getLenis } from '../../hooks/useLenis';
 
 const Footer: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,9 +10,14 @@ const Footer: React.FC = () => {
   useFooterAnimation(containerRef);
 
   const scrollToSection = (selector: string) => {
-    const element = document.querySelector(selector);
+    const element = document.querySelector<HTMLElement>(selector);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const lenis = getLenis();
+      if (lenis) {
+        lenis.scrollTo(element, { duration: 1.2 });
+      } else {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -67,40 +73,40 @@ const Footer: React.FC = () => {
             <div className="footer-minimal_nav-column">
               <button
                 type="button"
-                onClick={() => scrollToSection('.hero-cinematic')}
+                onClick={() => scrollToSection('#hero')}
                 className="footer-minimal_link-btn"
               >
                 Home
               </button>
               <button
                 type="button"
-                onClick={() => scrollToSection('.section-about-grid')}
+                onClick={() => scrollToSection('#about')}
                 className="footer-minimal_link-btn"
               >
-                Overview
+                Overview (About)
               </button>
               <button
                 type="button"
-                onClick={() => scrollToSection('.section_testimonials')}
+                onClick={() => scrollToSection('#vision')}
                 className="footer-minimal_link-btn"
               >
-                Strategic Pillars
+                Strategic Vision
               </button>
             </div>
             <div className="footer-minimal_nav-column">
               <button
                 type="button"
-                onClick={() => scrollToSection('.section_services-home')}
+                onClick={() => scrollToSection('#location')}
                 className="footer-minimal_link-btn"
               >
-                Infrastructure
+                Location & Infrastructure
               </button>
               <button
                 type="button"
-                onClick={() => scrollToSection('.section_project-clean-listing')}
+                onClick={() => scrollToSection('#plots')}
                 className="footer-minimal_link-btn"
               >
-                Masterplan Sectors
+                Masterplan Plots
               </button>
               <button
                 type="button"

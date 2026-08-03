@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroIntro from '../components/Hero/HeroIntro';
 import AboutGrid from '../components/About/AboutGrid';
 import TypoTitles from '../components/Typography/TypoTitles';
+import ProjectListing from '../components/Projects/ProjectListing';
+import StickyServices from '../components/StickyServices/StickyServices';
 import SolutionsShowcase from '../components/Solutions/SolutionsShowcase';
 import TestimonialsSection from '../components/Testimonials/TestimonialsSection';
-import StickyServices from '../components/StickyServices/StickyServices';
-import ProjectListing from '../components/Projects/ProjectListing';
+import ConsultationSection from '../components/Consultation/ConsultationSection';
 import { SITE_META } from '../utils/constants';
+import { getLenis } from '../hooks/useLenis';
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    if (window.location.hash) {
+      const hash = window.location.hash;
+      const timer = setTimeout(() => {
+        const el = document.querySelector<HTMLElement>(hash);
+        if (el) {
+          const lenis = getLenis();
+          if (lenis) {
+            lenis.scrollTo(el, { duration: 1.2 });
+          } else {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -25,19 +45,45 @@ const Home: React.FC = () => {
         <link rel="canonical" href={SITE_META.canonical} />
       </Helmet>
 
-      <HeroIntro />
-      <AboutGrid />
-      <TypoTitles
-        variant="without-image"
-        title1="Codename "
-        title2="Future City"
-        title3="Fourth City"
-        subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
-      />
-      <SolutionsShowcase />
+      {/* Hero Section */}
+      <section id="hero">
+        <HeroIntro />
+      </section>
+
+      {/* About Section */}
+      <section id="about">
+        <AboutGrid />
+        <TypoTitles
+          variant="without-image"
+          title1="Codename "
+          title2="Future City"
+          title3="Fourth City"
+          subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
+        />
+      </section>
+
+      {/* Plots / Masterplan Sectors Section */}
+      <section id="plots">
+        <ProjectListing />
+      </section>
+
+      {/* Location & Infrastructure Section */}
+      <section id="location">
+        <StickyServices />
+      </section>
+
+      {/* Vision & Growth Corridor Section */}
+      <section id="vision">
+        <SolutionsShowcase />
+      </section>
+
+      {/* Testimonials */}
       <TestimonialsSection />
-      <StickyServices />
-      <ProjectListing />
+
+      {/* Contact & Site Visit Booking Section */}
+      <section id="contact">
+        <ConsultationSection />
+      </section>
     </>
   );
 };
