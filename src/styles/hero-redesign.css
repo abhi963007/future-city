@@ -402,16 +402,9 @@
   justify-content: flex-end !important;
   align-items: center !important;
   width: auto !important;
-  flex: 0 0 auto !important;
-  gap: 36px;
+  flex: 1;
+  gap: 44px;
   position: relative;
-  padding: 8px 20px 8px 32px;
-  background: rgba(7, 18, 33, 0.70);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 999px;
-  border: 1px solid rgba(212, 162, 76, 0.25);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
 }
 
 /* Hide burger menu completely as requested for mobile and desktop */
