@@ -123,6 +123,17 @@ const Footer: React.FC = () => {
                 className="footer-map_iframe"
               />
 
+              {/* Custom Google Maps Red Pointer Pin Overlay */}
+              <div className="footer-map_pointer_overlay">
+                <div className="google-red-pin">
+                  <svg width="36" height="48" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="red-pin-icon">
+                    <path d="M12 0C5.37 0 0 5.37 0 12C0 21 12 32 12 32C12 32 24 21 24 12C24 5.37 18.63 0 12 0ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" fill="#EA4335"/>
+                    <circle cx="12" cy="12" r="4" fill="#FFFFFF"/>
+                  </svg>
+                  <div className="google-pin-ripple"></div>
+                </div>
+              </div>
+
               {/* Floating badge on map */}
               <div className="footer-map_floating_card">
                 <div className="map-card-info">
