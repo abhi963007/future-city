@@ -7,7 +7,6 @@ import ProjectListing from '../components/Projects/ProjectListing';
 import StickyServices from '../components/StickyServices/StickyServices';
 import SolutionsShowcase from '../components/Solutions/SolutionsShowcase';
 import TestimonialsSection from '../components/Testimonials/TestimonialsSection';
-import ConsultationSection from '../components/Consultation/ConsultationSection';
 import { SITE_META } from '../utils/constants';
 import { getLenis } from '../hooks/useLenis';
 
@@ -79,11 +78,6 @@ const Home: React.FC = () => {
 
       {/* Testimonials */}
       <TestimonialsSection />
-
-      {/* Contact & Site Visit Booking Section */}
-      <section id="contact">
-        <ConsultationSection />
-      </section>
     </>
   );
 };

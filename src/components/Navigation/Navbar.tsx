@@ -11,7 +11,6 @@ const navMenuItems = [
   { href: '/#plots', label: 'Plots', selector: '#plots' },
   { href: '/#location', label: 'Location & Infrastructure', selector: '#location' },
   { href: '/#vision', label: 'Future City Vision', selector: '#vision' },
-  { href: '/#contact', label: 'Contact & Site Visit', selector: '#contact' },
 ];
 
 const headerNavLinks = [
@@ -217,13 +216,9 @@ const Navbar: React.FC = () => {
                 ))}
               </div>
               <div className="menu-additional-links">
-                <Link
-                  to="/#contact"
-                  onClick={(e) => handleNavClick(e, '/#contact', '#contact')}
-                  className="menu-additional-link"
-                >
+                <button type="button" onClick={handleBookClick} className="menu-additional-link">
                   Contact
-                </Link>
+                </button>
                 <button type="button" onClick={handleBookClick} className="menu-additional-link">
                   Book Site Visit
                 </button>
