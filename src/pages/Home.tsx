@@ -61,11 +61,6 @@ const Home: React.FC = () => {
         />
       </section>
 
-      {/* Plots / Masterplan Sectors Section */}
-      <section id="plots">
-        <ProjectListing />
-      </section>
-
       {/* Location & Infrastructure Section */}
       <section id="location">
         <StickyServices />
@@ -74,6 +69,11 @@ const Home: React.FC = () => {
       {/* Vision & Growth Corridor Section */}
       <section id="vision">
         <SolutionsShowcase />
+      </section>
+
+      {/* Plots / Masterplan Sectors Section */}
+      <section id="plots">
+        <ProjectListing />
       </section>
 
       {/* Testimonials */}
