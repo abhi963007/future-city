@@ -59,6 +59,15 @@ const SolutionsShowcase: React.FC = () => {
       data-wf-variant-state="base"
       className="section-solutions-showcase"
     >
+      {/* Animated Section Header */}
+      <div className="section_animated-heading solutions-showcase_heading">
+        <div className="animated-heading_wrap">
+          <h2 className="animated-scroll-heading is-first">Future City</h2>
+          <h2 className="animated-scroll-heading is-middle">Growth & Vision</h2>
+          <h2 className="animated-scroll-heading is-last">Corridors</h2>
+        </div>
+      </div>
+
       <div className="solutions-showcase-wrap w-dyn-list">
         <div role="list" className="solutions-showcase-list w-dyn-items">
           {solutionsData.map((item, index) => (
