@@ -2200,25 +2200,26 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   }
 
   .footer-minimal_nav {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
     width: 100%;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1.25rem 0;
   }
 
   .footer-minimal_nav-column {
-    align-items: center;
+    display: contents;
   }
 
   .footer-minimal_link-btn {
     text-align: center;
+    font-size: 0.82rem;
+    padding: 0.2rem 0;
   }
 
   .footer-minimal_contact {
-    gap: 1.5rem;
+    gap: 1.25rem;
     align-items: center;
     width: 100%;
     margin: 0 auto;
@@ -2227,7 +2228,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   .footer-minimal_contact-item {
     align-items: center;
     text-align: center;
-    gap: 0.3rem;
+    gap: 0.15rem;
   }
 
   .contact-label {
