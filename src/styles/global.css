@@ -1595,11 +1595,11 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   }
 
   .project-clean_cta-btn {
-    width: 100%;
+    width: max-content;
     justify-content: center;
-    margin-top: 0.65rem;
-    padding: 0.9rem 1.4rem;
-    font-size: 0.8rem;
+    margin: 1rem auto 0 auto !important;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
     box-sizing: border-box;
   }
 
