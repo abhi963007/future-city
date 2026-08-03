@@ -6,7 +6,6 @@ import TypoTitles from '../components/Typography/TypoTitles';
 import ProjectListing from '../components/Projects/ProjectListing';
 import StickyServices from '../components/StickyServices/StickyServices';
 import SolutionsShowcase from '../components/Solutions/SolutionsShowcase';
-import VisionSection from '../components/Vision/VisionSection';
 import TestimonialsSection from '../components/Testimonials/TestimonialsSection';
 import { SITE_META } from '../utils/constants';
 import { getLenis } from '../hooks/useLenis';
@@ -60,10 +59,6 @@ const Home: React.FC = () => {
           title3="Fourth City"
           subtitle="Transforming Hyderabad's southern corridor into an international hub for tech, AI, and mega infrastructure"
         />
-        {/* CM Revanth Reddy - A Vision For Tomorrow Section */}
-        <div id="cm-vision">
-          <VisionSection />
-        </div>
       </section>
 
       {/* Plots / Masterplan Sectors Section */}
