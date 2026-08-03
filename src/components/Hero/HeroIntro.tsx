@@ -20,14 +20,20 @@ const HeroIntro: React.FC = () => {
 
   return (
     <div ref={heroRef} className="hero-cinematic">
-      {/* ── Full-bleed background image ── */}
+      {/* ── Full-bleed background video ── */}
       <div className="hero-cinematic-bg">
-        <img
-          src="/images/hero-dusk-gate.png"
-          alt="Future City Dusk Gate — Yacharam, Hyderabad"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero-dusk-gate.png"
           className="hero-cinematic-bg-img"
-        />
-        {/* Left-heavy dark vignette gradient over image */}
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+        >
+          <source src="/media/hero video.mp4" type="video/mp4" />
+        </video>
+        {/* Left-heavy dark vignette gradient over video */}
         <div className="hero-cinematic-dark-overlay" />
       </div>
 
