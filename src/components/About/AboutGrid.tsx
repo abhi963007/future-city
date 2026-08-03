@@ -6,30 +6,35 @@ const gridImages = [
   {
     src: '/images/Slot 1.png',
     title: 'Future City',
+    shortTitle: 'Future City',
     alt: 'Future City',
     position: 'is-topleft',
   },
   {
     src: '/images/Slot 2.png',
     title: 'Eliminedu Aerospace SEZ',
+    shortTitle: 'Eliminedu SEZ',
     alt: 'Eliminedu Aerospace SEZ',
     position: 'is-top',
   },
   {
     src: '/images/Slot 3.png',
     title: 'HMDA IT Hub & Township',
+    shortTitle: 'HMDA IT Hub',
     alt: 'HMDA IT Hub & Township',
     position: 'is-top',
   },
   {
     src: '/images/Slot 4.png',
     title: 'Amazon Data Center & Skill University',
+    shortTitle: 'Amazon Hub',
     alt: 'Amazon Data Center & Skill University',
     position: 'is-top',
   },
   {
     src: '/images/Slot 5.png',
     title: 'Radial Road S7',
+    shortTitle: 'Radial S7',
     alt: 'Radial Road S7',
     position: 'is-top-right',
   },
@@ -37,12 +42,14 @@ const gridImages = [
   {
     src: '/images/Slot 6.png',
     title: 'Future City Master Plan Roads',
+    shortTitle: 'Master Plan',
     alt: 'Future City Master Plan Roads',
     position: 'is-left',
   },
   {
     src: '/images/Slot 7.png',
     title: 'Outer Ring Road (ORR)',
+    shortTitle: 'ORR',
     alt: 'Outer Ring Road (ORR)',
     position: 'is-right',
   },
@@ -50,30 +57,35 @@ const gridImages = [
   {
     src: '/images/Slot 8.png',
     title: 'Proposed Regional Ring Road (RRR)',
+    shortTitle: 'Proposed RRR',
     alt: 'Proposed Regional Ring Road (RRR)',
     position: 'is-bottom-left',
   },
   {
     src: '/images/Slot 9.png',
     title: 'TATA Aerospace & TCS Adibatla',
+    shortTitle: 'TATA & TCS',
     alt: 'TATA Aerospace & TCS Adibatla',
     position: 'is-bottom',
   },
   {
     src: '/images/Slot 10.png',
     title: 'Ranga Reddy Collectorate Office',
+    shortTitle: 'Collectorate',
     alt: 'Ranga Reddy Collectorate Office',
     position: 'is-bottom',
   },
   {
     src: '/images/Slot 11.png',
     title: 'Wonderla Amusement Park',
+    shortTitle: 'Wonderla',
     alt: 'Wonderla Amusement Park',
     position: 'is-bottom',
   },
   {
     src: '/images/Slot 12.png',
     title: 'Nandi Wanaparthy Reserved Forest',
+    shortTitle: 'Reserved Forest',
     alt: 'Nandi Wanaparthy Reserved Forest',
     position: 'is-bottom-right',
   },
@@ -95,7 +107,8 @@ const AboutGrid: React.FC = () => {
               <div key={i} className={`home-grid_image-wrap ${img.position}`}>
                 <img src={img.src} loading="eager" alt={img.alt} className="home-grid_image" />
                 <div className="home-grid_card-overlay">
-                  <span className="home-grid_card-title">{img.title}</span>
+                  <span className="home-grid_card-title desktop-title">{img.title}</span>
+                  <span className="home-grid_card-title mobile-title">{img.shortTitle}</span>
                 </div>
               </div>
             ))}
@@ -109,12 +122,13 @@ const AboutGrid: React.FC = () => {
                 className="home-grid_image"
               />
               <div className="home-grid_card-overlay">
-                <span className="home-grid_card-title">{gridImages[5].title}</span>
+                <span className="home-grid_card-title desktop-title">{gridImages[5].title}</span>
+                <span className="home-grid_card-title mobile-title">{gridImages[5].shortTitle}</span>
               </div>
             </div>
 
             {/* Row 2: Middle 3 columns spacer (behind center video wrap) */}
-            <div style={{ gridColumn: 'span 3' }}></div>
+            <div className="home-grid_middle-spacer" style={{ gridColumn: 'span 3' }}></div>
 
             {/* Row 2: Right image (Col 5) */}
             <div className={`home-grid_image-wrap ${gridImages[6].position}`}>
@@ -125,7 +139,8 @@ const AboutGrid: React.FC = () => {
                 className="home-grid_image"
               />
               <div className="home-grid_card-overlay">
-                <span className="home-grid_card-title">{gridImages[6].title}</span>
+                <span className="home-grid_card-title desktop-title">{gridImages[6].title}</span>
+                <span className="home-grid_card-title mobile-title">{gridImages[6].shortTitle}</span>
               </div>
             </div>
 
@@ -134,7 +149,8 @@ const AboutGrid: React.FC = () => {
               <div key={i + 7} className={`home-grid_image-wrap ${img.position}`}>
                 <img src={img.src} loading="lazy" alt={img.alt} className="home-grid_image" />
                 <div className="home-grid_card-overlay">
-                  <span className="home-grid_card-title">{img.title}</span>
+                  <span className="home-grid_card-title desktop-title">{img.title}</span>
+                  <span className="home-grid_card-title mobile-title">{img.shortTitle}</span>
                 </div>
               </div>
             ))}
