@@ -37,72 +37,79 @@ const HeroIntro: React.FC = () => {
         <div className="hero-cinematic-dark-overlay" />
       </div>
 
+
       {/* ── Left Content Panel ── */}
       <div className="hero-curved-panel">
         <div className="hero-panel-content">
 
-          {/* PLOTTING PROJECT kicker + gold line */}
+          {/* Kicker: Gold line + THE FUTURE IS BEING BUILT */}
           <div className="hero-panel-kicker" data-hero-el="kicker">
-            <span className="kicker-text">PLOTTING PROJECT</span>
             <span className="kicker-divider" />
+            <span className="kicker-text">THE FUTURE IS BEING BUILT</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="hero-panel-title" data-hero-el="title">
             <span className="title-row title-white">Hyderabad's Next</span>
             <span className="title-row title-gold">Growth Zone</span>
-            <span className="title-row title-white">Starts Here</span>
           </h1>
 
-          {/* Gold separator line between headline and tagline */}
+          {/* Gold separator line */}
           <div className="hero-title-separator" data-hero-el="separator" />
 
-          {/* Tagline — italic gold serif */}
-          <div className="hero-panel-tagline" data-hero-el="tagline">
-            Invest Today, Grow Tomorrow!
+          {/* Subtitle / Description */}
+          <div className="hero-panel-description" data-hero-el="tagline">
+            A visionary plotted development designed for growth,<br />
+            connectivity, and a higher quality of life.
           </div>
 
-          {/* Location Information with vertical connector */}
-          <div className="hero-panel-locations" data-hero-el="locations">
-            {/* Row 1 — Pin icon + text */}
-            <div className="hero-loc-item">
-              <div className="hero-loc-icon-col">
-                <svg className="hero-loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                  <circle cx="12" cy="9" r="2.5"/>
-                </svg>
-              </div>
-              <span className="hero-loc-text">Yacharam, Hyderabad</span>
-            </div>
-
-            {/* Vertical gold connector line — sibling between rows, left-aligned with icons */}
-            <div className="hero-loc-connector-row">
-              <div className="hero-loc-connector" />
-            </div>
-
-            {/* Row 2 — City icon + text */}
-            <div className="hero-loc-item">
-              <div className="hero-loc-icon-col">
-                <svg className="hero-loc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 21h18M5 21V7l8-4v18M13 21V11l6-3v13"/>
-                </svg>
-              </div>
-              <span className="hero-loc-text">Near Hyderabad Future City</span>
-            </div>
-          </div>
-
-          {/* Primary CTA */}
+          {/* Primary CTA Button */}
           <div className="hero-panel-cta-wrap" data-hero-el="cta">
             <button
               type="button"
               onClick={scrollToNextSection}
               className="hero-panel-cta"
             >
-              <span>EXPLORE THE OPPORTUNITY</span>
-              <span className="hero-cta-arrow">→</span>
+              <div className="hero-cta-circle">
+                <span className="hero-cta-arrow">→</span>
+              </div>
+              <span className="hero-cta-label">DISCOVER THE OPPORTUNITY</span>
             </button>
           </div>
 
+        </div>
+      </div>
+
+      {/* ── Right Side Bottom: STRATEGICALLY POSITIONED ── */}
+      <div className="hero-strategic-widget" data-hero-el="locations">
+        <div className="hero-strategic-header">
+          <span className="hero-strategic-dot" />
+          <span className="hero-strategic-title">STRATEGICALLY POSITIONED</span>
+          <span className="hero-strategic-line" />
+        </div>
+        <div className="hero-strategic-grid">
+          <div className="hero-strategic-col">
+            <span className="hero-strategic-val">Future Ready</span>
+            <span className="hero-strategic-lbl">Infrastructure</span>
+          </div>
+          <div className="hero-strategic-divider" />
+          <div className="hero-strategic-col">
+            <span className="hero-strategic-val">High Growth</span>
+            <span className="hero-strategic-lbl">Corridor</span>
+          </div>
+          <div className="hero-strategic-divider" />
+          <div className="hero-strategic-col">
+            <span className="hero-strategic-val">Smart</span>
+            <span className="hero-strategic-lbl">Investment</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Right Edge Vertical Scroll Indicator ── */}
+      <div className="hero-scroll-indicator">
+        <span className="hero-scroll-text">SCROLL TO EXPLORE</span>
+        <div className="hero-scroll-line">
+          <span className="hero-scroll-dot" />
         </div>
       </div>
     </div>
