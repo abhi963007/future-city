@@ -868,109 +868,75 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: block;
 }
 
-.masterplan-bulge-hotspot {
+/* ══ Dot-style map hotspot markers ══ */
+.map-dot-marker {
   position: absolute;
   transform: translate(-50%, -50%);
-  border-radius: 10px;
-  border: 1px solid rgba(212, 162, 76, 0.22);
-  background: rgba(212, 162, 76, 0.03);
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.4s ease;
-}
-
-/* Precise Target Corner Brackets */
-.hotspot-corner {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-color: rgba(212, 162, 76, 0.65);
-  border-style: solid;
-  border-width: 0;
-  transition: border-color 0.3s ease, transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-  pointer-events: none;
-}
-.corner-tl { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; border-top-left-radius: 8px; }
-.corner-tr { top: -1px; right: -1px; border-top-width: 2px; border-right-width: 2px; border-top-right-radius: 8px; }
-.corner-bl { bottom: -1px; left: -1px; border-bottom-width: 2px; border-left-width: 2px; border-bottom-left-radius: 8px; }
-.corner-br { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; border-bottom-right-radius: 8px; }
-
-.target-beacon-dot {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #D4A24C;
-  box-shadow: 0 0 8px #D4A24C;
-  animation: beacon-pulse 2s infinite ease-in-out;
-  pointer-events: none;
-}
-
-@keyframes beacon-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.5); opacity: 0.3; }
-}
-
-.masterplan-bulge-hotspot:hover,
-.masterplan-bulge-hotspot.is-hovered {
-  transform: translate(-50%, -50%) scale(1.12);
-  background: rgba(212, 162, 76, 0.18);
-  border: 1.5px solid #D4A24C;
-  border-radius: 12px;
-  box-shadow:
-    0 0 35px rgba(212, 162, 76, 0.65),
-    inset 0 0 25px rgba(212, 162, 76, 0.3);
-  z-index: 25;
-}
-
-.masterplan-bulge-hotspot:hover .hotspot-corner,
-.masterplan-bulge-hotspot.is-hovered .hotspot-corner {
-  border-color: #FFFFFF;
   width: 14px;
   height: 14px;
+  border-radius: 50%;
+  background: var(--dot-color, #D4A24C);
+  box-shadow:
+    0 0 0 0 var(--dot-color, #D4A24C),
+    0 0 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: dot-idle-pulse 2.8s infinite ease-in-out;
 }
 
-.masterplan-bulge-hotspot:hover .target-beacon-dot {
-  background: #FFFFFF;
-  box-shadow: 0 0 10px #FFFFFF;
-}
-
-.bulge-tag-label {
+/* White inner dot pinpoint */
+.map-dot-marker::before {
+  content: '';
   position: absolute;
-  bottom: -24px;
-  background: rgba(5, 12, 27, 0.95);
-  color: #E8E8E4;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(212, 162, 76, 0.4);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
-  z-index: 30;
+  inset: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  transition: inset 0.25s ease;
 }
 
-.masterplan-bulge-hotspot:hover .bulge-tag-label,
-.masterplan-bulge-hotspot.is-hovered .bulge-tag-label {
-  opacity: 1;
-  transform: translateY(0);
-  color: #D4A24C;
-  border-color: #D4A24C;
+/* Outer ripple ring (always subtle, amplified on hover) */
+.map-dot-marker::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--dot-color, #D4A24C);
+  opacity: 0.4;
+  animation: dot-ring-breathe 2.8s infinite ease-in-out;
+  transition: inset 0.25s ease, opacity 0.25s ease;
+}
+
+@keyframes dot-idle-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--dot-color, #D4A24C), 0 0 6px rgba(0,0,0,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(212,162,76,0), 0 0 10px rgba(0,0,0,0.4); }
+}
+
+@keyframes dot-ring-breathe {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%       { opacity: 0.08; transform: scale(1.5); }
+}
+
+.map-dot-marker:hover,
+.map-dot-marker.is-active {
+  transform: translate(-50%, -50%) scale(1.55);
+  box-shadow:
+    0 0 0 8px color-mix(in srgb, var(--dot-color, #D4A24C) 20%, transparent),
+    0 0 20px var(--dot-color, #D4A24C);
+  z-index: 25;
+  animation: none;
+}
+
+.map-dot-marker:hover::before,
+.map-dot-marker.is-active::before {
+  inset: 3px;
+}
+
+.map-dot-marker:hover::after,
+.map-dot-marker.is-active::after {
+  inset: -10px;
+  opacity: 0.7;
+  animation: none;
 }
 
 /* Floating Detail Card on Hover */
