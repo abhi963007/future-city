@@ -2009,8 +2009,12 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   }
 
   .footer-map_heading {
-    font-size: clamp(2rem, 8vw, 2.6rem);
-    line-height: 1.1;
+    font-size: 1.45rem !important;
+    line-height: 1.25;
+  }
+
+  .footer-map_heading br {
+    display: none;
   }
 
   .footer-map_desc {
