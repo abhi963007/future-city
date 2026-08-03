@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useTestimonialsAnimation } from '../../hooks/useTestimonialsAnimation';
+import { useSectionHeadingsAnimation } from '../../hooks/useSectionHeadingsAnimation';
 
 interface PillarItem {
   id: string;
@@ -75,15 +76,16 @@ const TestimonialsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(2); // Default middle pillar card
 
   useTestimonialsAnimation(containerRef, setActiveIndex);
+  useSectionHeadingsAnimation(containerRef);
 
   return (
     <div ref={containerRef} className="section_testimonials-wrapper">
       {/* Animated Section Header */}
       <div className="section_animated-heading">
         <div className="animated-heading_wrap">
-          <h2 className="animated-scroll-heading is-first">Strategic Pillars of</h2>
-          <h2 className="animated-scroll-heading is-middle">Codename Future City</h2>
-          <h2 className="animated-scroll-heading is-last">Growth</h2>
+          <h2 className="animated-scroll-heading is-first">Future City</h2>
+          <h2 className="animated-scroll-heading is-middle">Growth</h2>
+          <h2 className="animated-scroll-heading is-last">Pillars</h2>
         </div>
       </div>
 

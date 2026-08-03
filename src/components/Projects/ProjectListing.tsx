@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import { useProjectsAnimation } from '../../hooks/useProjectsAnimation';
+import { useSectionHeadingsAnimation } from '../../hooks/useSectionHeadingsAnimation';
 import InteractiveMasterplanMap from './InteractiveMasterplanMap';
 
 const ProjectListing: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useProjectsAnimation(containerRef);
+  useSectionHeadingsAnimation(containerRef);
 
   return (
     <div ref={sectionRef => { containerRef.current = sectionRef; }} className="section_project-clean-listing">

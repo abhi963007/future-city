@@ -13,31 +13,51 @@ export function useTypoTitlesAnimation(containerRef: React.RefObject<Element | n
 
       if (titles.length) {
         gsap.set(titles, { visibility: 'visible' });
-        gsap.from(titles, {
-          opacity: 0,
-          y: 40,
-          stagger: 0.15,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: container,
-            start: 'top 75%',
+        gsap.fromTo(
+          titles,
+          {
+            opacity: 0,
+            x: -120,
+            filter: 'blur(5px)',
           },
-        });
+          {
+            opacity: 1,
+            x: 0,
+            filter: 'blur(0px)',
+            stagger: 0.35,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: container,
+              start: 'top 85%',
+              end: 'bottom 40%',
+              scrub: 1,
+            },
+          }
+        );
       }
 
       if (text.length) {
         gsap.set(text, { visibility: 'visible' });
-        gsap.from(text, {
-          opacity: 0,
-          y: 20,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: container,
-            start: 'top 70%',
+        gsap.fromTo(
+          text,
+          {
+            opacity: 0,
+            x: -60,
+            filter: 'blur(3px)',
           },
-        });
+          {
+            opacity: 1,
+            x: 0,
+            filter: 'blur(0px)',
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: container,
+              start: 'top 75%',
+              end: 'bottom 45%',
+              scrub: 1,
+            },
+          }
+        );
       }
 
       if (typoImg) {

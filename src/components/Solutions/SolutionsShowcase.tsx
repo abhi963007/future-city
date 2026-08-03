@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSolutionsAnimation } from '../../hooks/useSolutionsAnimation';
+import { useSectionHeadingsAnimation } from '../../hooks/useSectionHeadingsAnimation';
 import { ROUTES } from '../../utils/constants';
 
 interface SolutionItem {
@@ -37,20 +38,13 @@ const solutionsData: SolutionItem[] = [
     imageSrc: '/images/main-card-3.png',
     srcset: '/images/main-card-3.png 1920w',
   },
-  {
-    href: ROUTES.PROJECT,
-    title: 'DTCP & RERA Approved',
-    desc: '100% clear title, bank loan eligible, with immediate spot registration readiness.',
-    clientCount: '100% Verified',
-    imageSrc: '/images/main-card-4.png',
-    srcset: '/images/main-card-4.png 1920w',
-  },
 ];
 
 const SolutionsShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useSolutionsAnimation(containerRef);
+  useSectionHeadingsAnimation(containerRef);
 
   return (
     <div

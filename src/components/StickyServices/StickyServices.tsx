@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useStickyServicesAnimation } from '../../hooks/useStickyServicesAnimation';
+import { useSectionHeadingsAnimation } from '../../hooks/useSectionHeadingsAnimation';
 
 interface InfrastructureCard {
   number: string;
@@ -54,6 +55,7 @@ const StickyServices: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useStickyServicesAnimation(containerRef);
+  useSectionHeadingsAnimation(containerRef);
 
   return (
     <div ref={containerRef} className="section_services-home">
