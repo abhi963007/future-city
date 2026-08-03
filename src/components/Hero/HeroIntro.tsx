@@ -92,13 +92,18 @@ const HeroIntro: React.FC = () => {
         </div>
         <div className="hero-strategic-grid">
           <div className="hero-strategic-col">
-            <span className="hero-strategic-val">Future Ready</span>
-            <span className="hero-strategic-lbl">Infrastructure</span>
+            <span className="hero-strategic-val">Yacharam, Hyd</span>
+            <span className="hero-strategic-lbl">Project Location</span>
           </div>
           <div className="hero-strategic-divider" />
           <div className="hero-strategic-col">
-            <span className="hero-strategic-val">High Growth</span>
-            <span className="hero-strategic-lbl">Corridor</span>
+            <span className="hero-strategic-val">Future City</span>
+            <span className="hero-strategic-lbl">Near Growth Hub</span>
+          </div>
+          <div className="hero-strategic-divider" />
+          <div className="hero-strategic-col">
+            <span className="hero-strategic-val">Future Ready</span>
+            <span className="hero-strategic-lbl">Infrastructure</span>
           </div>
           <div className="hero-strategic-divider" />
           <div className="hero-strategic-col">
