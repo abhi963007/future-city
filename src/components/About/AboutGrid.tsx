@@ -5,64 +5,76 @@ const gridImages = [
   // Top row (5 images: Slots 1 to 5)
   {
     src: '/images/Slot 1.png',
-    alt: 'Future City masterplan aerial view',
+    title: 'Future City',
+    alt: 'Future City',
     position: 'is-topleft',
   },
   {
     src: '/images/Slot 2.png',
-    alt: 'Future City AI Hub tech corridor',
+    title: 'Eliminedu Aerospace SEZ',
+    alt: 'Eliminedu Aerospace SEZ',
     position: 'is-top',
   },
   {
     src: '/images/Slot 3.png',
-    alt: 'Future City luxury villa plot boundary',
+    title: 'HMDA IT Hub & Township',
+    alt: 'HMDA IT Hub & Township',
     position: 'is-top',
   },
   {
     src: '/images/Slot 4.png',
-    alt: 'Future City executive clubhouse amenities',
+    title: 'Amazon Data Center & Skill University',
+    alt: 'Amazon Data Center & Skill University',
     position: 'is-top',
   },
   {
     src: '/images/Slot 5.png',
-    alt: 'Future City 6-lane highway corridor',
+    title: 'Radial Road S7',
+    alt: 'Radial Road S7',
     position: 'is-top-right',
   },
   // Middle row side images (2 images: Slots 6 and 7)
   {
     src: '/images/Slot 6.png',
-    alt: 'Future City grand entry arch and security gate',
+    title: 'Future City Master Plan Roads',
+    alt: 'Future City Master Plan Roads',
     position: 'is-left',
   },
   {
     src: '/images/Slot 7.png',
-    alt: 'Future City avenue parks and jogging tracks',
+    title: 'Outer Ring Road (ORR)',
+    alt: 'Outer Ring Road (ORR)',
     position: 'is-right',
   },
   // Bottom row (5 images: Slots 8 to 12)
   {
     src: '/images/Slot 8.png',
-    alt: 'Future City subterranean utilities smart grid',
+    title: 'Proposed Regional Ring Road (RRR)',
+    alt: 'Proposed Regional Ring Road (RRR)',
     position: 'is-bottom-left',
   },
   {
     src: '/images/Slot 9.png',
-    alt: 'Future City Pharma City life sciences hub',
+    title: 'TATA Aerospace & TCS Adibatla',
+    alt: 'TATA Aerospace & TCS Adibatla',
     position: 'is-bottom',
   },
   {
     src: '/images/Slot 10.png',
-    alt: 'Future City Regional Ring Road cloverleaf junction',
+    title: 'Ranga Reddy Collectorate Office',
+    alt: 'Ranga Reddy Collectorate Office',
     position: 'is-bottom',
   },
   {
     src: '/images/Slot 11.png',
-    alt: 'Future City central landscaped park and waterfront lake',
+    title: 'Wonderla Amusement Park',
+    alt: 'Wonderla Amusement Park',
     position: 'is-bottom',
   },
   {
     src: '/images/Slot 12.png',
-    alt: 'Future City Young India Skills University campus',
+    title: 'Nandi Wanaparthy Reserved Forest',
+    alt: 'Nandi Wanaparthy Reserved Forest',
     position: 'is-bottom-right',
   },
 ];
@@ -82,6 +94,9 @@ const AboutGrid: React.FC = () => {
             {gridImages.slice(0, 5).map((img, i) => (
               <div key={i} className={`home-grid_image-wrap ${img.position}`}>
                 <img src={img.src} loading="eager" alt={img.alt} className="home-grid_image" />
+                <div className="home-grid_card-overlay">
+                  <span className="home-grid_card-title">{img.title}</span>
+                </div>
               </div>
             ))}
 
@@ -93,6 +108,9 @@ const AboutGrid: React.FC = () => {
                 alt={gridImages[5].alt}
                 className="home-grid_image"
               />
+              <div className="home-grid_card-overlay">
+                <span className="home-grid_card-title">{gridImages[5].title}</span>
+              </div>
             </div>
 
             {/* Row 2: Middle 3 columns spacer (behind center video wrap) */}
@@ -106,12 +124,18 @@ const AboutGrid: React.FC = () => {
                 alt={gridImages[6].alt}
                 className="home-grid_image"
               />
+              <div className="home-grid_card-overlay">
+                <span className="home-grid_card-title">{gridImages[6].title}</span>
+              </div>
             </div>
 
             {/* Row 3: Bottom 5 images */}
             {gridImages.slice(7, 12).map((img, i) => (
               <div key={i + 7} className={`home-grid_image-wrap ${img.position}`}>
                 <img src={img.src} loading="lazy" alt={img.alt} className="home-grid_image" />
+                <div className="home-grid_card-overlay">
+                  <span className="home-grid_card-title">{img.title}</span>
+                </div>
               </div>
             ))}
 

@@ -121,7 +121,7 @@
   flex-direction: column;
   margin: 0;
   max-width: 560px;
-  font-family: 'NyghtSerif', 'Cormorant Garamond', 'DM Serif Display', Georgia, serif;
+  font-family: 'Nyght Serif', 'Cormorant Garamond', 'DM Serif Display', Georgia, serif;
   font-size: clamp(2.5rem, 3.8vw, 4.5rem);
   font-weight: 500;
   line-height: 0.92;
@@ -154,7 +154,7 @@
 /* ── 9. Tagline ──
    ~30% larger, luxury serif italic */
 .hero-panel-tagline {
-  font-family: 'NyghtSerif', 'Cormorant Garamond', 'DM Serif Display', Georgia, serif;
+  font-family: 'Nyght Serif', 'Cormorant Garamond', 'DM Serif Display', Georgia, serif;
   font-size: clamp(1.45rem, 2.1vw, 1.95rem);
   font-weight: 400;
   font-style: italic;

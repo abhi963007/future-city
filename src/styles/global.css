@@ -78,9 +78,9 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   --grid--border-radius: 1.11vw;
 }
 
-/* ?????? Outer wrapper (scroll driver: 400 vh gives plenty of scrub room) */
+/* ══ Outer wrapper ══ */
 .section_grid-home {
-  background-color: #f8f7f3;
+  background: linear-gradient(180deg, #0a0f1e 0%, #060d18 40%, #081020 100%);
   height: 400vh;
   position: relative;
   overflow: clip;
@@ -118,16 +118,21 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: grid;
 }
 
-/* ?????? Image cells */
+/* ══ Image cells ══ */
 .home-grid_image-wrap {
   border-radius: var(--grid--border-radius);
   backface-visibility: hidden;
   width: 100%;
   height: auto;
-  overflow: clip;
+  overflow: hidden;
+  position: relative;
+  /* Premium card border */
+  outline: 1px solid rgba(255, 255, 255, 0.06);
+  cursor: default;
+  isolation: isolate;
 }
 
-/* transform-origin per position ??? drives 3D flip direction */
+/* transform-origin per position — drives 3D flip direction */
 .home-grid_image-wrap.is-topleft      { transform-origin: 0 0; }
 .home-grid_image-wrap.is-top          { transform-origin: 50% 0; }
 .home-grid_image-wrap.is-top-right    { transform-origin: 100% 0; }
@@ -142,13 +147,113 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   width: 100%;
   height: 100%;
   display: block;
+  /* Vibrant starting state */
+  opacity: 0.72;
+  filter: brightness(0.78) saturate(1.1) contrast(1.05);
+  transform: scale(1.0);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* ?????? Centre video panel ???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
-   Position: absolute + inset:0% + margin:auto  ???  centred in the grid.
-   Starts small (60% wide, ~33% tall); GSAP zooms it to 100vw ?? 100vh.
+/* Parallax-like scale on hover */
+.home-grid_image-wrap:hover .home-grid_image {
+  opacity: 0.95;
+  filter: brightness(0.90) saturate(1.15) contrast(1.0);
+  transform: scale(1.07);
+}
+
+/* ═══ Card Overlay ═══
+   Layered gradient: transparent top → rich dark bottom
+   so the title always pops regardless of image brightness */
+.home-grid_card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  /* Deep scrim only on lower third */
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(4, 10, 24, 0.0) 35%,
+      rgba(4, 10, 24, 0.55) 65%,
+      rgba(4, 10, 24, 0.88) 100%
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
+
+/* On hover: scrim spreads a little upward */
+.home-grid_image-wrap:hover .home-grid_card-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(4, 10, 24, 0.0) 20%,
+      rgba(4, 10, 24, 0.60) 55%,
+      rgba(4, 10, 24, 0.95) 100%
+    );
+}
+
+/* Gold accent line above title — slides in on hover */
+.home-grid_card-overlay::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #D4A24C, #f0c980);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  opacity: 0;
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.home-grid_image-wrap:hover .home-grid_card-overlay::before {
+  width: 28px;
+  opacity: 1;
+}
+
+/* Title typography */
+.home-grid_card-title {
+  color: rgba(244, 243, 239, 0.92);
+  font-family: 'Nyght Serif', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(10px, 0.9vw, 15px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  line-height: 1.3;
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.8),
+    0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(4px);
+  transition:
+    color 0.4s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    text-shadow 0.4s ease;
+}
+
+.home-grid_image-wrap:hover .home-grid_card-title {
+  color: #EAC97A;
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.9),
+    0 0 24px rgba(212, 162, 76, 0.35);
+  transform: translateY(0);
+}
+
+/* ══ Centre video panel ══
+   Position: absolute + inset:0% + margin:auto  ─  centred in the grid.
+   Starts small (60% wide, ~33% tall); GSAP zooms it to 100vw × 100vh.
    z-index:10 ensures it renders on top of all image cells when expanded.
-   ????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????? */
+   ═══════════════════════════════════════════════════════════════════════ */
 .home-grid_video-wrap {
   border-radius: var(--grid--border-radius);
   width: calc(60% - 0.4vw);
@@ -159,9 +264,13 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   transform: translate(-50%, -50%);
   overflow: clip;
   z-index: 10;
+  /* Premium shadow for the video panel */
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(212, 162, 76, 0.18);
 }
 
-/* Inner video layer ??? fills the wrap */
+/* Inner video layer — fills the wrap */
 .home-grid_video {
   transform-origin: 50%;
   width: 100%;
@@ -177,10 +286,10 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   display: block;
 }
 
-/* ?????? Lightbox overlay ("play  +  showreel") */
+/* ══ Lightbox overlay ("explore + masterplan") ══ */
 .home-grid_lightbox {
   gap: 1vw;
-  color: #f8f7f3;
+  color: #f0ede6;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -188,22 +297,32 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   inset: 0%;
   z-index: 2;
   pointer-events: none;
+  /* Subtle vignette on the video */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.0) 40%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
 }
 
 .home-grid_lightbox-text {
   font-family: var(--_typography---display-font, 'Nyght Serif', serif);
   font-size: clamp(0.9rem, 1.8vw, 1.8rem);
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: lowercase;
   line-height: 1;
+  color: rgba(244, 243, 239, 0.88);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .home-grid_lightbox-icon {
   width: clamp(1rem, 1.8vw, 1.8rem);
   height: clamp(1rem, 1.8vw, 1.8rem);
   flex-shrink: 0;
-  animation: grid-lightbox-spin 4s linear infinite;
+  animation: grid-lightbox-spin 6s linear infinite;
+  color: #D4A24C;
+  opacity: 0.85;
 }
 
 @keyframes grid-lightbox-spin {
