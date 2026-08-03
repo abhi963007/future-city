@@ -1739,6 +1739,199 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
 }
 
+/* ══ Interactive Google Map Location Showcase ══ */
+.footer-map_section {
+  width: 100%;
+  padding: 4vw 4vw 2vw;
+  background: rgba(7, 18, 33, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-map_container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-map_header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-map_badge_tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #D4A24C;
+  text-transform: uppercase;
+}
+
+.red-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #EA4335;
+  box-shadow: 0 0 10px #EA4335;
+  animation: pulseRed 2s infinite ease-in-out;
+}
+
+@keyframes pulseRed {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(234, 67, 53, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 10px rgba(234, 67, 53, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(234, 67, 53, 0); }
+}
+
+.footer-map_heading {
+  font-family: var(--_typography---display-font, 'Nyght Serif', serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: #F4F3EF;
+  margin: 0;
+}
+
+.footer-map_card {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid rgba(212, 162, 76, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  background: #08101d;
+}
+
+.footer-map_iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+.footer-map_pointer_overlay {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.google-red-pin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.red-pin-icon {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+  animation: bouncePin 2.5s infinite ease-in-out;
+}
+
+@keyframes bouncePin {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.google-pin-ripple {
+  width: 24px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(234, 67, 53, 0.4);
+  box-shadow: 0 0 16px rgba(234, 67, 53, 0.8);
+  margin-top: -6px;
+  animation: ripplePin 2.5s infinite ease-in-out;
+}
+
+@keyframes ripplePin {
+  0%, 100% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 0.2; }
+}
+
+.footer-map_floating_card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 10;
+  background: rgba(7, 18, 33, 0.88);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(212, 162, 76, 0.4);
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.map-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #D4A24C;
+}
+
+.map-card-subtitle {
+  font-size: 12px;
+  color: #E8E8E4;
+  opacity: 0.9;
+}
+
+.map-card-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #D4A24C;
+  color: #071221;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+  white-space: nowrap;
+}
+
+.map-card-directions-btn:hover {
+  background: #f4c26b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .footer-map_floating_card {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 14px 16px;
+  }
+  .map-card-directions-btn {
+    justify-content: center;
+  }
+  .footer-map_card {
+    height: 380px;
+  }
+}
+
 .footer-minimal_main {
   padding: 5vw 4vw 3vw;
   max-width: 1400px;
