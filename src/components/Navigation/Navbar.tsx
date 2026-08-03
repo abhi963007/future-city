@@ -147,6 +147,9 @@ const Navbar: React.FC = () => {
   return (
     <nav ref={navRef} className="nav">
       <div home-preload="true" className="nav-grid">
+        <Link to="/#hero" onClick={(e) => handleNavClick(e, '/#hero', '#hero')} className="nav-logo" aria-label="Future City Home">
+          <img src="/logo.svg" alt="Future City Logo" className="nav-logo-img" />
+        </Link>
         <div className="nav-actions">
           <div className="nav-inline-links">
             {headerNavLinks.map((link) => (
