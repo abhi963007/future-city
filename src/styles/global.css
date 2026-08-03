@@ -555,7 +555,7 @@ html.w-mod-js:not(.w-mod-ix3) :is(
   color: #111315;
   text-align: center;
   transform: none !important;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .animated-scroll-heading.is-middle {
