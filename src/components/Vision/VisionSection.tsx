@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useSectionHeadingsAnimation } from '../../hooks/useSectionHeadingsAnimation';
 
 const VisionSection: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useSectionHeadingsAnimation(containerRef);
+
   return (
-    <div className="section_vision-tomorrow">
+    <div ref={containerRef} className="section_vision-tomorrow">
       {/* Animated Section Header */}
       <div className="section_animated-heading vision-tomorrow_heading">
         <div className="animated-heading_wrap">
