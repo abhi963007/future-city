@@ -38,6 +38,14 @@ const solutionsData: SolutionItem[] = [
     imageSrc: '/images/main-card-3.png',
     srcset: '/images/main-card-3.png 1920w',
   },
+  {
+    href: ROUTES.VISION,
+    title: 'A Vision For Tomorrow',
+    desc: 'Transforming Telangana into an international economic powerhouse under visionary leadership.',
+    clientCount: 'Telangana Vision',
+    imageSrc: '/images/main-card-4.png',
+    srcset: '/images/main-card-4.png 1920w',
+  },
 ];
 
 const SolutionsShowcase: React.FC = () => {
