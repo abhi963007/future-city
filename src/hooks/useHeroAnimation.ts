@@ -7,6 +7,9 @@ export const useHeroAnimation = (heroRef: React.RefObject<HTMLDivElement | null>
       const container = heroRef.current;
       if (!container) return;
 
+      // Detect mobile — skip horizontal slide on mobile so CSS flex position is preserved
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
       // Target elements
       const bgImg     = container.querySelector('.hero-cinematic-bg-img');
       const overlay   = container.querySelector('.hero-cinematic-dark-overlay');
@@ -22,12 +25,13 @@ export const useHeroAnimation = (heroRef: React.RefObject<HTMLDivElement | null>
       // ── Set initial states ──
       if (bgImg)            gsap.set(bgImg,     { scale: 1.05, opacity: 0 });
       if (overlay)          gsap.set(overlay,   { opacity: 0 });
-      if (panel)            gsap.set(panel,     { opacity: 0, x: -24 });
-      if (kicker)           gsap.set(kicker,    { opacity: 0, y: 16 });
-      if (titleRows.length) gsap.set(titleRows, { opacity: 0, y: 32 });
+      // On mobile: only fade (no x slide) so flex bottom position is not disturbed
+      if (panel)            gsap.set(panel,     isMobile ? { opacity: 0 } : { opacity: 0, x: -24 });
+      if (kicker)           gsap.set(kicker,    { opacity: 0, y: isMobile ? 10 : 16 });
+      if (titleRows.length) gsap.set(titleRows, { opacity: 0, y: isMobile ? 16 : 32 });
       if (separator)        gsap.set(separator, { scaleX: 0, transformOrigin: 'left center' });
-      if (tagline)          gsap.set(tagline,   { opacity: 0, y: 16 });
-      if (cta)              gsap.set(cta,       { opacity: 0, y: 20 });
+      if (tagline)          gsap.set(tagline,   { opacity: 0, y: isMobile ? 8 : 16 });
+      if (cta)              gsap.set(cta,       { opacity: 0, y: isMobile ? 8 : 20 });
       if (widget)           gsap.set(widget,    { opacity: 0, y: 16 });
       if (scrollInd)        gsap.set(scrollInd, { opacity: 0 });
 
@@ -53,11 +57,11 @@ export const useHeroAnimation = (heroRef: React.RefObject<HTMLDivElement | null>
         }, 0.1);
       }
 
-      // 3. Panel slides in from left
+      // 3. Panel: slides in from left on desktop, fades in on mobile
       if (panel) {
         tl.to(panel, {
           opacity: 1,
-          x: 0,
+          ...(isMobile ? {} : { x: 0 }),
           duration: 1.1,
           ease: 'power3.out',
         }, 0.2);

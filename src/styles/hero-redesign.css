@@ -518,15 +518,16 @@
 
 @media (max-width: 767px) {
 
-  /* ── Full height container: flex column so widget shows ── */
+  /* ── Full height container: flex column, content at bottom ── */
   .hero-cinematic {
-    height: auto;
-    min-height: 100svh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-end !important;
   }
 
   /* ── Video overlay: stronger fade at top & bottom on mobile ── */
@@ -539,19 +540,22 @@
     );
   }
 
-  /* ── Content panel: no forced full height, auto-sizes ── */
+  /* ── Content panel: sits at the bottom of the hero ── */
   .hero-curved-panel {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 24px 24px 8px 24px;
-    background: transparent;
-    backdrop-filter: none;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 32px 24px 16px 24px !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    justify-content: flex-end !important;
   }
 
   .hero-panel-content {
